@@ -10,5 +10,9 @@ package Models;
  * @author hp
  */
 public class LivestockModel {
-    private int id;
+    private int id; // Identification of Livestock
+    private int feeds; // Amount of feeds available for that livestock (Per Pack)
+    private float water; // Amount of water available for that livestock (Per Liter)
+    private float harvest; // Amount of egg harvest available for that livestock (Per piece)
+    private enum welfare { Healthy, Sick }; // Dead livestocks should be removed in the database
 }
