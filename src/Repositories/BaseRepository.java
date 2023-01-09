@@ -7,14 +7,13 @@ package Repositories;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
-import java.sql.ResultSet;
 import java.sql.Statement;
 
 /**
  *
  * @author hp
  */
-public class BaseRepository {
+public abstract class BaseRepository {
     private String USERNAME = "sql6589200";
     private String PASSWORD = "5Ucl5F84KY";
     private final String LINK = "jdbc:mysql://sql6.freemysqlhosting.net:3306?useTimezone=true&serverTimezone=UTC";
