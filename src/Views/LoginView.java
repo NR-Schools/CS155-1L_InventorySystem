@@ -5,6 +5,10 @@
  */
 package Views;
 
+import Repositories.AuthRepository;
+import java.util.Arrays;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author hp
@@ -14,8 +18,13 @@ public class LoginView extends javax.swing.JFrame {
     /**
      * Creates new form LoginView
      */
+    
+    MainMenuView mainmenu;
+    
     public LoginView() {
         initComponents();
+        
+        mainmenu = new MainMenuView();
     }
 
     /**
@@ -62,8 +71,16 @@ public class LoginView extends javax.swing.JFrame {
         // TODO add your handling code here:
         
         // Get Contents of Password Field
-        // Hash Password
+        String PasswordStr = String.valueOf(PasswdFld.getPassword());
+
         // Compare Hash to Saved Password Hash
+        if(AuthRepository.getRepository().checkAuth(PasswordStr)) {
+            // Proceed To Menu
+            this.setVisible(false);
+            this.mainmenu.setVisible(true);
+        } else {
+            JOptionPane.showMessageDialog(rootPane, "Incorrect Password!", "Error", JOptionPane.ERROR_MESSAGE);
+        }
     }//GEN-LAST:event_LogInBtnActionPerformed
 
     /**
