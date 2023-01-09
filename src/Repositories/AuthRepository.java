@@ -46,17 +46,29 @@ public class AuthRepository extends BaseRepository {
         return sb.toString();
     }
     
-    public boolean checkAuth(String Password) {
+    public boolean checkAuth(String Username, String Password) {
         try {
             // Hash Sent Password
+            String StoredHashedPassword = "";
             String HashedPasswordInput = this._HashPassword(Password);
             
             // Pull Hashed Password from storage
             Connection con = createSQLConnection();
             Statement Query = con.createStatement();
-            ResultSet results = Query.executeQuery("SELECT * FROM AuthTable");
-            results.next(); // Since 1 row only
-            String StoredHashedPassword = results.getString("HashedPassword");
+            ResultSet results = Query.executeQuery(
+                    String.format(
+                            "SELECT * FROM AuthTable WHERE Username=\"%s\";",
+                            Username
+                     )
+            );
+            if(results.first()) {
+                StoredHashedPassword = results.getString("HashedPassword");
+            }
+            else {
+                return false;
+            }
+            
+            con.close();
             
             // Check If Same
             return HashedPasswordInput == null ? StoredHashedPassword == null : HashedPasswordInput.equals(StoredHashedPassword);

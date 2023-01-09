@@ -38,8 +38,8 @@ public class LoginView extends javax.swing.JFrame {
 
         jPanel1 = new javax.swing.JPanel();
         jPanel2 = new javax.swing.JPanel();
-        PasswdFld = new javax.swing.JPasswordField();
-        jTextField1 = new javax.swing.JTextField();
+        PasswordField = new javax.swing.JPasswordField();
+        UsernameField = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jSeparator1 = new javax.swing.JSeparator();
@@ -58,8 +58,8 @@ public class LoginView extends javax.swing.JFrame {
 
         jPanel2.setBackground(new java.awt.Color(255, 255, 255));
         jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-        jPanel2.add(PasswdFld, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 180, 380, 50));
-        jPanel2.add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 80, 380, 50));
+        jPanel2.add(PasswordField, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 180, 380, 50));
+        jPanel2.add(UsernameField, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 80, 380, 50));
 
         jLabel2.setFont(new java.awt.Font("Arial Narrow", 1, 24)); // NOI18N
         jLabel2.setText("Password:");
@@ -107,16 +107,18 @@ public class LoginView extends javax.swing.JFrame {
     private void LogInBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LogInBtnActionPerformed
         // TODO add your handling code here:
         
+        String UsernameStr = UsernameField.getText();
+        
         // Get Contents of Password Field
-        String PasswordStr = String.valueOf(PasswdFld.getPassword());
+        String PasswordStr = String.valueOf(PasswordField.getPassword());
 
         // Compare Hash to Saved Password Hash
-        if(AuthRepository.getRepository().checkAuth(PasswordStr)) {
+        if(AuthRepository.getRepository().checkAuth(UsernameStr, PasswordStr)) {
             // Proceed To Menu
             this.setVisible(false);
             this.mainmenu.setVisible(true);
         } else {
-            JOptionPane.showMessageDialog(rootPane, "Incorrect Password!", "Error", JOptionPane.ERROR_MESSAGE);
+            JOptionPane.showMessageDialog(rootPane, "Incorrect Username or Password!", "Error", JOptionPane.ERROR_MESSAGE);
         }
     }//GEN-LAST:event_LogInBtnActionPerformed
 
@@ -157,7 +159,8 @@ public class LoginView extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton LogInBtn;
-    private javax.swing.JPasswordField PasswdFld;
+    private javax.swing.JPasswordField PasswordField;
+    private javax.swing.JTextField UsernameField;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -165,6 +168,5 @@ public class LoginView extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JSeparator jSeparator1;
-    private javax.swing.JTextField jTextField1;
     // End of variables declaration//GEN-END:variables
 }
