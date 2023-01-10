@@ -5,6 +5,10 @@
  */
 package Views;
 
+import Models.LivestockModel;
+import Repositories.LivestockRepository;
+import java.util.ArrayList;
+
 /**
  *
  * @author hp
@@ -27,9 +31,9 @@ public class MainMenuView extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
+        AddLivestockBtn = new javax.swing.JButton();
+        DeleteLivestockBtn = new javax.swing.JButton();
+        UpdateLivestockBtn = new javax.swing.JButton();
         jButton4 = new javax.swing.JButton();
         jButton5 = new javax.swing.JButton();
         jButton6 = new javax.swing.JButton();
@@ -38,17 +42,37 @@ public class MainMenuView extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setResizable(false);
 
-        jButton1.setText("Add Livestock");
+        AddLivestockBtn.setText("Add Livestock");
+        AddLivestockBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                AddLivestockBtnActionPerformed(evt);
+            }
+        });
 
-        jButton2.setText("Delete Livestock");
+        DeleteLivestockBtn.setText("Delete Livestock");
+        DeleteLivestockBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                DeleteLivestockBtnActionPerformed(evt);
+            }
+        });
 
-        jButton3.setText("Update Livestock");
+        UpdateLivestockBtn.setText("Update Livestock");
+        UpdateLivestockBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                UpdateLivestockBtnActionPerformed(evt);
+            }
+        });
 
         jButton4.setText("jButton1");
 
         jButton5.setText("jButton1");
 
         jButton6.setText("View Livestock Status");
+        jButton6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton6ActionPerformed(evt);
+            }
+        });
 
         jLabel1.setText("Main Menu ng MPultry");
 
@@ -68,11 +92,11 @@ public class MainMenuView extends javax.swing.JFrame {
                                 .addGap(69, 69, 69)
                                 .addComponent(jButton5, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(layout.createSequentialGroup()
-                                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(AddLivestockBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(76, 76, 76)
-                                .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(UpdateLivestockBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(69, 69, 69)
-                                .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                                .addComponent(DeleteLivestockBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE))))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(197, 197, 197)
                         .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)))
@@ -85,9 +109,9 @@ public class MainMenuView extends javax.swing.JFrame {
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(55, 55, 55)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(AddLivestockBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(UpdateLivestockBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(DeleteLivestockBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(62, 62, 62)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButton6, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -98,6 +122,46 @@ public class MainMenuView extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void AddLivestockBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AddLivestockBtnActionPerformed
+        // TODO add your handling code here:
+        LivestockModel livestock = new LivestockModel();
+        livestock.setFeeds(2);
+        livestock.setWater(2.1f);
+        livestock.setHarvest(2);
+        livestock.setWelfare(LivestockModel.LivestockWelfare.Healthy);
+        LivestockRepository.getRepository().addLivestock(livestock);
+    }//GEN-LAST:event_AddLivestockBtnActionPerformed
+
+    private void UpdateLivestockBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_UpdateLivestockBtnActionPerformed
+        // TODO add your handling code here:
+        LivestockModel livestock = new LivestockModel();
+        livestock.setId(1);
+        livestock.setFeeds(2);
+        livestock.setWater(2.1f);
+        livestock.setHarvest(5);
+        livestock.setWelfare(LivestockModel.LivestockWelfare.Sick);
+        LivestockRepository.getRepository().updateLivestock(livestock);
+    }//GEN-LAST:event_UpdateLivestockBtnActionPerformed
+
+    private void DeleteLivestockBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DeleteLivestockBtnActionPerformed
+        // TODO add your handling code here:
+        LivestockModel livestock = new LivestockModel();
+        livestock.setId(1);
+        LivestockRepository.getRepository().deleteLivestock(livestock);
+    }//GEN-LAST:event_DeleteLivestockBtnActionPerformed
+
+    private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
+        // TODO add your handling code here:
+        ArrayList<LivestockModel> ll = LivestockRepository.getRepository().getLivestocks();
+        for (LivestockModel l : ll) {
+            System.out.println(l.getId());
+            System.out.println(l.getFeeds());
+            System.out.println(l.getWater());
+            System.out.println(l.getHarvest());
+            System.out.println(l.getWelfare());
+        }
+    }//GEN-LAST:event_jButton6ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -124,9 +188,9 @@ public class MainMenuView extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
+    private javax.swing.JButton AddLivestockBtn;
+    private javax.swing.JButton DeleteLivestockBtn;
+    private javax.swing.JButton UpdateLivestockBtn;
     private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton5;
     private javax.swing.JButton jButton6;

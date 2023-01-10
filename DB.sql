@@ -11,12 +11,19 @@ INSERT INTO AuthTable VALUES ('Admin', '838302694ec6710e2873daacbec8c3ed');
 SELECT * FROM AuthTable WHERE Username="Admin";
 SELECT * FROM AuthTable;
 
+DROP TABLE AuthTable;
+
 
 -- Create Livestock Table
 CREATE TABLE Livestock (
 	Livestock_ID INT PRIMARY KEY AUTO_INCREMENT,
     Livestock_Feeds INT,
-    Livestock_Wate FLOAT,
+    Livestock_Water FLOAT,
     Livestock_Harvest INT,
     Livestock_Welfare INT
 );
+
+DROP TABLE Livestock;
+
+
+SELECT * FROM Livestock;

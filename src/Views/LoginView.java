@@ -85,7 +85,7 @@ public class LoginView extends javax.swing.JFrame {
                 LogInBtnActionPerformed(evt);
             }
         });
-        jPanel2.add(LogInBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(-10, 280, 580, 70));
+        jPanel2.add(LogInBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(-10, 280, 580, 60));
 
         jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 160, 550, 340));
 
