@@ -52,3 +52,17 @@ CREATE TABLE HarvestTable (
 DROP TABLE IF EXISTS `HarvestTable`;
 
 SELECT * FROM HarvestTable;
+
+
+
+-- Create Livestock Table [Deprecated]
+CREATE TABLE Livestock (
+	Livestock_ID INT PRIMARY KEY AUTO_INCREMENT,
+    Livestock_Feeds INT,
+    Livestock_Water FLOAT,
+    Livestock_Harvest INT,
+    Livestock_Welfare INT
+);
+DROP TABLE IF EXISTS `Livestock`;
+
+SELECT * FROM Livestock;
