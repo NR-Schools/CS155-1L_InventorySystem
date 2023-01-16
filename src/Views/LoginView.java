@@ -58,7 +58,7 @@ public class LoginView extends javax.swing.JFrame {
         jPanel1.setBackground(new java.awt.Color(113, 119, 117));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jPanel2.setBackground(new java.awt.Color(132, 196, 244));
+        jPanel2.setBackground(new java.awt.Color(164, 196, 181));
         jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
         jPanel2.add(PasswordField, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 380, 450, 50));
         jPanel2.add(UsernameField, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 270, 450, 50));
@@ -88,12 +88,12 @@ public class LoginView extends javax.swing.JFrame {
         jPanel2.add(LogInBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 480, 450, 50));
 
         jLabel1.setFont(new java.awt.Font("Arial Narrow", 1, 36)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(102, 102, 102));
+        jLabel1.setForeground(new java.awt.Color(14, 79, 85));
         jLabel1.setText("Login To Your Account");
         jPanel2.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 110, 330, 40));
 
         jLabel4.setFont(new java.awt.Font("Arial Narrow", 0, 24)); // NOI18N
-        jLabel4.setForeground(new java.awt.Color(102, 102, 102));
+        jLabel4.setForeground(new java.awt.Color(14, 79, 85));
         jLabel4.setText("Enter your details to login.");
         jPanel2.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 160, -1, -1));
 
@@ -102,13 +102,13 @@ public class LoginView extends javax.swing.JFrame {
         jPanel3.setBackground(new java.awt.Color(255, 255, 255));
         jPanel3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel5.setIcon(new javax.swing.ImageIcon("C:\\Users\\user\\OneDrive\\Documents\\Term6\\Software-Engineering-Laboratory\\login-image.png")); // NOI18N
-        jPanel3.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 170, 490, 440));
+        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Views/logo.png"))); // NOI18N
+        jPanel3.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 150, 600, 440));
 
         jLabel6.setFont(new java.awt.Font("Arial Narrow", 1, 48)); // NOI18N
-        jLabel6.setForeground(new java.awt.Color(0, 93, 119));
+        jLabel6.setForeground(new java.awt.Color(14, 79, 85));
         jLabel6.setText("Manage Your Poultry Inventory");
-        jPanel3.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 70, -1, -1));
+        jPanel3.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 80, -1, -1));
 
         jPanel1.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 110, 710, 740));
 
