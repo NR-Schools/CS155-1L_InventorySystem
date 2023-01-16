@@ -43,13 +43,13 @@ public class WaterRepository extends BaseRepository {
         try {
             Connection con = createSQLConnection();
             
-            Statement readFeedDB = con.createStatement();
-            ResultSet results = readFeedDB.executeQuery("SELECT * FROM WaterTable");
+            Statement readWaterDB = con.createStatement();
+            ResultSet results = readWaterDB.executeQuery("SELECT * FROM WaterTable");
             ArrayList<WaterModel> waters = new ArrayList<>();
             while(results.next()) {
                 WaterModel water = new WaterModel();
                 water.setId(results.getInt("Feed_ID"));
-                water.setAmount(results.getInt("Feed_Amount"));
+                water.setAmount(results.getDouble("Feed_Amount"));
                 water.setTimestamp(results.getDate("Feed_TimeStamp"));
                 waters.add(water);
             }
@@ -68,8 +68,8 @@ public class WaterRepository extends BaseRepository {
         try {
             Connection con = createSQLConnection();
             
-            Statement updateLivestockDB = con.createStatement();
-            updateLivestockDB.executeUpdate(
+            Statement updateWaterDB = con.createStatement();
+            updateWaterDB.executeUpdate(
                 String.format("UPDATE WaterTable SET Water_Amount=%f, Water_TimeStamp=\"%s\" WHERE Water_ID = %d",
                             water.getAmount(),
                             water.getTimestamp(),
@@ -87,8 +87,8 @@ public class WaterRepository extends BaseRepository {
         try {
             Connection con = createSQLConnection();
             
-            Statement deleteLivestockDB = con.createStatement();
-            deleteLivestockDB.executeUpdate(
+            Statement deleteWaterDB = con.createStatement();
+            deleteWaterDB.executeUpdate(
                 String.format("DELETE FROM WaterTable WHERE Water_ID = %d",
                             water.getId()
                 )

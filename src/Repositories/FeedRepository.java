@@ -50,8 +50,8 @@ public class FeedRepository extends BaseRepository {
             while(results.next()) {
                 FeedModel feed = new FeedModel();
                 feed.setId(results.getInt("Feed_ID"));
-                feed.setAmount(results.getInt("Feed_Amount"));
-                feed.setPrice(results.getFloat("Feed_Price"));
+                feed.setAmount(results.getDouble("Feed_Amount"));
+                feed.setPrice(results.getDouble("Feed_Price"));
                 feed.setTimestamp(results.getDate("Feed_TimeStamp"));
                 feeds.add(feed);
             }
@@ -70,8 +70,8 @@ public class FeedRepository extends BaseRepository {
         try {
             Connection con = createSQLConnection();
             
-            Statement updateLivestockDB = con.createStatement();
-            updateLivestockDB.executeUpdate(
+            Statement updateFeedDB = con.createStatement();
+            updateFeedDB.executeUpdate(
                 String.format("UPDATE FeedTable SET Feed_Amount=%f, Feed_Price=%f, Feed_TimeStamp=\"%s\" WHERE Feed_ID = %d",
                             feed.getAmount(),
                             feed.getPrice(),
@@ -90,8 +90,8 @@ public class FeedRepository extends BaseRepository {
         try {
             Connection con = createSQLConnection();
             
-            Statement deleteLivestockDB = con.createStatement();
-            deleteLivestockDB.executeUpdate(
+            Statement deleteFeedDB = con.createStatement();
+            deleteFeedDB.executeUpdate(
                 String.format("DELETE FROM FeedTable WHERE Feed_ID = %d",
                             feed.getId()
                 )
