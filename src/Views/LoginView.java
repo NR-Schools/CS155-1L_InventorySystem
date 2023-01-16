@@ -42,38 +42,38 @@ public class LoginView extends javax.swing.JFrame {
         UsernameField = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
-        jSeparator1 = new javax.swing.JSeparator();
         LogInBtn = new javax.swing.JButton();
-        jPanel3 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
+        jPanel3 = new javax.swing.JPanel();
+        jLabel5 = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setPreferredSize(new java.awt.Dimension(950, 650));
+        setPreferredSize(new java.awt.Dimension(1850, 1050));
         setResizable(false);
-        setSize(new java.awt.Dimension(540, 432));
+        setSize(new java.awt.Dimension(1850, 1050));
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jPanel1.setBackground(new java.awt.Color(105, 123, 132));
+        jPanel1.setBackground(new java.awt.Color(113, 119, 117));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jPanel2.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel2.setBackground(new java.awt.Color(132, 196, 244));
         jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-        jPanel2.add(PasswordField, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 180, 380, 50));
-        jPanel2.add(UsernameField, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 80, 380, 50));
+        jPanel2.add(PasswordField, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 380, 450, 50));
+        jPanel2.add(UsernameField, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 270, 450, 50));
 
-        jLabel2.setFont(new java.awt.Font("Arial Narrow", 1, 24)); // NOI18N
-        jLabel2.setText("Password:");
-        jPanel2.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 140, -1, 30));
+        jLabel2.setFont(new java.awt.Font("Arial Narrow", 1, 18)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(102, 102, 102));
+        jLabel2.setText("PASSWORD:");
+        jPanel2.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 340, -1, 30));
 
-        jLabel3.setFont(new java.awt.Font("Arial Narrow", 1, 24)); // NOI18N
-        jLabel3.setText("Username:");
-        jPanel2.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 40, -1, -1));
+        jLabel3.setFont(new java.awt.Font("Arial Narrow", 1, 18)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(102, 102, 102));
+        jLabel3.setText("USERNAME:");
+        jPanel2.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 240, -1, -1));
 
-        jSeparator1.setBackground(new java.awt.Color(0, 0, 0));
-        jSeparator1.setForeground(new java.awt.Color(0, 0, 0));
-        jPanel2.add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 10, 550, 20));
-
-        LogInBtn.setBackground(new java.awt.Color(51, 125, 232));
+        LogInBtn.setBackground(new java.awt.Color(247, 138, 47));
         LogInBtn.setFont(new java.awt.Font("Arial Narrow", 1, 24)); // NOI18N
         LogInBtn.setForeground(new java.awt.Color(255, 255, 255));
         LogInBtn.setText("Log In");
@@ -85,21 +85,34 @@ public class LoginView extends javax.swing.JFrame {
                 LogInBtnActionPerformed(evt);
             }
         });
-        jPanel2.add(LogInBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(-10, 280, 580, 60));
+        jPanel2.add(LogInBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 480, 450, 50));
 
-        jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 160, 550, 340));
+        jLabel1.setFont(new java.awt.Font("Arial Narrow", 1, 36)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(102, 102, 102));
+        jLabel1.setText("Login To Your Account");
+        jPanel2.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 110, 330, 40));
+
+        jLabel4.setFont(new java.awt.Font("Arial Narrow", 0, 24)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(102, 102, 102));
+        jLabel4.setText("Enter your details to login.");
+        jPanel2.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 160, -1, -1));
+
+        jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(940, 110, 630, 740));
 
         jPanel3.setBackground(new java.awt.Color(255, 255, 255));
         jPanel3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel1.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(51, 125, 232));
-        jLabel1.setText("User Login");
-        jPanel3.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 30, 130, -1));
+        jLabel5.setIcon(new javax.swing.ImageIcon("C:\\Users\\user\\OneDrive\\Documents\\Term6\\Software-Engineering-Laboratory\\login-image.png")); // NOI18N
+        jPanel3.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 170, 490, 440));
 
-        jPanel1.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 90, 550, 70));
+        jLabel6.setFont(new java.awt.Font("Arial Narrow", 1, 48)); // NOI18N
+        jLabel6.setForeground(new java.awt.Color(0, 93, 119));
+        jLabel6.setText("Manage Your Poultry Inventory");
+        jPanel3.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 70, -1, -1));
 
-        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 940, 630));
+        jPanel1.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 110, 710, 740));
+
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1850, 1120));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -155,9 +168,11 @@ public class LoginView extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
-    private javax.swing.JSeparator jSeparator1;
     // End of variables declaration//GEN-END:variables
 }
