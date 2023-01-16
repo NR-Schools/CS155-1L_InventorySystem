@@ -6,7 +6,6 @@
 package Repositories;
 
 import Models.FeedModel;
-import Models.LivestockModel;
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.Statement;
@@ -22,7 +21,7 @@ public class FeedRepository extends BaseRepository {
     
     public FeedRepository() {}
     
-    public void addLivestock(FeedModel feed) {
+    public void addFeed(FeedModel feed) {
         try {
             Connection con = createSQLConnection();
             
@@ -37,36 +36,37 @@ public class FeedRepository extends BaseRepository {
             
             con.close();
         } catch (Exception ex) {
-            Logger.getLogger(LivestockRepository.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(FeedRepository.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
     
-    public ArrayList<LivestockModel> getLivestocks() {
+    public ArrayList<FeedModel> getFeeds() {
         try {
             Connection con = createSQLConnection();
             
             Statement readFeedDB = con.createStatement();
             ResultSet results = readFeedDB.executeQuery("SELECT * FROM FeedTable");
-            ArrayList<LivestockModel> livestocks = new ArrayList<>();
+            ArrayList<FeedModel> feeds = new ArrayList<>();
             while(results.next()) {
                 FeedModel feed = new FeedModel();
                 feed.setId(results.getInt("Feed_ID"));
                 feed.setAmount(results.getInt("Feed_Amount"));
                 feed.setPrice(results.getFloat("Feed_Price"));
                 feed.setTimestamp(results.getDate("Feed_TimeStamp"));
+                feeds.add(feed);
             }
             
             con.close();
             
-            return livestocks;
+            return feeds;
         } catch (Exception ex) {
-            Logger.getLogger(LivestockRepository.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(FeedRepository.class.getName()).log(Level.SEVERE, null, ex);
         }
         
         return new ArrayList<>();
     }
     
-    public void updateLivestock(FeedModel feed) {
+    public void updateFeed(FeedModel feed) {
         try {
             Connection con = createSQLConnection();
             
@@ -82,11 +82,11 @@ public class FeedRepository extends BaseRepository {
             
             con.close();
         } catch (Exception ex) {
-            Logger.getLogger(LivestockRepository.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(FeedRepository.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
     
-    public void deleteLivestock(FeedModel feed) {
+    public void deleteFeed(FeedModel feed) {
         try {
             Connection con = createSQLConnection();
             
@@ -99,7 +99,7 @@ public class FeedRepository extends BaseRepository {
             
             con.close();
         } catch (Exception ex) {
-            Logger.getLogger(LivestockRepository.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(FeedRepository.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
 }
