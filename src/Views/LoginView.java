@@ -61,20 +61,22 @@ public class LoginView extends javax.swing.JFrame {
         jPanel2.setBackground(new java.awt.Color(164, 196, 181));
         jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
         jPanel2.add(PasswordField, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 380, 450, 50));
+
+        UsernameField.setFont(new java.awt.Font("Arial Narrow", 0, 18)); // NOI18N
         jPanel2.add(UsernameField, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 270, 450, 50));
 
         jLabel2.setFont(new java.awt.Font("Arial Narrow", 1, 18)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(102, 102, 102));
+        jLabel2.setForeground(new java.awt.Color(14, 79, 85));
         jLabel2.setText("PASSWORD:");
         jPanel2.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 340, -1, 30));
 
         jLabel3.setFont(new java.awt.Font("Arial Narrow", 1, 18)); // NOI18N
-        jLabel3.setForeground(new java.awt.Color(102, 102, 102));
+        jLabel3.setForeground(new java.awt.Color(14, 79, 85));
         jLabel3.setText("USERNAME:");
         jPanel2.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 240, -1, -1));
 
         LogInBtn.setBackground(new java.awt.Color(247, 138, 47));
-        LogInBtn.setFont(new java.awt.Font("Arial Narrow", 1, 24)); // NOI18N
+        LogInBtn.setFont(new java.awt.Font("Berlin Sans FB Demi", 1, 24)); // NOI18N
         LogInBtn.setForeground(new java.awt.Color(255, 255, 255));
         LogInBtn.setText("Log In");
         LogInBtn.setAlignmentY(0.0F);
@@ -87,10 +89,10 @@ public class LoginView extends javax.swing.JFrame {
         });
         jPanel2.add(LogInBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 480, 450, 50));
 
-        jLabel1.setFont(new java.awt.Font("Arial Narrow", 1, 36)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Berlin Sans FB Demi", 1, 36)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(14, 79, 85));
         jLabel1.setText("Login To Your Account");
-        jPanel2.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 110, 330, 40));
+        jPanel2.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 110, 390, 40));
 
         jLabel4.setFont(new java.awt.Font("Arial Narrow", 0, 24)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(14, 79, 85));
@@ -105,10 +107,10 @@ public class LoginView extends javax.swing.JFrame {
         jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Views/logo.png"))); // NOI18N
         jPanel3.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 150, 600, 440));
 
-        jLabel6.setFont(new java.awt.Font("Arial Narrow", 1, 48)); // NOI18N
+        jLabel6.setFont(new java.awt.Font("Berlin Sans FB Demi", 1, 45)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(14, 79, 85));
         jLabel6.setText("Manage Your Poultry Inventory");
-        jPanel3.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 80, -1, -1));
+        jPanel3.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 90, -1, -1));
 
         jPanel1.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 110, 710, 740));
 
