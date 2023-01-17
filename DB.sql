@@ -29,13 +29,14 @@ DROP TABLE IF EXISTS `FeedTable`;
 
 SELECT * FROM FeedTable;
 
+SELECT SUM(Feed_Amount) AS TotalAmount FROM FeedTable;
 
 
 -- Create Water Table
 CREATE TABLE WaterTable (
 	Water_ID INT PRIMARY KEY AUTO_INCREMENT,
     Water_Amount DOUBLE NOT NULL,
-    Water_TimeStamp DATETIME NOT NULL
+    Water_TimeStamp TIMESTAMP NOT NULL
 );
 DROP TABLE IF EXISTS `WaterTable`;
 
@@ -46,8 +47,8 @@ SELECT * FROM WaterTable;
 -- Create Harvest Table
 CREATE TABLE HarvestTable (
 	Harvest_ID INT PRIMARY KEY AUTO_INCREMENT,
-    Harvest_Amount DOUBLE NOT NULL,
-    Harvest_TimeStamp DATETIME NOT NULL
+    Harvest_Amount INT NOT NULL,
+    Harvest_TimeStamp TIMESTAMP NOT NULL
 );
 DROP TABLE IF EXISTS `HarvestTable`;
 
