@@ -126,7 +126,6 @@ public class FeedView extends javax.swing.JFrame {
         jButton1.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 140, 290, 40));
 
-        jSeparator1.setBackground(new java.awt.Color(255, 255, 255));
         jSeparator1.setForeground(new java.awt.Color(255, 255, 255));
         jPanel1.add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 110, 310, 20));
 
