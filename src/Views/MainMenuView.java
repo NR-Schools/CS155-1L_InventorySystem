@@ -6,6 +6,7 @@
 package Views;
 
 import Models.FeedModel;
+import Models.WaterModel;
 import Repositories.RepositoryProvider;
 import java.awt.CardLayout;
 import java.sql.Timestamp;
@@ -26,6 +27,7 @@ public class MainMenuView extends javax.swing.JFrame {
     
     private SimpleDateFormat sdm;
     private int FeedSelectedID;
+    private int WaterSelectedID;
     private enum PropType { Feed, Water, Harvest }
     
     public MainMenuView() {
@@ -89,16 +91,17 @@ public class MainMenuView extends javax.swing.JFrame {
         jLabel25 = new javax.swing.JLabel();
         WaterFragment = new javax.swing.JPanel();
         jScrollPane2 = new javax.swing.JScrollPane();
-        jTable2 = new javax.swing.JTable();
-        jButton8 = new javax.swing.JButton();
-        jTextField6 = new javax.swing.JTextField();
+        WatersTable = new javax.swing.JTable();
+        DeleteWaterBtn = new javax.swing.JButton();
+        AddWaterAmount = new javax.swing.JTextField();
         jLabel19 = new javax.swing.JLabel();
-        jButton7 = new javax.swing.JButton();
-        jTextField8 = new javax.swing.JTextField();
+        AddWaterBtn = new javax.swing.JButton();
         jLabel20 = new javax.swing.JLabel();
-        jButton6 = new javax.swing.JButton();
-        jTextField10 = new javax.swing.JTextField();
+        UpdateWaterBtn = new javax.swing.JButton();
+        UpdateWaterAmount = new javax.swing.JTextField();
         jLabel21 = new javax.swing.JLabel();
+        RefreshWaterBtn = new javax.swing.JButton();
+        UpdateWaterID = new javax.swing.JLabel();
         HarvestFragment = new javax.swing.JPanel();
         jScrollPane3 = new javax.swing.JScrollPane();
         jTable3 = new javax.swing.JTable();
@@ -374,7 +377,7 @@ public class MainMenuView extends javax.swing.JFrame {
 
         WaterFragment.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jTable2.setModel(new javax.swing.table.DefaultTableModel(
+        WatersTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null},
                 {null, null, null},
@@ -382,45 +385,80 @@ public class MainMenuView extends javax.swing.JFrame {
                 {null, null, null}
             },
             new String [] {
-                "Id", "Date", "Amount ( L )"
+                "Id", "Amount (L)", "Date"
             }
         ));
-        jScrollPane2.setViewportView(jTable2);
+        WatersTable.getTableHeader().setReorderingAllowed(false);
+        WatersTable.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                WatersTableMousePressed(evt);
+            }
+        });
+        jScrollPane2.setViewportView(WatersTable);
 
         WaterFragment.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 40, 1440, 540));
 
-        jButton8.setBackground(new java.awt.Color(164, 196, 181));
-        jButton8.setFont(new java.awt.Font("Berlin Sans FB Demi", 0, 24)); // NOI18N
-        jButton8.setText("Delete Water");
-        jButton8.setBorder(null);
-        WaterFragment.add(jButton8, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 600, 200, 50));
-        WaterFragment.add(jTextField6, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 730, 370, 50));
+        DeleteWaterBtn.setBackground(new java.awt.Color(164, 196, 181));
+        DeleteWaterBtn.setFont(new java.awt.Font("Berlin Sans FB Demi", 0, 24)); // NOI18N
+        DeleteWaterBtn.setText("Delete Water");
+        DeleteWaterBtn.setBorder(null);
+        DeleteWaterBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                DeleteWaterBtnActionPerformed(evt);
+            }
+        });
+        WaterFragment.add(DeleteWaterBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 600, 200, 50));
+        WaterFragment.add(AddWaterAmount, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 730, 370, 50));
 
         jLabel19.setFont(new java.awt.Font("Berlin Sans FB Demi", 0, 24)); // NOI18N
         jLabel19.setText("Amount(L) :");
         WaterFragment.add(jLabel19, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 690, -1, -1));
 
-        jButton7.setBackground(new java.awt.Color(164, 196, 181));
-        jButton7.setFont(new java.awt.Font("Berlin Sans FB Demi", 0, 24)); // NOI18N
-        jButton7.setText("Add Water");
-        jButton7.setBorder(null);
-        WaterFragment.add(jButton7, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 800, 200, 50));
-        WaterFragment.add(jTextField8, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 730, 290, 50));
+        AddWaterBtn.setBackground(new java.awt.Color(164, 196, 181));
+        AddWaterBtn.setFont(new java.awt.Font("Berlin Sans FB Demi", 0, 24)); // NOI18N
+        AddWaterBtn.setText("Add Water");
+        AddWaterBtn.setBorder(null);
+        AddWaterBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                AddWaterBtnActionPerformed(evt);
+            }
+        });
+        WaterFragment.add(AddWaterBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 800, 200, 50));
 
         jLabel20.setFont(new java.awt.Font("Berlin Sans FB Demi", 0, 24)); // NOI18N
         jLabel20.setText("ID :");
         WaterFragment.add(jLabel20, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 690, -1, -1));
 
-        jButton6.setBackground(new java.awt.Color(164, 196, 181));
-        jButton6.setFont(new java.awt.Font("Berlin Sans FB Demi", 0, 24)); // NOI18N
-        jButton6.setText("Update Water");
-        jButton6.setBorder(null);
-        WaterFragment.add(jButton6, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 800, 200, 50));
-        WaterFragment.add(jTextField10, new org.netbeans.lib.awtextra.AbsoluteConstraints(830, 730, 370, 50));
+        UpdateWaterBtn.setBackground(new java.awt.Color(164, 196, 181));
+        UpdateWaterBtn.setFont(new java.awt.Font("Berlin Sans FB Demi", 0, 24)); // NOI18N
+        UpdateWaterBtn.setText("Update Water");
+        UpdateWaterBtn.setBorder(null);
+        UpdateWaterBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                UpdateWaterBtnActionPerformed(evt);
+            }
+        });
+        WaterFragment.add(UpdateWaterBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 800, 200, 50));
+        WaterFragment.add(UpdateWaterAmount, new org.netbeans.lib.awtextra.AbsoluteConstraints(830, 730, 370, 50));
 
         jLabel21.setFont(new java.awt.Font("Berlin Sans FB Demi", 0, 24)); // NOI18N
         jLabel21.setText("Amount(L) :");
         WaterFragment.add(jLabel21, new org.netbeans.lib.awtextra.AbsoluteConstraints(830, 690, -1, -1));
+
+        RefreshWaterBtn.setBackground(new java.awt.Color(164, 196, 181));
+        RefreshWaterBtn.setFont(new java.awt.Font("Berlin Sans FB Demi", 0, 24)); // NOI18N
+        RefreshWaterBtn.setText("Refresh Waters");
+        RefreshWaterBtn.setBorder(null);
+        RefreshWaterBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                RefreshWaterBtnActionPerformed(evt);
+            }
+        });
+        WaterFragment.add(RefreshWaterBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(1280, 600, 200, 50));
+
+        UpdateWaterID.setFont(new java.awt.Font("Berlin Sans FB", 0, 36)); // NOI18N
+        UpdateWaterID.setText("?");
+        WaterFragment.add(UpdateWaterID, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 730, -1, -1));
 
         FragmentManager.add(WaterFragment, "card5");
 
@@ -503,6 +541,7 @@ public class MainMenuView extends javax.swing.JFrame {
 
     private void ResetSelectedIDs() {
         FeedSelectedID = -1;
+        WaterSelectedID = -1;
     }
     
     private void LoadTable(PropType ptype) {
@@ -523,6 +562,20 @@ public class MainMenuView extends javax.swing.JFrame {
                 });
                 
                 FeedsTable.setModel(DTM);
+                break;
+            case Water:
+                DTM.setColumnIdentifiers(new Object[] {"Id", "Amount (L)", "Date"});
+                
+                ArrayList<WaterModel> waters = RepositoryProvider.getProvider().getWaterRepo().getWaters();
+                waters.stream().forEachOrdered(waterHolder -> {
+                    DTM.addRow(new Object[] {
+                        waterHolder.getId(),
+                        waterHolder.getAmount(),
+                        sdm.format(waterHolder.getTimestamp())
+                    });
+                });
+                
+                WatersTable.setModel(DTM);
                 break;
         }
     }
@@ -663,6 +716,104 @@ public class MainMenuView extends javax.swing.JFrame {
         LoadTable(PropType.Feed);
     }//GEN-LAST:event_RefreshFeedBtnActionPerformed
 
+    private void WatersTableMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_WatersTableMousePressed
+        // TODO add your handling code here:
+        int rowSelected = WatersTable.getSelectedRow();
+        
+        // Update [Update Water Information]
+        UpdateWaterID.setText(WatersTable.getValueAt(rowSelected, 0).toString());
+        UpdateWaterAmount.setText(WatersTable.getValueAt(rowSelected, 1).toString());
+        
+        // Update [Delete Water Information]
+        WaterSelectedID = Integer.parseInt(WatersTable.getValueAt(rowSelected, 0).toString());
+    }//GEN-LAST:event_WatersTableMousePressed
+
+    private void DeleteWaterBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DeleteWaterBtnActionPerformed
+        // TODO add your handling code here:
+        // Check Validity
+        if(WaterSelectedID < 0) {
+            JOptionPane.showMessageDialog(rootPane, "Invalid Water ID", "Delete Water Error", JOptionPane.ERROR_MESSAGE);
+            return;
+        }
+        
+        // Assemble Class
+        WaterModel water = new WaterModel();
+        water.setId(WaterSelectedID);
+        
+        // Perform Operation
+        RepositoryProvider.getProvider().getWaterRepo().deleteWater(water);
+        
+        // Success Message
+        JOptionPane.showMessageDialog(rootPane, "Water Entry Deleted Successfully", "Water Info", JOptionPane.INFORMATION_MESSAGE);
+    }//GEN-LAST:event_DeleteWaterBtnActionPerformed
+
+    private void AddWaterBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AddWaterBtnActionPerformed
+        // TODO add your handling code here:
+        double Amount;
+        
+        try {
+            Amount = Double.parseDouble(AddWaterAmount.getText().trim());
+        }
+        catch(Exception ex) {
+            JOptionPane.showMessageDialog(rootPane, "Invalid Water Inputs", "Add Water Error", JOptionPane.ERROR_MESSAGE);
+            return;
+        }
+        
+        // Check Validity
+        if (Amount < 0) {
+            JOptionPane.showMessageDialog(rootPane, "Invalid Water Amount", "Add Water Error", JOptionPane.ERROR_MESSAGE);
+            return;
+        }
+        
+        // Assemble Class
+        WaterModel water = new WaterModel();
+        water.setAmount(Amount);
+        water.setTimestamp(new Timestamp(new java.util.Date().getTime()));
+        
+        // Perform Operation
+        RepositoryProvider.getProvider().getWaterRepo().addWater(water);
+        
+        // Success Message
+        JOptionPane.showMessageDialog(rootPane, "Water Entry Added Successfully", "Water Info", JOptionPane.INFORMATION_MESSAGE);
+    }//GEN-LAST:event_AddWaterBtnActionPerformed
+
+    private void UpdateWaterBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_UpdateWaterBtnActionPerformed
+        // TODO add your handling code here:
+        double Amount;
+        
+        try {
+            Amount = Double.parseDouble(UpdateWaterAmount.getText().trim());
+        }
+        catch(Exception ex) {
+            JOptionPane.showMessageDialog(rootPane, "Invalid Water Input", "Update Water Error", JOptionPane.ERROR_MESSAGE);
+            return;
+        }
+        
+        // Check Validity
+        if (Amount < 0) {
+            JOptionPane.showMessageDialog(rootPane, "Invalid Water Amount", "Update Water Error", JOptionPane.ERROR_MESSAGE);
+            return;
+        }
+        
+        // Assemble Class
+        WaterModel water = new WaterModel();
+        water.setId(WaterSelectedID);
+        water.setAmount(Amount);
+        water.setTimestamp(new Timestamp(new java.util.Date().getTime()));
+        
+        // Perform Operation
+        RepositoryProvider.getProvider().getWaterRepo().updateWater(water);
+        
+        // Success Message
+        JOptionPane.showMessageDialog(rootPane, "Water Entry Updated Successfully", "Water Info", JOptionPane.INFORMATION_MESSAGE);
+    }//GEN-LAST:event_UpdateWaterBtnActionPerformed
+
+    private void RefreshWaterBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RefreshWaterBtnActionPerformed
+        // TODO add your handling code here:
+        
+        LoadTable(PropType.Water);
+    }//GEN-LAST:event_RefreshWaterBtnActionPerformed
+
     
     /**
      * @param args the command line arguments
@@ -692,9 +843,12 @@ public class MainMenuView extends javax.swing.JFrame {
     private javax.swing.JTextField AddFeedAmount;
     private javax.swing.JButton AddFeedBtn;
     private javax.swing.JTextField AddFeedPrice;
+    private javax.swing.JTextField AddWaterAmount;
+    private javax.swing.JButton AddWaterBtn;
     private javax.swing.JPanel DashboardFragment;
     private javax.swing.JButton DashboardViewBtn;
     private javax.swing.JButton DeleteFeedBtn;
+    private javax.swing.JButton DeleteWaterBtn;
     private javax.swing.JPanel FeedFragment;
     private javax.swing.JPanel FeedPanel;
     private javax.swing.JButton FeedViewBtn;
@@ -704,6 +858,7 @@ public class MainMenuView extends javax.swing.JFrame {
     private javax.swing.JPanel HarvestPanel;
     private javax.swing.JButton HarvestViewBtn;
     private javax.swing.JButton RefreshFeedBtn;
+    private javax.swing.JButton RefreshWaterBtn;
     private javax.swing.JPanel Sidebar;
     private javax.swing.JPanel Topbar;
     private javax.swing.JLabel TotalFeedLabel;
@@ -713,14 +868,15 @@ public class MainMenuView extends javax.swing.JFrame {
     private javax.swing.JButton UpdateFeedBtn;
     private javax.swing.JLabel UpdateFeedID;
     private javax.swing.JTextField UpdateFeedPrice;
+    private javax.swing.JTextField UpdateWaterAmount;
+    private javax.swing.JButton UpdateWaterBtn;
+    private javax.swing.JLabel UpdateWaterID;
     private javax.swing.JPanel WaterFragment;
     private javax.swing.JPanel WaterPanel;
     private javax.swing.JButton WaterViewBtn;
+    private javax.swing.JTable WatersTable;
     private javax.swing.JButton jButton10;
     private javax.swing.JButton jButton11;
-    private javax.swing.JButton jButton6;
-    private javax.swing.JButton jButton7;
-    private javax.swing.JButton jButton8;
     private javax.swing.JButton jButton9;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
@@ -747,13 +903,9 @@ public class MainMenuView extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JSeparator jSeparator1;
-    private javax.swing.JTable jTable2;
     private javax.swing.JTable jTable3;
-    private javax.swing.JTextField jTextField10;
     private javax.swing.JTextField jTextField11;
-    private javax.swing.JTextField jTextField6;
     private javax.swing.JTextField jTextField7;
-    private javax.swing.JTextField jTextField8;
     private javax.swing.JTextField jTextField9;
     // End of variables declaration//GEN-END:variables
 }

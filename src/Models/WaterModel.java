@@ -5,7 +5,7 @@
  */
 package Models;
 
-import java.sql.Date;
+import java.sql.Timestamp;
 
 /**
  *
@@ -14,7 +14,7 @@ import java.sql.Date;
 public class WaterModel {
     private int id;
     private double amount; // liters
-    private Date timestamp;
+    private Timestamp timestamp;
 
     public int getId() {
         return id;
@@ -32,11 +32,11 @@ public class WaterModel {
         this.amount = amount;
     }
 
-    public Date getTimestamp() {
+    public Timestamp getTimestamp() {
         return timestamp;
     }
 
-    public void setTimestamp(Date timestamp) {
+    public void setTimestamp(Timestamp timestamp) {
         this.timestamp = timestamp;
     }
 }

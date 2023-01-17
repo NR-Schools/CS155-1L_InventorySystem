@@ -48,9 +48,9 @@ public class WaterRepository extends BaseRepository {
             ArrayList<WaterModel> waters = new ArrayList<>();
             while(results.next()) {
                 WaterModel water = new WaterModel();
-                water.setId(results.getInt("Feed_ID"));
-                water.setAmount(results.getDouble("Feed_Amount"));
-                water.setTimestamp(results.getDate("Feed_TimeStamp"));
+                water.setId(results.getInt("Water_ID"));
+                water.setAmount(results.getDouble("Water_Amount"));
+                water.setTimestamp(results.getTimestamp("Water_TimeStamp"));
                 waters.add(water);
             }
             
