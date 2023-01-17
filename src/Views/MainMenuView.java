@@ -662,29 +662,45 @@ public class MainMenuView extends javax.swing.JFrame {
         }
     }
     
+    private void LoadTotals() {
+        TotalFeedLabel.setText(
+            Double.toString(RepositoryProvider.getProvider().getFeedRepo().getTotalFeeds())
+        );
+        TotalWaterLabel.setText(
+            Double.toString(RepositoryProvider.getProvider().getWaterRepo().getTotalFeeds())
+        );
+        TotalHarvestLabel.setText(
+            Integer.toString(RepositoryProvider.getProvider().getHarvestRepo().getTotalFeeds())
+        );
+    }
+    
     
     private void FeedViewBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_FeedViewBtnActionPerformed
         // TODO add your handling code here:
         ((CardLayout)FragmentManager.getLayout()).show(FragmentManager, "card3");
         ResetSelectedIDs();
+        LoadTable(PropType.Feed);
     }//GEN-LAST:event_FeedViewBtnActionPerformed
 
     private void WaterViewBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_WaterViewBtnActionPerformed
         // TODO add your handling code here:
         ((CardLayout)FragmentManager.getLayout()).show(FragmentManager, "card5");
         ResetSelectedIDs();
+        LoadTable(PropType.Water);
     }//GEN-LAST:event_WaterViewBtnActionPerformed
 
     private void HarvestViewBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_HarvestViewBtnActionPerformed
         // TODO add your handling code here:
         ((CardLayout)FragmentManager.getLayout()).show(FragmentManager, "card4");
         ResetSelectedIDs();
+        LoadTable(PropType.Harvest);
     }//GEN-LAST:event_HarvestViewBtnActionPerformed
 
     private void DashboardViewBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DashboardViewBtnActionPerformed
         // TODO add your handling code here:
         ((CardLayout)FragmentManager.getLayout()).show(FragmentManager, "card2");
         ResetSelectedIDs();
+        LoadTotals();
     }//GEN-LAST:event_DashboardViewBtnActionPerformed
 
     
@@ -1023,15 +1039,7 @@ public class MainMenuView extends javax.swing.JFrame {
 
     private void RefreshTotalAmountsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RefreshTotalAmountsActionPerformed
         // TODO add your handling code here:
-        TotalFeedLabel.setText(
-                Double.toString(RepositoryProvider.getProvider().getFeedRepo().getTotalFeeds())
-        );
-        TotalWaterLabel.setText(
-                Double.toString(RepositoryProvider.getProvider().getWaterRepo().getTotalFeeds())
-        );
-        TotalHarvestLabel.setText(
-                Integer.toString(RepositoryProvider.getProvider().getHarvestRepo().getTotalFeeds())
-        );
+        LoadTotals();
     }//GEN-LAST:event_RefreshTotalAmountsActionPerformed
 
     
