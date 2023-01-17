@@ -6,6 +6,7 @@
 package Views;
 
 import Models.FeedModel;
+import Models.HarvestModel;
 import Models.WaterModel;
 import Repositories.RepositoryProvider;
 import java.awt.CardLayout;
@@ -28,6 +29,7 @@ public class MainMenuView extends javax.swing.JFrame {
     private SimpleDateFormat sdm;
     private int FeedSelectedID;
     private int WaterSelectedID;
+    private int HarvestSelectedID;
     private enum PropType { Feed, Water, Harvest }
     
     public MainMenuView() {
@@ -104,16 +106,17 @@ public class MainMenuView extends javax.swing.JFrame {
         UpdateWaterID = new javax.swing.JLabel();
         HarvestFragment = new javax.swing.JPanel();
         jScrollPane3 = new javax.swing.JScrollPane();
-        jTable3 = new javax.swing.JTable();
-        jButton9 = new javax.swing.JButton();
+        HarvestsTable = new javax.swing.JTable();
+        DeleteHarvestBtn = new javax.swing.JButton();
         jLabel22 = new javax.swing.JLabel();
-        jTextField7 = new javax.swing.JTextField();
-        jButton10 = new javax.swing.JButton();
-        jTextField9 = new javax.swing.JTextField();
+        AddHarvestAmount = new javax.swing.JTextField();
+        AddHarvestBtn = new javax.swing.JButton();
         jLabel23 = new javax.swing.JLabel();
-        jButton11 = new javax.swing.JButton();
+        UpdateHarvestBtn = new javax.swing.JButton();
         jLabel24 = new javax.swing.JLabel();
-        jTextField11 = new javax.swing.JTextField();
+        UpdateHarvestAmount = new javax.swing.JTextField();
+        RefreshHarvestBtn = new javax.swing.JButton();
+        UpdateHarvestID = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setPreferredSize(new java.awt.Dimension(1850, 1030));
@@ -464,7 +467,7 @@ public class MainMenuView extends javax.swing.JFrame {
 
         HarvestFragment.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jTable3.setModel(new javax.swing.table.DefaultTableModel(
+        HarvestsTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null},
                 {null, null, null},
@@ -472,45 +475,80 @@ public class MainMenuView extends javax.swing.JFrame {
                 {null, null, null}
             },
             new String [] {
-                "Id", "Date", "Amount ( Per Chicken )"
+                "Id", "Amount (Per Chicken)", "Date"
             }
         ));
-        jScrollPane3.setViewportView(jTable3);
+        HarvestsTable.getTableHeader().setReorderingAllowed(false);
+        HarvestsTable.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                HarvestsTableMousePressed(evt);
+            }
+        });
+        jScrollPane3.setViewportView(HarvestsTable);
 
         HarvestFragment.add(jScrollPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 40, 1440, 540));
 
-        jButton9.setBackground(new java.awt.Color(164, 196, 181));
-        jButton9.setFont(new java.awt.Font("Berlin Sans FB Demi", 0, 24)); // NOI18N
-        jButton9.setText("Delete Harvest");
-        jButton9.setBorder(null);
-        HarvestFragment.add(jButton9, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 600, 200, 50));
+        DeleteHarvestBtn.setBackground(new java.awt.Color(164, 196, 181));
+        DeleteHarvestBtn.setFont(new java.awt.Font("Berlin Sans FB Demi", 0, 24)); // NOI18N
+        DeleteHarvestBtn.setText("Delete Harvest");
+        DeleteHarvestBtn.setBorder(null);
+        DeleteHarvestBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                DeleteHarvestBtnActionPerformed(evt);
+            }
+        });
+        HarvestFragment.add(DeleteHarvestBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 600, 200, 50));
 
         jLabel22.setFont(new java.awt.Font("Berlin Sans FB Demi", 0, 24)); // NOI18N
         jLabel22.setText("Amount(Per Chicken) :");
         HarvestFragment.add(jLabel22, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 690, -1, -1));
-        HarvestFragment.add(jTextField7, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 730, 370, 50));
+        HarvestFragment.add(AddHarvestAmount, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 730, 370, 50));
 
-        jButton10.setBackground(new java.awt.Color(164, 196, 181));
-        jButton10.setFont(new java.awt.Font("Berlin Sans FB Demi", 0, 24)); // NOI18N
-        jButton10.setText("Add Harvest");
-        jButton10.setBorder(null);
-        HarvestFragment.add(jButton10, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 800, 200, 50));
-        HarvestFragment.add(jTextField9, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 730, 290, 50));
+        AddHarvestBtn.setBackground(new java.awt.Color(164, 196, 181));
+        AddHarvestBtn.setFont(new java.awt.Font("Berlin Sans FB Demi", 0, 24)); // NOI18N
+        AddHarvestBtn.setText("Add Harvest");
+        AddHarvestBtn.setBorder(null);
+        AddHarvestBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                AddHarvestBtnActionPerformed(evt);
+            }
+        });
+        HarvestFragment.add(AddHarvestBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 800, 200, 50));
 
         jLabel23.setFont(new java.awt.Font("Berlin Sans FB Demi", 0, 24)); // NOI18N
         jLabel23.setText("ID :");
         HarvestFragment.add(jLabel23, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 690, -1, -1));
 
-        jButton11.setBackground(new java.awt.Color(164, 196, 181));
-        jButton11.setFont(new java.awt.Font("Berlin Sans FB Demi", 0, 24)); // NOI18N
-        jButton11.setText("Update Harvest");
-        jButton11.setBorder(null);
-        HarvestFragment.add(jButton11, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 800, 200, 50));
+        UpdateHarvestBtn.setBackground(new java.awt.Color(164, 196, 181));
+        UpdateHarvestBtn.setFont(new java.awt.Font("Berlin Sans FB Demi", 0, 24)); // NOI18N
+        UpdateHarvestBtn.setText("Update Harvest");
+        UpdateHarvestBtn.setBorder(null);
+        UpdateHarvestBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                UpdateHarvestBtnActionPerformed(evt);
+            }
+        });
+        HarvestFragment.add(UpdateHarvestBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 800, 200, 50));
 
         jLabel24.setFont(new java.awt.Font("Berlin Sans FB Demi", 0, 24)); // NOI18N
         jLabel24.setText("Amount(Per Chicken) :");
         HarvestFragment.add(jLabel24, new org.netbeans.lib.awtextra.AbsoluteConstraints(810, 690, -1, -1));
-        HarvestFragment.add(jTextField11, new org.netbeans.lib.awtextra.AbsoluteConstraints(810, 730, 370, 50));
+        HarvestFragment.add(UpdateHarvestAmount, new org.netbeans.lib.awtextra.AbsoluteConstraints(810, 730, 370, 50));
+
+        RefreshHarvestBtn.setBackground(new java.awt.Color(164, 196, 181));
+        RefreshHarvestBtn.setFont(new java.awt.Font("Berlin Sans FB Demi", 0, 24)); // NOI18N
+        RefreshHarvestBtn.setText("Refresh Harvests");
+        RefreshHarvestBtn.setBorder(null);
+        RefreshHarvestBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                RefreshHarvestBtnActionPerformed(evt);
+            }
+        });
+        HarvestFragment.add(RefreshHarvestBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(1280, 600, 200, 50));
+
+        UpdateHarvestID.setFont(new java.awt.Font("Berlin Sans FB", 0, 36)); // NOI18N
+        UpdateHarvestID.setText("?");
+        HarvestFragment.add(UpdateHarvestID, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 730, -1, -1));
 
         FragmentManager.add(HarvestFragment, "card4");
 
@@ -542,6 +580,7 @@ public class MainMenuView extends javax.swing.JFrame {
     private void ResetSelectedIDs() {
         FeedSelectedID = -1;
         WaterSelectedID = -1;
+        HarvestSelectedID = -1;
     }
     
     private void LoadTable(PropType ptype) {
@@ -576,6 +615,20 @@ public class MainMenuView extends javax.swing.JFrame {
                 });
                 
                 WatersTable.setModel(DTM);
+                break;
+            case Harvest:
+                DTM.setColumnIdentifiers(new Object[] {"Id", "Amount (Per Chicken)", "Date"});
+                
+                ArrayList<HarvestModel> harvests = RepositoryProvider.getProvider().getHarvestRepo().getHarvests();
+                harvests.stream().forEachOrdered(harvestHolder -> {
+                    DTM.addRow(new Object[] {
+                        harvestHolder.getId(),
+                        harvestHolder.getAmount(),
+                        sdm.format(harvestHolder.getTimestamp())
+                    });
+                });
+                
+                HarvestsTable.setModel(DTM);
                 break;
         }
     }
@@ -814,6 +867,104 @@ public class MainMenuView extends javax.swing.JFrame {
         LoadTable(PropType.Water);
     }//GEN-LAST:event_RefreshWaterBtnActionPerformed
 
+    private void HarvestsTableMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_HarvestsTableMousePressed
+        // TODO add your handling code here:
+        int rowSelected = HarvestsTable.getSelectedRow();
+        
+        // Update [Update Harvest Information]
+        UpdateHarvestID.setText(HarvestsTable.getValueAt(rowSelected, 0).toString());
+        UpdateHarvestAmount.setText(HarvestsTable.getValueAt(rowSelected, 1).toString());
+        
+        // Update [Delete Harvest Information]
+        HarvestSelectedID = Integer.parseInt(HarvestsTable.getValueAt(rowSelected, 0).toString());
+    }//GEN-LAST:event_HarvestsTableMousePressed
+
+    private void DeleteHarvestBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DeleteHarvestBtnActionPerformed
+        // TODO add your handling code here:
+        // Check Validity
+        if(HarvestSelectedID < 0) {
+            JOptionPane.showMessageDialog(rootPane, "Invalid Harvest ID", "Delete Harvest Error", JOptionPane.ERROR_MESSAGE);
+            return;
+        }
+        
+        // Assemble Class
+        HarvestModel harvest = new HarvestModel();
+        harvest.setId(HarvestSelectedID);
+        
+        // Perform Operation
+        RepositoryProvider.getProvider().getHarvestRepo().deleteHarvest(harvest);
+        
+        // Success Message
+        JOptionPane.showMessageDialog(rootPane, "Harvest Entry Deleted Successfully", "Harvest Info", JOptionPane.INFORMATION_MESSAGE);
+    }//GEN-LAST:event_DeleteHarvestBtnActionPerformed
+
+    private void AddHarvestBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AddHarvestBtnActionPerformed
+        // TODO add your handling code here:
+        int Amount;
+        
+        try {
+            Amount = Integer.parseInt(AddHarvestAmount.getText().trim());
+        }
+        catch(Exception ex) {
+            JOptionPane.showMessageDialog(rootPane, "Invalid Harvest Inputs", "Add Harvest Error", JOptionPane.ERROR_MESSAGE);
+            return;
+        }
+        
+        // Check Validity
+        if (Amount < 0) {
+            JOptionPane.showMessageDialog(rootPane, "Invalid Harvest Amount", "Add Harvest Error", JOptionPane.ERROR_MESSAGE);
+            return;
+        }
+        
+        // Assemble Class
+        HarvestModel harvest = new HarvestModel();
+        harvest.setAmount(Amount);
+        harvest.setTimestamp(new Timestamp(new java.util.Date().getTime()));
+        
+        // Perform Operation
+        RepositoryProvider.getProvider().getHarvestRepo().addHarvest(harvest);
+        
+        // Success Message
+        JOptionPane.showMessageDialog(rootPane, "Harvest Entry Added Successfully", "Harvest Info", JOptionPane.INFORMATION_MESSAGE);
+    }//GEN-LAST:event_AddHarvestBtnActionPerformed
+
+    private void UpdateHarvestBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_UpdateHarvestBtnActionPerformed
+        // TODO add your handling code here:
+        int Amount;
+        
+        try {
+            Amount = Integer.parseInt(UpdateHarvestAmount.getText().trim());
+        }
+        catch(Exception ex) {
+            JOptionPane.showMessageDialog(rootPane, "Invalid Harvest Inputs", "Update Harvest Error", JOptionPane.ERROR_MESSAGE);
+            return;
+        }
+        
+        // Check Validity
+        if (Amount < 0) {
+            JOptionPane.showMessageDialog(rootPane, "Invalid Harvest Amount", "Update Harvest Error", JOptionPane.ERROR_MESSAGE);
+            return;
+        }
+        
+        // Assemble Class
+        HarvestModel harvest = new HarvestModel();
+        harvest.setId(HarvestSelectedID);
+        harvest.setAmount(Amount);
+        harvest.setTimestamp(new Timestamp(new java.util.Date().getTime()));
+        
+        // Perform Operation
+        RepositoryProvider.getProvider().getHarvestRepo().updateHarvest(harvest);
+        
+        // Success Message
+        JOptionPane.showMessageDialog(rootPane, "Harvest Entry Updated Successfully", "Harvest Info", JOptionPane.INFORMATION_MESSAGE);
+    }//GEN-LAST:event_UpdateHarvestBtnActionPerformed
+
+    private void RefreshHarvestBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RefreshHarvestBtnActionPerformed
+        // TODO add your handling code here:
+        
+        LoadTable(PropType.Harvest);
+    }//GEN-LAST:event_RefreshHarvestBtnActionPerformed
+
     
     /**
      * @param args the command line arguments
@@ -843,11 +994,14 @@ public class MainMenuView extends javax.swing.JFrame {
     private javax.swing.JTextField AddFeedAmount;
     private javax.swing.JButton AddFeedBtn;
     private javax.swing.JTextField AddFeedPrice;
+    private javax.swing.JTextField AddHarvestAmount;
+    private javax.swing.JButton AddHarvestBtn;
     private javax.swing.JTextField AddWaterAmount;
     private javax.swing.JButton AddWaterBtn;
     private javax.swing.JPanel DashboardFragment;
     private javax.swing.JButton DashboardViewBtn;
     private javax.swing.JButton DeleteFeedBtn;
+    private javax.swing.JButton DeleteHarvestBtn;
     private javax.swing.JButton DeleteWaterBtn;
     private javax.swing.JPanel FeedFragment;
     private javax.swing.JPanel FeedPanel;
@@ -857,7 +1011,9 @@ public class MainMenuView extends javax.swing.JFrame {
     private javax.swing.JPanel HarvestFragment;
     private javax.swing.JPanel HarvestPanel;
     private javax.swing.JButton HarvestViewBtn;
+    private javax.swing.JTable HarvestsTable;
     private javax.swing.JButton RefreshFeedBtn;
+    private javax.swing.JButton RefreshHarvestBtn;
     private javax.swing.JButton RefreshWaterBtn;
     private javax.swing.JPanel Sidebar;
     private javax.swing.JPanel Topbar;
@@ -868,6 +1024,9 @@ public class MainMenuView extends javax.swing.JFrame {
     private javax.swing.JButton UpdateFeedBtn;
     private javax.swing.JLabel UpdateFeedID;
     private javax.swing.JTextField UpdateFeedPrice;
+    private javax.swing.JTextField UpdateHarvestAmount;
+    private javax.swing.JButton UpdateHarvestBtn;
+    private javax.swing.JLabel UpdateHarvestID;
     private javax.swing.JTextField UpdateWaterAmount;
     private javax.swing.JButton UpdateWaterBtn;
     private javax.swing.JLabel UpdateWaterID;
@@ -875,9 +1034,6 @@ public class MainMenuView extends javax.swing.JFrame {
     private javax.swing.JPanel WaterPanel;
     private javax.swing.JButton WaterViewBtn;
     private javax.swing.JTable WatersTable;
-    private javax.swing.JButton jButton10;
-    private javax.swing.JButton jButton11;
-    private javax.swing.JButton jButton9;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel14;
@@ -903,9 +1059,5 @@ public class MainMenuView extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JSeparator jSeparator1;
-    private javax.swing.JTable jTable3;
-    private javax.swing.JTextField jTextField11;
-    private javax.swing.JTextField jTextField7;
-    private javax.swing.JTextField jTextField9;
     // End of variables declaration//GEN-END:variables
 }

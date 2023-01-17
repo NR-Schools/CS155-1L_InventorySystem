@@ -27,7 +27,7 @@ public class HarvestRepository extends BaseRepository {
             
             Statement addHarvestDB = con.createStatement();
             addHarvestDB.executeUpdate(
-                String.format("INSERT INTO HarvestTable VALUES(null, %f, \"%s\");",
+                String.format("INSERT INTO HarvestTable VALUES(null, %d, \"%s\");",
                         harvest.getAmount(),
                         harvest.getTimestamp()
                 )
@@ -49,8 +49,8 @@ public class HarvestRepository extends BaseRepository {
             while(results.next()) {
                 HarvestModel harvest = new HarvestModel();
                 harvest.setId(results.getInt("Harvest_ID"));
-                harvest.setAmount(results.getDouble("Harvest_Amount"));
-                harvest.setTimestamp(results.getDate("Harvest_TimeStamp"));
+                harvest.setAmount(results.getInt("Harvest_Amount"));
+                harvest.setTimestamp(results.getTimestamp("Harvest_TimeStamp"));
                 harvests.add(harvest);
             }
             
@@ -70,7 +70,7 @@ public class HarvestRepository extends BaseRepository {
             
             Statement updateHarvestDB = con.createStatement();
             updateHarvestDB.executeUpdate(
-                String.format("UPDATE HarvestTable SET Harvest_Amount=%f, Harvest_TimeStamp=\"%s\" WHERE Harvest_ID = %d",
+                String.format("UPDATE HarvestTable SET Harvest_Amount=%d, Harvest_TimeStamp=\"%s\" WHERE Harvest_ID = %d",
                             harvest.getAmount(),
                             harvest.getTimestamp(),
                             harvest.getId()

@@ -5,7 +5,7 @@
  */
 package Models;
 
-import java.sql.Date;
+import java.sql.Timestamp;
 
 /**
  *
@@ -13,8 +13,8 @@ import java.sql.Date;
  */
 public class HarvestModel {
     private int id;
-    private double amount; // pc
-    private Date timestamp;
+    private int amount; // pc
+    private Timestamp timestamp;
 
     public int getId() {
         return id;
@@ -24,19 +24,19 @@ public class HarvestModel {
         this.id = id;
     }
 
-    public double getAmount() {
+    public int getAmount() {
         return amount;
     }
 
-    public void setAmount(double amount) {
+    public void setAmount(int amount) {
         this.amount = amount;
     }
 
-    public Date getTimestamp() {
+    public Timestamp getTimestamp() {
         return timestamp;
     }
 
-    public void setTimestamp(Date timestamp) {
+    public void setTimestamp(Timestamp timestamp) {
         this.timestamp = timestamp;
     }
     
