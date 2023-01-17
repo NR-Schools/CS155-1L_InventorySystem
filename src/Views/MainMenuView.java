@@ -577,6 +577,24 @@ public class MainMenuView extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void ResetInputs() {
+        AddFeedAmount.setText("");
+        AddFeedPrice.setText("");
+        UpdateFeedID.setText("?");
+        UpdateFeedAmount.setText("");
+        UpdateFeedPrice.setText("");
+        
+        AddWaterAmount.setText("");
+        UpdateWaterID.setText("?");
+        UpdateWaterAmount.setText("");
+        
+        AddHarvestAmount.setText("");
+        UpdateHarvestID.setText("?");
+        UpdateHarvestAmount.setText("");
+        
+        ResetSelectedIDs();
+    }
+    
     private void ResetSelectedIDs() {
         FeedSelectedID = -1;
         WaterSelectedID = -1;
@@ -658,6 +676,9 @@ public class MainMenuView extends javax.swing.JFrame {
         ResetSelectedIDs();
     }//GEN-LAST:event_DashboardViewBtnActionPerformed
 
+    
+    // FEED
+    
     private void FeedsTableMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_FeedsTableMousePressed
         // TODO add your handling code here:
         int rowSelected = FeedsTable.getSelectedRow();
@@ -688,6 +709,8 @@ public class MainMenuView extends javax.swing.JFrame {
         
         // Success Message
         JOptionPane.showMessageDialog(rootPane, "Feed Entry Deleted Successfully", "Feed Info", JOptionPane.INFORMATION_MESSAGE);
+        ResetInputs();
+        LoadTable(PropType.Feed);
     }//GEN-LAST:event_DeleteFeedBtnActionPerformed
 
     private void AddFeedBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AddFeedBtnActionPerformed
@@ -724,6 +747,8 @@ public class MainMenuView extends javax.swing.JFrame {
         
         // Success Message
         JOptionPane.showMessageDialog(rootPane, "Feed Entry Added Successfully", "Feed Info", JOptionPane.INFORMATION_MESSAGE);
+        ResetInputs();
+        LoadTable(PropType.Feed);
     }//GEN-LAST:event_AddFeedBtnActionPerformed
 
     private void UpdateFeedBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_UpdateFeedBtnActionPerformed
@@ -761,6 +786,8 @@ public class MainMenuView extends javax.swing.JFrame {
         
         // Success Message
         JOptionPane.showMessageDialog(rootPane, "Feed Entry Updated Successfully", "Feed Info", JOptionPane.INFORMATION_MESSAGE);
+        ResetInputs();
+        LoadTable(PropType.Feed);
     }//GEN-LAST:event_UpdateFeedBtnActionPerformed
 
     private void RefreshFeedBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RefreshFeedBtnActionPerformed
@@ -769,6 +796,9 @@ public class MainMenuView extends javax.swing.JFrame {
         LoadTable(PropType.Feed);
     }//GEN-LAST:event_RefreshFeedBtnActionPerformed
 
+    
+    // WATER
+    
     private void WatersTableMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_WatersTableMousePressed
         // TODO add your handling code here:
         int rowSelected = WatersTable.getSelectedRow();
@@ -798,6 +828,8 @@ public class MainMenuView extends javax.swing.JFrame {
         
         // Success Message
         JOptionPane.showMessageDialog(rootPane, "Water Entry Deleted Successfully", "Water Info", JOptionPane.INFORMATION_MESSAGE);
+        ResetInputs();
+        LoadTable(PropType.Water);
     }//GEN-LAST:event_DeleteWaterBtnActionPerformed
 
     private void AddWaterBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AddWaterBtnActionPerformed
@@ -828,6 +860,8 @@ public class MainMenuView extends javax.swing.JFrame {
         
         // Success Message
         JOptionPane.showMessageDialog(rootPane, "Water Entry Added Successfully", "Water Info", JOptionPane.INFORMATION_MESSAGE);
+        ResetInputs();
+        LoadTable(PropType.Water);
     }//GEN-LAST:event_AddWaterBtnActionPerformed
 
     private void UpdateWaterBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_UpdateWaterBtnActionPerformed
@@ -859,6 +893,8 @@ public class MainMenuView extends javax.swing.JFrame {
         
         // Success Message
         JOptionPane.showMessageDialog(rootPane, "Water Entry Updated Successfully", "Water Info", JOptionPane.INFORMATION_MESSAGE);
+        ResetInputs();
+        LoadTable(PropType.Water);
     }//GEN-LAST:event_UpdateWaterBtnActionPerformed
 
     private void RefreshWaterBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RefreshWaterBtnActionPerformed
@@ -867,6 +903,9 @@ public class MainMenuView extends javax.swing.JFrame {
         LoadTable(PropType.Water);
     }//GEN-LAST:event_RefreshWaterBtnActionPerformed
 
+    
+    // HARVEST
+    
     private void HarvestsTableMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_HarvestsTableMousePressed
         // TODO add your handling code here:
         int rowSelected = HarvestsTable.getSelectedRow();
@@ -896,6 +935,8 @@ public class MainMenuView extends javax.swing.JFrame {
         
         // Success Message
         JOptionPane.showMessageDialog(rootPane, "Harvest Entry Deleted Successfully", "Harvest Info", JOptionPane.INFORMATION_MESSAGE);
+        ResetInputs();
+        LoadTable(PropType.Harvest);
     }//GEN-LAST:event_DeleteHarvestBtnActionPerformed
 
     private void AddHarvestBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AddHarvestBtnActionPerformed
@@ -926,6 +967,8 @@ public class MainMenuView extends javax.swing.JFrame {
         
         // Success Message
         JOptionPane.showMessageDialog(rootPane, "Harvest Entry Added Successfully", "Harvest Info", JOptionPane.INFORMATION_MESSAGE);
+        ResetInputs();
+        LoadTable(PropType.Harvest);
     }//GEN-LAST:event_AddHarvestBtnActionPerformed
 
     private void UpdateHarvestBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_UpdateHarvestBtnActionPerformed
@@ -957,6 +1000,8 @@ public class MainMenuView extends javax.swing.JFrame {
         
         // Success Message
         JOptionPane.showMessageDialog(rootPane, "Harvest Entry Updated Successfully", "Harvest Info", JOptionPane.INFORMATION_MESSAGE);
+        ResetInputs();
+        LoadTable(PropType.Harvest);
     }//GEN-LAST:event_UpdateHarvestBtnActionPerformed
 
     private void RefreshHarvestBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RefreshHarvestBtnActionPerformed
