@@ -14,8 +14,8 @@ import java.sql.Statement;
  * @author hp
  */
 public abstract class BaseRepository {
-    private String USERNAME = "sql6589200";
-    private String PASSWORD = "5Ucl5F84KY";
+    private String USERNAME = "sql6590997";
+    private String PASSWORD = "JX7vaTZMbm";
     private final String LINK = "jdbc:mysql://sql6.freemysqlhosting.net:3306?useTimezone=true&serverTimezone=UTC";
     private final String CONNECTOR = "com.mysql.cj.jdbc.Driver";
     
@@ -25,7 +25,7 @@ public abstract class BaseRepository {
         Connection sql_con = DriverManager.getConnection(LINK, USERNAME, PASSWORD);
             
         Statement SetDB = sql_con.createStatement();
-        SetDB.executeUpdate("USE sql6589200;");
+        SetDB.executeUpdate("USE sql6590997;");
             
         return sql_con;
     }
