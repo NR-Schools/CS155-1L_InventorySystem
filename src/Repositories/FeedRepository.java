@@ -102,4 +102,23 @@ public class FeedRepository extends BaseRepository {
             Logger.getLogger(FeedRepository.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
+    
+    public double getTotalFeeds() {
+        double totalFeeds = 0;
+        
+        try {
+            Connection con = createSQLConnection();
+            
+            Statement readFeedDB = con.createStatement();
+            ResultSet results = readFeedDB.executeQuery("SELECT SUM(Feed_Amount) AS TotalAmount FROM FeedTable");
+            results.next();
+            totalFeeds = results.getDouble("TotalAmount");
+            
+            con.close();
+        } catch (Exception ex) {
+            Logger.getLogger(FeedRepository.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
+        return totalFeeds;
+    }
 }

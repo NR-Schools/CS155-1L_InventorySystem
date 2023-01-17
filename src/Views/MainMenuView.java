@@ -74,6 +74,7 @@ public class MainMenuView extends javax.swing.JFrame {
         jLabel7 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
         TotalHarvestLabel = new javax.swing.JLabel();
+        RefreshTotalAmounts = new javax.swing.JButton();
         FeedFragment = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
         FeedsTable = new javax.swing.JTable();
@@ -119,7 +120,6 @@ public class MainMenuView extends javax.swing.JFrame {
         UpdateHarvestID = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setPreferredSize(new java.awt.Dimension(1850, 1030));
         setSize(new java.awt.Dimension(1850, 1030));
 
         Topbar.setBackground(new java.awt.Color(237, 180, 106));
@@ -237,7 +237,7 @@ public class MainMenuView extends javax.swing.JFrame {
 
         TotalFeedLabel.setFont(new java.awt.Font("Berlin Sans FB Demi", 1, 70)); // NOI18N
         TotalFeedLabel.setForeground(new java.awt.Color(255, 255, 255));
-        TotalFeedLabel.setText("30");
+        TotalFeedLabel.setText("0.0");
         FeedPanel.add(TotalFeedLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(224, 63, -1, -1));
 
         DashboardFragment.add(FeedPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 40, 370, 170));
@@ -255,7 +255,7 @@ public class MainMenuView extends javax.swing.JFrame {
 
         TotalWaterLabel.setFont(new java.awt.Font("Berlin Sans FB Demi", 1, 70)); // NOI18N
         TotalWaterLabel.setForeground(new java.awt.Color(255, 255, 255));
-        TotalWaterLabel.setText("12");
+        TotalWaterLabel.setText("0.0");
         WaterPanel.add(TotalWaterLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 60, -1, -1));
 
         DashboardFragment.add(WaterPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 40, 370, 170));
@@ -273,10 +273,21 @@ public class MainMenuView extends javax.swing.JFrame {
 
         TotalHarvestLabel.setFont(new java.awt.Font("Berlin Sans FB Demi", 1, 70)); // NOI18N
         TotalHarvestLabel.setForeground(new java.awt.Color(255, 255, 255));
-        TotalHarvestLabel.setText("133");
+        TotalHarvestLabel.setText("0");
         HarvestPanel.add(TotalHarvestLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 60, -1, -1));
 
         DashboardFragment.add(HarvestPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(820, 40, 370, 170));
+
+        RefreshTotalAmounts.setBackground(new java.awt.Color(164, 196, 181));
+        RefreshTotalAmounts.setFont(new java.awt.Font("Berlin Sans FB Demi", 0, 24)); // NOI18N
+        RefreshTotalAmounts.setText("Refresh Amounts");
+        RefreshTotalAmounts.setBorder(null);
+        RefreshTotalAmounts.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                RefreshTotalAmountsActionPerformed(evt);
+            }
+        });
+        DashboardFragment.add(RefreshTotalAmounts, new org.netbeans.lib.awtextra.AbsoluteConstraints(1310, 260, 200, 50));
 
         FragmentManager.add(DashboardFragment, "card2");
 
@@ -1010,6 +1021,19 @@ public class MainMenuView extends javax.swing.JFrame {
         LoadTable(PropType.Harvest);
     }//GEN-LAST:event_RefreshHarvestBtnActionPerformed
 
+    private void RefreshTotalAmountsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RefreshTotalAmountsActionPerformed
+        // TODO add your handling code here:
+        TotalFeedLabel.setText(
+                Double.toString(RepositoryProvider.getProvider().getFeedRepo().getTotalFeeds())
+        );
+        TotalWaterLabel.setText(
+                Double.toString(RepositoryProvider.getProvider().getWaterRepo().getTotalFeeds())
+        );
+        TotalHarvestLabel.setText(
+                Integer.toString(RepositoryProvider.getProvider().getHarvestRepo().getTotalFeeds())
+        );
+    }//GEN-LAST:event_RefreshTotalAmountsActionPerformed
+
     
     /**
      * @param args the command line arguments
@@ -1059,6 +1083,7 @@ public class MainMenuView extends javax.swing.JFrame {
     private javax.swing.JTable HarvestsTable;
     private javax.swing.JButton RefreshFeedBtn;
     private javax.swing.JButton RefreshHarvestBtn;
+    private javax.swing.JButton RefreshTotalAmounts;
     private javax.swing.JButton RefreshWaterBtn;
     private javax.swing.JPanel Sidebar;
     private javax.swing.JPanel Topbar;

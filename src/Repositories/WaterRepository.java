@@ -99,4 +99,23 @@ public class WaterRepository extends BaseRepository {
             Logger.getLogger(WaterRepository.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
+    
+    public double getTotalFeeds() {
+        double totalWater = 0;
+        
+        try {
+            Connection con = createSQLConnection();
+            
+            Statement readWaterDB = con.createStatement();
+            ResultSet results = readWaterDB.executeQuery("SELECT SUM(Water_Amount) AS TotalAmount FROM WaterTable");
+            results.next();
+            totalWater = results.getDouble("TotalAmount");
+            
+            con.close();
+        } catch (Exception ex) {
+            Logger.getLogger(FeedRepository.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
+        return totalWater;
+    }
 }

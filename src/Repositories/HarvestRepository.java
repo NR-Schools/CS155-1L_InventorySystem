@@ -99,4 +99,23 @@ public class HarvestRepository extends BaseRepository {
             Logger.getLogger(HarvestRepository.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
+    
+    public int getTotalFeeds() {
+        int totalHarvests = 0;
+        
+        try {
+            Connection con = createSQLConnection();
+            
+            Statement readWaterDB = con.createStatement();
+            ResultSet results = readWaterDB.executeQuery("SELECT SUM(Harvest_Amount) AS TotalAmount FROM HarvestTable");
+            results.next();
+            totalHarvests = results.getInt("TotalAmount");
+            
+            con.close();
+        } catch (Exception ex) {
+            Logger.getLogger(FeedRepository.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
+        return totalHarvests;
+    }
 }
