@@ -1,4 +1,4 @@
-USE sql6589200;
+USE sql6590997;
 
 SHOW TABLES;
 
@@ -23,7 +23,7 @@ CREATE TABLE FeedTable (
 	Feed_ID INT PRIMARY KEY AUTO_INCREMENT,
     Feed_Amount DOUBLE NOT NULL,
     Feed_Price DOUBLE NOT NULL,
-    Feed_TimeStamp DATETIME NOT NULL
+    Feed_TimeStamp TIMESTAMP NOT NULL
 );
 DROP TABLE IF EXISTS `FeedTable`;
 

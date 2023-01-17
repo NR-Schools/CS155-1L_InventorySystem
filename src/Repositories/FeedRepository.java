@@ -52,7 +52,7 @@ public class FeedRepository extends BaseRepository {
                 feed.setId(results.getInt("Feed_ID"));
                 feed.setAmount(results.getDouble("Feed_Amount"));
                 feed.setPrice(results.getDouble("Feed_Price"));
-                feed.setTimestamp(results.getDate("Feed_TimeStamp"));
+                feed.setTimestamp(results.getTimestamp("Feed_TimeStamp"));
                 feeds.add(feed);
             }
             

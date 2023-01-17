@@ -5,10 +5,14 @@
  */
 package Views;
 
-import Models.LivestockModel;
-import Repositories.LivestockRepository;
+import Models.FeedModel;
+import Repositories.RepositoryProvider;
 import java.awt.CardLayout;
+import java.sql.Timestamp;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
 
 /**
  *
@@ -19,8 +23,17 @@ public class MainMenuView extends javax.swing.JFrame {
     /**
      * Creates new form MainMenuView
      */
+    
+    private SimpleDateFormat sdm;
+    private int FeedSelectedID;
+    private enum PropType { Feed, Water, Harvest }
+    
     public MainMenuView() {
         initComponents();
+        
+        sdm = new SimpleDateFormat("dd/MM/yyyy hh:mm aa");
+        
+        ResetSelectedIDs();
     }
 
     /**
@@ -48,31 +61,32 @@ public class MainMenuView extends javax.swing.JFrame {
         FeedPanel = new javax.swing.JPanel();
         jLabel4 = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
-        jLabel12 = new javax.swing.JLabel();
+        TotalFeedLabel = new javax.swing.JLabel();
         WaterPanel = new javax.swing.JPanel();
         jLabel6 = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
-        jLabel13 = new javax.swing.JLabel();
+        TotalWaterLabel = new javax.swing.JLabel();
         HarvestPanel = new javax.swing.JPanel();
         jLabel7 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
-        jLabel11 = new javax.swing.JLabel();
+        TotalHarvestLabel = new javax.swing.JLabel();
         FeedFragment = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
-        jButton4 = new javax.swing.JButton();
+        FeedsTable = new javax.swing.JTable();
+        DeleteFeedBtn = new javax.swing.JButton();
         jLabel14 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
-        jButton3 = new javax.swing.JButton();
+        AddFeedAmount = new javax.swing.JTextField();
+        AddFeedBtn = new javax.swing.JButton();
         jLabel15 = new javax.swing.JLabel();
-        jTextField2 = new javax.swing.JTextField();
-        jLabel16 = new javax.swing.JLabel();
-        jTextField3 = new javax.swing.JTextField();
-        jButton2 = new javax.swing.JButton();
+        AddFeedPrice = new javax.swing.JTextField();
+        UpdateFeedID = new javax.swing.JLabel();
+        UpdateFeedBtn = new javax.swing.JButton();
         jLabel17 = new javax.swing.JLabel();
-        jTextField5 = new javax.swing.JTextField();
+        UpdateFeedAmount = new javax.swing.JTextField();
         jLabel18 = new javax.swing.JLabel();
-        jTextField4 = new javax.swing.JTextField();
+        UpdateFeedPrice = new javax.swing.JTextField();
+        RefreshFeedBtn = new javax.swing.JButton();
+        jLabel25 = new javax.swing.JLabel();
         WaterFragment = new javax.swing.JPanel();
         jScrollPane2 = new javax.swing.JScrollPane();
         jTable2 = new javax.swing.JTable();
@@ -106,7 +120,7 @@ public class MainMenuView extends javax.swing.JFrame {
 
         jLabel5.setFont(new java.awt.Font("Berlin Sans FB Demi", 0, 36)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(14, 79, 85));
-        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Views/inventory.png"))); // NOI18N
+        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Resources/inventory.png"))); // NOI18N
         jLabel5.setText("Inventory Management System");
 
         javax.swing.GroupLayout TopbarLayout = new javax.swing.GroupLayout(Topbar);
@@ -131,7 +145,7 @@ public class MainMenuView extends javax.swing.JFrame {
         FeedViewBtn.setBackground(new java.awt.Color(14, 79, 85));
         FeedViewBtn.setFont(new java.awt.Font("Berlin Sans FB Demi", 0, 24)); // NOI18N
         FeedViewBtn.setForeground(new java.awt.Color(255, 255, 255));
-        FeedViewBtn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Views/feed.png"))); // NOI18N
+        FeedViewBtn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Resources/feed.png"))); // NOI18N
         FeedViewBtn.setText("   FEED");
         FeedViewBtn.setBorder(null);
         FeedViewBtn.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
@@ -145,7 +159,7 @@ public class MainMenuView extends javax.swing.JFrame {
         WaterViewBtn.setBackground(new java.awt.Color(14, 79, 85));
         WaterViewBtn.setFont(new java.awt.Font("Berlin Sans FB Demi", 0, 24)); // NOI18N
         WaterViewBtn.setForeground(new java.awt.Color(255, 255, 255));
-        WaterViewBtn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Views/water.png"))); // NOI18N
+        WaterViewBtn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Resources/water.png"))); // NOI18N
         WaterViewBtn.setText("   WATER");
         WaterViewBtn.setBorder(null);
         WaterViewBtn.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
@@ -159,7 +173,7 @@ public class MainMenuView extends javax.swing.JFrame {
         HarvestViewBtn.setBackground(new java.awt.Color(14, 79, 85));
         HarvestViewBtn.setFont(new java.awt.Font("Berlin Sans FB Demi", 0, 24)); // NOI18N
         HarvestViewBtn.setForeground(new java.awt.Color(255, 255, 255));
-        HarvestViewBtn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Views/harvest.png"))); // NOI18N
+        HarvestViewBtn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Resources/harvest.png"))); // NOI18N
         HarvestViewBtn.setText("   HARVEST");
         HarvestViewBtn.setBorder(null);
         HarvestViewBtn.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
@@ -180,13 +194,13 @@ public class MainMenuView extends javax.swing.JFrame {
         jLabel3.setText("Admin");
         Sidebar.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(106, 58, -1, -1));
 
-        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Views/user.png"))); // NOI18N
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Resources/user.png"))); // NOI18N
         Sidebar.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 6, -1, -1));
 
         DashboardViewBtn.setBackground(new java.awt.Color(14, 79, 85));
         DashboardViewBtn.setFont(new java.awt.Font("Berlin Sans FB Demi", 0, 24)); // NOI18N
         DashboardViewBtn.setForeground(new java.awt.Color(255, 255, 255));
-        DashboardViewBtn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Views/dashboard.png"))); // NOI18N
+        DashboardViewBtn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Resources/dashboard.png"))); // NOI18N
         DashboardViewBtn.setText("   DASHBOARD");
         DashboardViewBtn.setBorder(null);
         DashboardViewBtn.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
@@ -207,7 +221,7 @@ public class MainMenuView extends javax.swing.JFrame {
         FeedPanel.setBackground(new java.awt.Color(164, 196, 181));
         FeedPanel.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Views/total-feed.png"))); // NOI18N
+        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Resources/total-feed.png"))); // NOI18N
         FeedPanel.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(31, 33, -1, -1));
 
         jLabel9.setFont(new java.awt.Font("Berlin Sans FB Demi", 1, 36)); // NOI18N
@@ -215,17 +229,17 @@ public class MainMenuView extends javax.swing.JFrame {
         jLabel9.setText("Total Feed");
         FeedPanel.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(169, 16, -1, -1));
 
-        jLabel12.setFont(new java.awt.Font("Berlin Sans FB Demi", 1, 70)); // NOI18N
-        jLabel12.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel12.setText("30");
-        FeedPanel.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(224, 63, -1, -1));
+        TotalFeedLabel.setFont(new java.awt.Font("Berlin Sans FB Demi", 1, 70)); // NOI18N
+        TotalFeedLabel.setForeground(new java.awt.Color(255, 255, 255));
+        TotalFeedLabel.setText("30");
+        FeedPanel.add(TotalFeedLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(224, 63, -1, -1));
 
         DashboardFragment.add(FeedPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 40, 370, 170));
 
         WaterPanel.setBackground(new java.awt.Color(164, 196, 181));
         WaterPanel.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Views/total-water.png"))); // NOI18N
+        jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Resources/total-water.png"))); // NOI18N
         WaterPanel.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(29, 34, -1, -1));
 
         jLabel10.setFont(new java.awt.Font("Berlin Sans FB Demi", 1, 36)); // NOI18N
@@ -233,17 +247,17 @@ public class MainMenuView extends javax.swing.JFrame {
         jLabel10.setText("Total Water");
         WaterPanel.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(135, 18, -1, -1));
 
-        jLabel13.setFont(new java.awt.Font("Berlin Sans FB Demi", 1, 70)); // NOI18N
-        jLabel13.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel13.setText("12");
-        WaterPanel.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 60, -1, -1));
+        TotalWaterLabel.setFont(new java.awt.Font("Berlin Sans FB Demi", 1, 70)); // NOI18N
+        TotalWaterLabel.setForeground(new java.awt.Color(255, 255, 255));
+        TotalWaterLabel.setText("12");
+        WaterPanel.add(TotalWaterLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 60, -1, -1));
 
         DashboardFragment.add(WaterPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 40, 370, 170));
 
         HarvestPanel.setBackground(new java.awt.Color(164, 196, 181));
         HarvestPanel.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Views/total-harvest.png"))); // NOI18N
+        jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Resources/total-harvest.png"))); // NOI18N
         HarvestPanel.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(29, 39, -1, -1));
 
         jLabel8.setFont(new java.awt.Font("Berlin Sans FB Demi", 1, 36)); // NOI18N
@@ -251,10 +265,10 @@ public class MainMenuView extends javax.swing.JFrame {
         jLabel8.setText("Total Harvest");
         HarvestPanel.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(135, 17, -1, -1));
 
-        jLabel11.setFont(new java.awt.Font("Berlin Sans FB Demi", 1, 70)); // NOI18N
-        jLabel11.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel11.setText("133");
-        HarvestPanel.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 60, -1, -1));
+        TotalHarvestLabel.setFont(new java.awt.Font("Berlin Sans FB Demi", 1, 70)); // NOI18N
+        TotalHarvestLabel.setForeground(new java.awt.Color(255, 255, 255));
+        TotalHarvestLabel.setText("133");
+        HarvestPanel.add(TotalHarvestLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 60, -1, -1));
 
         DashboardFragment.add(HarvestPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(820, 40, 370, 170));
 
@@ -262,7 +276,7 @@ public class MainMenuView extends javax.swing.JFrame {
 
         FeedFragment.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        FeedsTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
                 {null, null, null, null},
@@ -270,56 +284,91 @@ public class MainMenuView extends javax.swing.JFrame {
                 {null, null, null, null}
             },
             new String [] {
-                "Id", "Date", "Amount ( kg )", "Price"
+                "Id", "Amount (kg)", "Price (Php)", "Date"
             }
         ));
-        jTable1.setPreferredSize(new java.awt.Dimension(225, 100));
-        jScrollPane1.setViewportView(jTable1);
+        FeedsTable.setPreferredSize(new java.awt.Dimension(225, 100));
+        FeedsTable.getTableHeader().setReorderingAllowed(false);
+        FeedsTable.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                FeedsTableMousePressed(evt);
+            }
+        });
+        jScrollPane1.setViewportView(FeedsTable);
 
         FeedFragment.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 40, 1440, 540));
 
-        jButton4.setBackground(new java.awt.Color(164, 196, 181));
-        jButton4.setFont(new java.awt.Font("Berlin Sans FB Demi", 0, 24)); // NOI18N
-        jButton4.setText("Delete Feed");
-        jButton4.setBorder(null);
-        FeedFragment.add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 600, 200, 50));
+        DeleteFeedBtn.setBackground(new java.awt.Color(164, 196, 181));
+        DeleteFeedBtn.setFont(new java.awt.Font("Berlin Sans FB Demi", 0, 24)); // NOI18N
+        DeleteFeedBtn.setText("Delete Feed");
+        DeleteFeedBtn.setBorder(null);
+        DeleteFeedBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                DeleteFeedBtnActionPerformed(evt);
+            }
+        });
+        FeedFragment.add(DeleteFeedBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 600, 200, 50));
 
         jLabel14.setFont(new java.awt.Font("Berlin Sans FB Demi", 0, 24)); // NOI18N
         jLabel14.setText("Amount(kg) :");
         FeedFragment.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 690, -1, -1));
-        FeedFragment.add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 730, 200, 50));
+        FeedFragment.add(AddFeedAmount, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 730, 200, 50));
 
-        jButton3.setBackground(new java.awt.Color(164, 196, 181));
-        jButton3.setFont(new java.awt.Font("Berlin Sans FB Demi", 0, 24)); // NOI18N
-        jButton3.setText("Add Feed");
-        jButton3.setBorder(null);
-        FeedFragment.add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 800, 200, 50));
+        AddFeedBtn.setBackground(new java.awt.Color(164, 196, 181));
+        AddFeedBtn.setFont(new java.awt.Font("Berlin Sans FB Demi", 0, 24)); // NOI18N
+        AddFeedBtn.setText("Add Feed");
+        AddFeedBtn.setBorder(null);
+        AddFeedBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                AddFeedBtnActionPerformed(evt);
+            }
+        });
+        FeedFragment.add(AddFeedBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 800, 200, 50));
 
         jLabel15.setFont(new java.awt.Font("Berlin Sans FB Demi", 0, 24)); // NOI18N
         jLabel15.setText("Price :");
         FeedFragment.add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 690, -1, -1));
-        FeedFragment.add(jTextField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 730, 200, 50));
+        FeedFragment.add(AddFeedPrice, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 730, 200, 50));
 
-        jLabel16.setFont(new java.awt.Font("Berlin Sans FB Demi", 0, 24)); // NOI18N
-        jLabel16.setText("ID :");
-        FeedFragment.add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 690, -1, -1));
-        FeedFragment.add(jTextField3, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 730, 200, 50));
+        UpdateFeedID.setFont(new java.awt.Font("Berlin Sans FB", 0, 36)); // NOI18N
+        UpdateFeedID.setText("?");
+        FeedFragment.add(UpdateFeedID, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 730, -1, -1));
 
-        jButton2.setBackground(new java.awt.Color(164, 196, 181));
-        jButton2.setFont(new java.awt.Font("Berlin Sans FB Demi", 0, 24)); // NOI18N
-        jButton2.setText("Update Feed");
-        jButton2.setBorder(null);
-        FeedFragment.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 800, 200, 50));
+        UpdateFeedBtn.setBackground(new java.awt.Color(164, 196, 181));
+        UpdateFeedBtn.setFont(new java.awt.Font("Berlin Sans FB Demi", 0, 24)); // NOI18N
+        UpdateFeedBtn.setText("Update Feed");
+        UpdateFeedBtn.setBorder(null);
+        UpdateFeedBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                UpdateFeedBtnActionPerformed(evt);
+            }
+        });
+        FeedFragment.add(UpdateFeedBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 800, 200, 50));
 
         jLabel17.setFont(new java.awt.Font("Berlin Sans FB Demi", 0, 24)); // NOI18N
         jLabel17.setText("Amount(kg) :");
         FeedFragment.add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(750, 690, -1, -1));
-        FeedFragment.add(jTextField5, new org.netbeans.lib.awtextra.AbsoluteConstraints(750, 730, 200, 50));
+        FeedFragment.add(UpdateFeedAmount, new org.netbeans.lib.awtextra.AbsoluteConstraints(750, 730, 200, 50));
 
         jLabel18.setFont(new java.awt.Font("Berlin Sans FB Demi", 0, 24)); // NOI18N
         jLabel18.setText("Price :");
         FeedFragment.add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(970, 690, -1, -1));
-        FeedFragment.add(jTextField4, new org.netbeans.lib.awtextra.AbsoluteConstraints(970, 730, 200, 50));
+        FeedFragment.add(UpdateFeedPrice, new org.netbeans.lib.awtextra.AbsoluteConstraints(970, 730, 200, 50));
+
+        RefreshFeedBtn.setBackground(new java.awt.Color(164, 196, 181));
+        RefreshFeedBtn.setFont(new java.awt.Font("Berlin Sans FB Demi", 0, 24)); // NOI18N
+        RefreshFeedBtn.setText("Refresh Feeds");
+        RefreshFeedBtn.setBorder(null);
+        RefreshFeedBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                RefreshFeedBtnActionPerformed(evt);
+            }
+        });
+        FeedFragment.add(RefreshFeedBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(1280, 600, 200, 50));
+
+        jLabel25.setFont(new java.awt.Font("Berlin Sans FB Demi", 0, 24)); // NOI18N
+        jLabel25.setText("ID :");
+        FeedFragment.add(jLabel25, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 690, -1, -1));
 
         FragmentManager.add(FeedFragment, "card3");
 
@@ -446,31 +495,173 @@ public class MainMenuView extends javax.swing.JFrame {
                 .addComponent(Topbar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(Sidebar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(FragmentManager, javax.swing.GroupLayout.DEFAULT_SIZE, 973, Short.MAX_VALUE)))
+                    .addComponent(FragmentManager, javax.swing.GroupLayout.DEFAULT_SIZE, 953, Short.MAX_VALUE)))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void ResetSelectedIDs() {
+        FeedSelectedID = -1;
+    }
+    
+    private void LoadTable(PropType ptype) {
+        DefaultTableModel DTM = new DefaultTableModel();
+                
+        switch(ptype) {
+            case Feed:
+                DTM.setColumnIdentifiers(new Object[] {"Id", "Amount (kg)", "Price (Php)", "Date"});
+                
+                ArrayList<FeedModel> feeds = RepositoryProvider.getProvider().getFeedRepo().getFeeds();
+                feeds.stream().forEachOrdered(feedHolder -> {
+                    DTM.addRow(new Object[] {
+                        feedHolder.getId(),
+                        feedHolder.getAmount(),
+                        feedHolder.getPrice(),
+                        sdm.format(feedHolder.getTimestamp())
+                    });
+                });
+                
+                FeedsTable.setModel(DTM);
+                break;
+        }
+    }
+    
+    
     private void FeedViewBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_FeedViewBtnActionPerformed
         // TODO add your handling code here:
         ((CardLayout)FragmentManager.getLayout()).show(FragmentManager, "card3");
+        ResetSelectedIDs();
     }//GEN-LAST:event_FeedViewBtnActionPerformed
 
     private void WaterViewBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_WaterViewBtnActionPerformed
         // TODO add your handling code here:
         ((CardLayout)FragmentManager.getLayout()).show(FragmentManager, "card5");
+        ResetSelectedIDs();
     }//GEN-LAST:event_WaterViewBtnActionPerformed
 
     private void HarvestViewBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_HarvestViewBtnActionPerformed
         // TODO add your handling code here:
         ((CardLayout)FragmentManager.getLayout()).show(FragmentManager, "card4");
+        ResetSelectedIDs();
     }//GEN-LAST:event_HarvestViewBtnActionPerformed
 
     private void DashboardViewBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DashboardViewBtnActionPerformed
         // TODO add your handling code here:
         ((CardLayout)FragmentManager.getLayout()).show(FragmentManager, "card2");
+        ResetSelectedIDs();
     }//GEN-LAST:event_DashboardViewBtnActionPerformed
+
+    private void FeedsTableMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_FeedsTableMousePressed
+        // TODO add your handling code here:
+        int rowSelected = FeedsTable.getSelectedRow();
+        
+        // Update [Update Feed Information]
+        UpdateFeedID.setText(FeedsTable.getValueAt(rowSelected, 0).toString());
+        UpdateFeedAmount.setText(FeedsTable.getValueAt(rowSelected, 1).toString());
+        UpdateFeedPrice.setText(FeedsTable.getValueAt(rowSelected, 2).toString());
+        
+        // Update [Delete Feed Information]
+        FeedSelectedID = Integer.parseInt(FeedsTable.getValueAt(rowSelected, 0).toString());
+    }//GEN-LAST:event_FeedsTableMousePressed
+
+    private void DeleteFeedBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DeleteFeedBtnActionPerformed
+        // TODO add your handling code here:
+        // Check Validity
+        if(FeedSelectedID < 0) {
+            JOptionPane.showMessageDialog(rootPane, "Invalid Feed ID", "Delete Feed Error", JOptionPane.ERROR_MESSAGE);
+            return;
+        }
+        
+        // Assemble Class
+        FeedModel feed = new FeedModel();
+        feed.setId(FeedSelectedID);
+        
+        // Perform Operation
+        RepositoryProvider.getProvider().getFeedRepo().deleteFeed(feed);
+        
+        // Success Message
+        JOptionPane.showMessageDialog(rootPane, "Feed Entry Deleted Successfully", "Feed Info", JOptionPane.INFORMATION_MESSAGE);
+    }//GEN-LAST:event_DeleteFeedBtnActionPerformed
+
+    private void AddFeedBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AddFeedBtnActionPerformed
+        // TODO add your handling code here:
+        double Amount, Price;
+        
+        try {
+            Amount = Double.parseDouble(AddFeedAmount.getText().trim());
+            Price = Double.parseDouble(AddFeedPrice.getText().trim());
+        }
+        catch(Exception ex) {
+            JOptionPane.showMessageDialog(rootPane, "Invalid Feed Inputs", "Add Feed Error", JOptionPane.ERROR_MESSAGE);
+            return;
+        }
+        
+        // Check Validity
+        if (Amount < 0) {
+            JOptionPane.showMessageDialog(rootPane, "Invalid Feed Amount", "Add Feed Error", JOptionPane.ERROR_MESSAGE);
+            return;
+        }
+        if (Price < 0) {
+            JOptionPane.showMessageDialog(rootPane, "Invalid Feed Price", "Add Feed Error", JOptionPane.ERROR_MESSAGE);
+            return;
+        }
+        
+        // Assemble Class
+        FeedModel feed = new FeedModel();
+        feed.setAmount(Amount);
+        feed.setPrice(Price);
+        feed.setTimestamp(new Timestamp(new java.util.Date().getTime()));
+        
+        // Perform Operation
+        RepositoryProvider.getProvider().getFeedRepo().addFeed(feed);
+        
+        // Success Message
+        JOptionPane.showMessageDialog(rootPane, "Feed Entry Added Successfully", "Feed Info", JOptionPane.INFORMATION_MESSAGE);
+    }//GEN-LAST:event_AddFeedBtnActionPerformed
+
+    private void UpdateFeedBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_UpdateFeedBtnActionPerformed
+        // TODO add your handling code here:
+        double Amount, Price;
+        
+        try {
+            Amount = Double.parseDouble(UpdateFeedAmount.getText().trim());
+            Price = Double.parseDouble(UpdateFeedPrice.getText().trim());
+        }
+        catch(Exception ex) {
+            JOptionPane.showMessageDialog(rootPane, "Invalid Feed Inputs", "Update Feed Error", JOptionPane.ERROR_MESSAGE);
+            return;
+        }
+        
+        // Check Validity
+        if (Amount < 0) {
+            JOptionPane.showMessageDialog(rootPane, "Invalid Feed Amount", "Update Feed Error", JOptionPane.ERROR_MESSAGE);
+            return;
+        }
+        if (Price < 0) {
+            JOptionPane.showMessageDialog(rootPane, "Invalid Feed Price", "Update Feed Error", JOptionPane.ERROR_MESSAGE);
+            return;
+        }
+        
+        // Assemble Class
+        FeedModel feed = new FeedModel();
+        feed.setId(Integer.parseInt(UpdateFeedID.getText()));
+        feed.setAmount(Amount);
+        feed.setPrice(Price);
+        feed.setTimestamp(new Timestamp(new java.util.Date().getTime()));
+        
+        // Perform Operation
+        RepositoryProvider.getProvider().getFeedRepo().updateFeed(feed);
+        
+        // Success Message
+        JOptionPane.showMessageDialog(rootPane, "Feed Entry Updated Successfully", "Feed Info", JOptionPane.INFORMATION_MESSAGE);
+    }//GEN-LAST:event_UpdateFeedBtnActionPerformed
+
+    private void RefreshFeedBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RefreshFeedBtnActionPerformed
+        // TODO add your handling code here:
+        
+        LoadTable(PropType.Feed);
+    }//GEN-LAST:event_RefreshFeedBtnActionPerformed
 
     
     /**
@@ -498,37 +689,43 @@ public class MainMenuView extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JTextField AddFeedAmount;
+    private javax.swing.JButton AddFeedBtn;
+    private javax.swing.JTextField AddFeedPrice;
     private javax.swing.JPanel DashboardFragment;
     private javax.swing.JButton DashboardViewBtn;
+    private javax.swing.JButton DeleteFeedBtn;
     private javax.swing.JPanel FeedFragment;
     private javax.swing.JPanel FeedPanel;
     private javax.swing.JButton FeedViewBtn;
+    private javax.swing.JTable FeedsTable;
     private javax.swing.JPanel FragmentManager;
     private javax.swing.JPanel HarvestFragment;
     private javax.swing.JPanel HarvestPanel;
     private javax.swing.JButton HarvestViewBtn;
+    private javax.swing.JButton RefreshFeedBtn;
     private javax.swing.JPanel Sidebar;
     private javax.swing.JPanel Topbar;
+    private javax.swing.JLabel TotalFeedLabel;
+    private javax.swing.JLabel TotalHarvestLabel;
+    private javax.swing.JLabel TotalWaterLabel;
+    private javax.swing.JTextField UpdateFeedAmount;
+    private javax.swing.JButton UpdateFeedBtn;
+    private javax.swing.JLabel UpdateFeedID;
+    private javax.swing.JTextField UpdateFeedPrice;
     private javax.swing.JPanel WaterFragment;
     private javax.swing.JPanel WaterPanel;
     private javax.swing.JButton WaterViewBtn;
     private javax.swing.JButton jButton10;
     private javax.swing.JButton jButton11;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton6;
     private javax.swing.JButton jButton7;
     private javax.swing.JButton jButton8;
     private javax.swing.JButton jButton9;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
-    private javax.swing.JLabel jLabel11;
-    private javax.swing.JLabel jLabel12;
-    private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel15;
-    private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel17;
     private javax.swing.JLabel jLabel18;
     private javax.swing.JLabel jLabel19;
@@ -538,6 +735,7 @@ public class MainMenuView extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel22;
     private javax.swing.JLabel jLabel23;
     private javax.swing.JLabel jLabel24;
+    private javax.swing.JLabel jLabel25;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
@@ -549,16 +747,10 @@ public class MainMenuView extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JSeparator jSeparator1;
-    private javax.swing.JTable jTable1;
     private javax.swing.JTable jTable2;
     private javax.swing.JTable jTable3;
-    private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField jTextField10;
     private javax.swing.JTextField jTextField11;
-    private javax.swing.JTextField jTextField2;
-    private javax.swing.JTextField jTextField3;
-    private javax.swing.JTextField jTextField4;
-    private javax.swing.JTextField jTextField5;
     private javax.swing.JTextField jTextField6;
     private javax.swing.JTextField jTextField7;
     private javax.swing.JTextField jTextField8;

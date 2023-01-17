@@ -16,7 +16,7 @@ import java.sql.Statement;
 public abstract class BaseRepository {
     private String USERNAME = "sql6590997";
     private String PASSWORD = "JX7vaTZMbm";
-    private final String LINK = "jdbc:mysql://sql6.freemysqlhosting.net:3306?useTimezone=true&serverTimezone=UTC";
+    private final String LINK = "jdbc:mysql://sql6.freemysqlhosting.net:3306?useTimezone=true&serverTimezone=GMT%2B8";
     private final String CONNECTOR = "com.mysql.cj.jdbc.Driver";
     
     protected Connection createSQLConnection() throws Exception {

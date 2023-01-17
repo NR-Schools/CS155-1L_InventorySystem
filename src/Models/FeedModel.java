@@ -5,7 +5,7 @@
  */
 package Models;
 
-import java.sql.Date;
+import java.sql.Timestamp;
 
 /**
  *
@@ -15,7 +15,7 @@ public class FeedModel {
     private int id;
     private double amount; // kg
     private double price; // php
-    private Date timestamp;
+    private Timestamp timestamp;
 
     public int getId() {
         return id;
@@ -41,11 +41,11 @@ public class FeedModel {
         this.price = price;
     }
 
-    public Date getTimestamp() {
+    public Timestamp getTimestamp() {
         return timestamp;
     }
 
-    public void setTimestamp(Date timestamp) {
+    public void setTimestamp(Timestamp timestamp) {
         this.timestamp = timestamp;
     }
 }
