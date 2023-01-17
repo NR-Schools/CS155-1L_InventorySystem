@@ -7,6 +7,7 @@ package Views;
 
 import Models.LivestockModel;
 import Repositories.LivestockRepository;
+import java.awt.CardLayout;
 import java.util.ArrayList;
 
 /**
@@ -73,7 +74,29 @@ public class MainMenuView extends javax.swing.JFrame {
         jLabel18 = new javax.swing.JLabel();
         jTextField4 = new javax.swing.JTextField();
         WaterFragment = new javax.swing.JPanel();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        jTable2 = new javax.swing.JTable();
+        jButton8 = new javax.swing.JButton();
+        jTextField6 = new javax.swing.JTextField();
+        jLabel19 = new javax.swing.JLabel();
+        jButton7 = new javax.swing.JButton();
+        jTextField8 = new javax.swing.JTextField();
+        jLabel20 = new javax.swing.JLabel();
+        jButton6 = new javax.swing.JButton();
+        jTextField10 = new javax.swing.JTextField();
+        jLabel21 = new javax.swing.JLabel();
         HarvestFragment = new javax.swing.JPanel();
+        jScrollPane3 = new javax.swing.JScrollPane();
+        jTable3 = new javax.swing.JTable();
+        jButton9 = new javax.swing.JButton();
+        jLabel22 = new javax.swing.JLabel();
+        jTextField7 = new javax.swing.JTextField();
+        jButton10 = new javax.swing.JButton();
+        jTextField9 = new javax.swing.JTextField();
+        jLabel23 = new javax.swing.JLabel();
+        jButton11 = new javax.swing.JButton();
+        jLabel24 = new javax.swing.JLabel();
+        jTextField11 = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setSize(new java.awt.Dimension(1850, 1050));
@@ -251,53 +274,155 @@ public class MainMenuView extends javax.swing.JFrame {
         ));
         jScrollPane1.setViewportView(jTable1);
 
-        FeedFragment.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 60, 1400, 540));
+        FeedFragment.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 20, 1400, 540));
 
         jButton4.setBackground(new java.awt.Color(164, 196, 181));
         jButton4.setFont(new java.awt.Font("Berlin Sans FB Demi", 0, 24)); // NOI18N
         jButton4.setText("Delete Feed");
         jButton4.setBorder(null);
-        FeedFragment.add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 620, 200, 50));
+        FeedFragment.add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 580, 200, 50));
 
         jLabel14.setFont(new java.awt.Font("Berlin Sans FB Demi", 0, 24)); // NOI18N
         jLabel14.setText("Amount(kg) :");
-        FeedFragment.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 730, -1, -1));
-        FeedFragment.add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 770, 200, 50));
+        FeedFragment.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 690, -1, -1));
+        FeedFragment.add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 730, 200, 50));
 
         jButton3.setBackground(new java.awt.Color(164, 196, 181));
         jButton3.setFont(new java.awt.Font("Berlin Sans FB Demi", 0, 24)); // NOI18N
         jButton3.setText("Add Feed");
         jButton3.setBorder(null);
-        FeedFragment.add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 840, 200, 50));
+        FeedFragment.add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 800, 200, 50));
 
         jLabel15.setFont(new java.awt.Font("Berlin Sans FB Demi", 0, 24)); // NOI18N
         jLabel15.setText("Price :");
-        FeedFragment.add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 730, -1, -1));
-        FeedFragment.add(jTextField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 770, 200, 50));
+        FeedFragment.add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 690, -1, -1));
+        FeedFragment.add(jTextField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 730, 200, 50));
 
         jLabel16.setFont(new java.awt.Font("Berlin Sans FB Demi", 0, 24)); // NOI18N
         jLabel16.setText("ID :");
-        FeedFragment.add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 730, -1, -1));
-        FeedFragment.add(jTextField3, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 770, 200, 50));
+        FeedFragment.add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 690, -1, -1));
+        FeedFragment.add(jTextField3, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 730, 200, 50));
 
         jButton2.setBackground(new java.awt.Color(164, 196, 181));
         jButton2.setFont(new java.awt.Font("Berlin Sans FB Demi", 0, 24)); // NOI18N
         jButton2.setText("Update Feed");
         jButton2.setBorder(null);
-        FeedFragment.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 840, 200, 50));
+        FeedFragment.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 800, 200, 50));
 
         jLabel17.setFont(new java.awt.Font("Berlin Sans FB Demi", 0, 24)); // NOI18N
         jLabel17.setText("Amount(kg) :");
-        FeedFragment.add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(910, 730, -1, -1));
-        FeedFragment.add(jTextField5, new org.netbeans.lib.awtextra.AbsoluteConstraints(910, 770, 200, 50));
+        FeedFragment.add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(890, 690, -1, -1));
+        FeedFragment.add(jTextField5, new org.netbeans.lib.awtextra.AbsoluteConstraints(890, 730, 200, 50));
 
         jLabel18.setFont(new java.awt.Font("Berlin Sans FB Demi", 0, 24)); // NOI18N
         jLabel18.setText("Price :");
-        FeedFragment.add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(1130, 730, -1, -1));
-        FeedFragment.add(jTextField4, new org.netbeans.lib.awtextra.AbsoluteConstraints(1130, 770, 200, 50));
+        FeedFragment.add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(1110, 690, -1, -1));
+        FeedFragment.add(jTextField4, new org.netbeans.lib.awtextra.AbsoluteConstraints(1110, 730, 200, 50));
 
         FragmentManager.add(FeedFragment, "card3");
+
+        WaterFragment.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jTable2.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null}
+            },
+            new String [] {
+                "Id", "Date", "Amount ( L )"
+            }
+        ));
+        jScrollPane2.setViewportView(jTable2);
+
+        WaterFragment.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 50, 1400, 540));
+
+        jButton8.setBackground(new java.awt.Color(164, 196, 181));
+        jButton8.setFont(new java.awt.Font("Berlin Sans FB Demi", 0, 24)); // NOI18N
+        jButton8.setText("Delete Water");
+        jButton8.setBorder(null);
+        WaterFragment.add(jButton8, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 610, 200, 50));
+        WaterFragment.add(jTextField6, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 740, 370, 50));
+
+        jLabel19.setFont(new java.awt.Font("Berlin Sans FB Demi", 0, 24)); // NOI18N
+        jLabel19.setText("Amount(L) :");
+        WaterFragment.add(jLabel19, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 700, -1, -1));
+
+        jButton7.setBackground(new java.awt.Color(164, 196, 181));
+        jButton7.setFont(new java.awt.Font("Berlin Sans FB Demi", 0, 24)); // NOI18N
+        jButton7.setText("Add Water");
+        jButton7.setBorder(null);
+        WaterFragment.add(jButton7, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 810, 200, 50));
+        WaterFragment.add(jTextField8, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 740, 290, 50));
+
+        jLabel20.setFont(new java.awt.Font("Berlin Sans FB Demi", 0, 24)); // NOI18N
+        jLabel20.setText("ID :");
+        WaterFragment.add(jLabel20, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 700, -1, -1));
+
+        jButton6.setBackground(new java.awt.Color(164, 196, 181));
+        jButton6.setFont(new java.awt.Font("Berlin Sans FB Demi", 0, 24)); // NOI18N
+        jButton6.setText("Update Water");
+        jButton6.setBorder(null);
+        WaterFragment.add(jButton6, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 810, 200, 50));
+        WaterFragment.add(jTextField10, new org.netbeans.lib.awtextra.AbsoluteConstraints(850, 740, 370, 50));
+
+        jLabel21.setFont(new java.awt.Font("Berlin Sans FB Demi", 0, 24)); // NOI18N
+        jLabel21.setText("Amount(L) :");
+        WaterFragment.add(jLabel21, new org.netbeans.lib.awtextra.AbsoluteConstraints(850, 700, -1, -1));
+
         FragmentManager.add(WaterFragment, "card5");
+
+        HarvestFragment.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jTable3.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null}
+            },
+            new String [] {
+                "Id", "Date", "Amount ( Per Chicken )"
+            }
+        ));
+        jScrollPane3.setViewportView(jTable3);
+
+        HarvestFragment.add(jScrollPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 40, 1400, 540));
+
+        jButton9.setBackground(new java.awt.Color(164, 196, 181));
+        jButton9.setFont(new java.awt.Font("Berlin Sans FB Demi", 0, 24)); // NOI18N
+        jButton9.setText("Delete Harvest");
+        jButton9.setBorder(null);
+        HarvestFragment.add(jButton9, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 600, 200, 50));
+
+        jLabel22.setFont(new java.awt.Font("Berlin Sans FB Demi", 0, 24)); // NOI18N
+        jLabel22.setText("Amount(Per Chicken) :");
+        HarvestFragment.add(jLabel22, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 690, -1, -1));
+        HarvestFragment.add(jTextField7, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 730, 370, 50));
+
+        jButton10.setBackground(new java.awt.Color(164, 196, 181));
+        jButton10.setFont(new java.awt.Font("Berlin Sans FB Demi", 0, 24)); // NOI18N
+        jButton10.setText("Add Harvest");
+        jButton10.setBorder(null);
+        HarvestFragment.add(jButton10, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 800, 200, 50));
+        HarvestFragment.add(jTextField9, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 730, 290, 50));
+
+        jLabel23.setFont(new java.awt.Font("Berlin Sans FB Demi", 0, 24)); // NOI18N
+        jLabel23.setText("ID :");
+        HarvestFragment.add(jLabel23, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 690, -1, -1));
+
+        jButton11.setBackground(new java.awt.Color(164, 196, 181));
+        jButton11.setFont(new java.awt.Font("Berlin Sans FB Demi", 0, 24)); // NOI18N
+        jButton11.setText("Update Harvest");
+        jButton11.setBorder(null);
+        HarvestFragment.add(jButton11, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 800, 200, 50));
+
+        jLabel24.setFont(new java.awt.Font("Berlin Sans FB Demi", 0, 24)); // NOI18N
+        jLabel24.setText("Amount(Per Chicken) :");
+        HarvestFragment.add(jLabel24, new org.netbeans.lib.awtextra.AbsoluteConstraints(810, 690, -1, -1));
+        HarvestFragment.add(jTextField11, new org.netbeans.lib.awtextra.AbsoluteConstraints(810, 730, 370, 50));
+
         FragmentManager.add(HarvestFragment, "card4");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -317,9 +442,9 @@ public class MainMenuView extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addComponent(Topbar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(FragmentManager, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(Sidebar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(Sidebar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(FragmentManager, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
         );
 
         pack();
@@ -327,18 +452,22 @@ public class MainMenuView extends javax.swing.JFrame {
 
     private void FeedViewBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_FeedViewBtnActionPerformed
         // TODO add your handling code here:
+        ((CardLayout)FragmentManager.getLayout()).show(FragmentManager, "card3");
     }//GEN-LAST:event_FeedViewBtnActionPerformed
 
     private void WaterViewBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_WaterViewBtnActionPerformed
         // TODO add your handling code here:
+        ((CardLayout)FragmentManager.getLayout()).show(FragmentManager, "card5");
     }//GEN-LAST:event_WaterViewBtnActionPerformed
 
     private void HarvestViewBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_HarvestViewBtnActionPerformed
         // TODO add your handling code here:
+        ((CardLayout)FragmentManager.getLayout()).show(FragmentManager, "card4");
     }//GEN-LAST:event_HarvestViewBtnActionPerformed
 
     private void DashboardViewBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DashboardViewBtnActionPerformed
         // TODO add your handling code here:
+        ((CardLayout)FragmentManager.getLayout()).show(FragmentManager, "card2");
     }//GEN-LAST:event_DashboardViewBtnActionPerformed
 
     
@@ -381,9 +510,15 @@ public class MainMenuView extends javax.swing.JFrame {
     private javax.swing.JPanel WaterFragment;
     private javax.swing.JPanel WaterPanel;
     private javax.swing.JButton WaterViewBtn;
+    private javax.swing.JButton jButton10;
+    private javax.swing.JButton jButton11;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
+    private javax.swing.JButton jButton6;
+    private javax.swing.JButton jButton7;
+    private javax.swing.JButton jButton8;
+    private javax.swing.JButton jButton9;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -394,7 +529,13 @@ public class MainMenuView extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel17;
     private javax.swing.JLabel jLabel18;
+    private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel20;
+    private javax.swing.JLabel jLabel21;
+    private javax.swing.JLabel jLabel22;
+    private javax.swing.JLabel jLabel23;
+    private javax.swing.JLabel jLabel24;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
@@ -403,12 +544,22 @@ public class MainMenuView extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JTable jTable1;
+    private javax.swing.JTable jTable2;
+    private javax.swing.JTable jTable3;
     private javax.swing.JTextField jTextField1;
+    private javax.swing.JTextField jTextField10;
+    private javax.swing.JTextField jTextField11;
     private javax.swing.JTextField jTextField2;
     private javax.swing.JTextField jTextField3;
     private javax.swing.JTextField jTextField4;
     private javax.swing.JTextField jTextField5;
+    private javax.swing.JTextField jTextField6;
+    private javax.swing.JTextField jTextField7;
+    private javax.swing.JTextField jTextField8;
+    private javax.swing.JTextField jTextField9;
     // End of variables declaration//GEN-END:variables
 }

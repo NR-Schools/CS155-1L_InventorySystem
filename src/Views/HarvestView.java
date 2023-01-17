@@ -121,7 +121,6 @@ public class HarvestView extends javax.swing.JFrame {
         jButton5.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         jPanel3.add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 140, 290, 40));
 
-        jSeparator1.setBackground(new java.awt.Color(255, 255, 255));
         jSeparator1.setForeground(new java.awt.Color(255, 255, 255));
         jPanel3.add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 110, 310, 20));
 
