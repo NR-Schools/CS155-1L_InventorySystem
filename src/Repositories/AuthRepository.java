@@ -23,12 +23,8 @@ import javax.crypto.spec.PBEKeySpec;
 // Pede gawin na lng tong helper class or service since isa lng naman yung i-authenticate niya
 // Kayo bahala
 public class AuthRepository extends BaseRepository {
-    private static AuthRepository instance;
-    public static AuthRepository getRepository() {
-        if (instance == null)
-            instance = new AuthRepository();
-        return instance;
-    }
+    
+    public AuthRepository() {}
     
     private String _HashPassword(String RawPassword) throws NoSuchAlgorithmException, InvalidKeySpecException {
         //https://www.baeldung.com/java-password-hashing

@@ -6,6 +6,7 @@
 package Views;
 
 import Repositories.AuthRepository;
+import Repositories.RepositoryProvider;
 import java.util.Arrays;
 import javax.swing.JOptionPane;
 
@@ -128,7 +129,7 @@ public class LoginView extends javax.swing.JFrame {
         String PasswordStr = String.valueOf(PasswordField.getPassword());
 
         // Compare Hash to Saved Password Hash
-        if(AuthRepository.getRepository().checkAuth(UsernameStr, PasswordStr)) {
+        if(RepositoryProvider.getProvider().getAuthRepo().checkAuth(UsernameStr, PasswordStr)) {
             // Proceed To Menu
             this.setVisible(false);
             this.mainmenu.setVisible(true);
