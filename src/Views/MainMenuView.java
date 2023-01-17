@@ -99,7 +99,8 @@ public class MainMenuView extends javax.swing.JFrame {
         jTextField11 = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setSize(new java.awt.Dimension(1850, 1050));
+        setPreferredSize(new java.awt.Dimension(1850, 1030));
+        setSize(new java.awt.Dimension(1850, 1030));
 
         Topbar.setBackground(new java.awt.Color(237, 180, 106));
 
@@ -272,52 +273,53 @@ public class MainMenuView extends javax.swing.JFrame {
                 "Id", "Date", "Amount ( kg )", "Price"
             }
         ));
+        jTable1.setPreferredSize(new java.awt.Dimension(225, 100));
         jScrollPane1.setViewportView(jTable1);
 
-        FeedFragment.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 20, 1400, 540));
+        FeedFragment.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 40, 1440, 540));
 
         jButton4.setBackground(new java.awt.Color(164, 196, 181));
         jButton4.setFont(new java.awt.Font("Berlin Sans FB Demi", 0, 24)); // NOI18N
         jButton4.setText("Delete Feed");
         jButton4.setBorder(null);
-        FeedFragment.add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 580, 200, 50));
+        FeedFragment.add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 600, 200, 50));
 
         jLabel14.setFont(new java.awt.Font("Berlin Sans FB Demi", 0, 24)); // NOI18N
         jLabel14.setText("Amount(kg) :");
-        FeedFragment.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 690, -1, -1));
-        FeedFragment.add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 730, 200, 50));
+        FeedFragment.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 690, -1, -1));
+        FeedFragment.add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 730, 200, 50));
 
         jButton3.setBackground(new java.awt.Color(164, 196, 181));
         jButton3.setFont(new java.awt.Font("Berlin Sans FB Demi", 0, 24)); // NOI18N
         jButton3.setText("Add Feed");
         jButton3.setBorder(null);
-        FeedFragment.add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 800, 200, 50));
+        FeedFragment.add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 800, 200, 50));
 
         jLabel15.setFont(new java.awt.Font("Berlin Sans FB Demi", 0, 24)); // NOI18N
         jLabel15.setText("Price :");
-        FeedFragment.add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 690, -1, -1));
-        FeedFragment.add(jTextField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 730, 200, 50));
+        FeedFragment.add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 690, -1, -1));
+        FeedFragment.add(jTextField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 730, 200, 50));
 
         jLabel16.setFont(new java.awt.Font("Berlin Sans FB Demi", 0, 24)); // NOI18N
         jLabel16.setText("ID :");
-        FeedFragment.add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 690, -1, -1));
-        FeedFragment.add(jTextField3, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 730, 200, 50));
+        FeedFragment.add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 690, -1, -1));
+        FeedFragment.add(jTextField3, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 730, 200, 50));
 
         jButton2.setBackground(new java.awt.Color(164, 196, 181));
         jButton2.setFont(new java.awt.Font("Berlin Sans FB Demi", 0, 24)); // NOI18N
         jButton2.setText("Update Feed");
         jButton2.setBorder(null);
-        FeedFragment.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 800, 200, 50));
+        FeedFragment.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 800, 200, 50));
 
         jLabel17.setFont(new java.awt.Font("Berlin Sans FB Demi", 0, 24)); // NOI18N
         jLabel17.setText("Amount(kg) :");
-        FeedFragment.add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(890, 690, -1, -1));
-        FeedFragment.add(jTextField5, new org.netbeans.lib.awtextra.AbsoluteConstraints(890, 730, 200, 50));
+        FeedFragment.add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(750, 690, -1, -1));
+        FeedFragment.add(jTextField5, new org.netbeans.lib.awtextra.AbsoluteConstraints(750, 730, 200, 50));
 
         jLabel18.setFont(new java.awt.Font("Berlin Sans FB Demi", 0, 24)); // NOI18N
         jLabel18.setText("Price :");
-        FeedFragment.add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(1110, 690, -1, -1));
-        FeedFragment.add(jTextField4, new org.netbeans.lib.awtextra.AbsoluteConstraints(1110, 730, 200, 50));
+        FeedFragment.add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(970, 690, -1, -1));
+        FeedFragment.add(jTextField4, new org.netbeans.lib.awtextra.AbsoluteConstraints(970, 730, 200, 50));
 
         FragmentManager.add(FeedFragment, "card3");
 
@@ -336,40 +338,40 @@ public class MainMenuView extends javax.swing.JFrame {
         ));
         jScrollPane2.setViewportView(jTable2);
 
-        WaterFragment.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 50, 1400, 540));
+        WaterFragment.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 40, 1440, 540));
 
         jButton8.setBackground(new java.awt.Color(164, 196, 181));
         jButton8.setFont(new java.awt.Font("Berlin Sans FB Demi", 0, 24)); // NOI18N
         jButton8.setText("Delete Water");
         jButton8.setBorder(null);
-        WaterFragment.add(jButton8, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 610, 200, 50));
-        WaterFragment.add(jTextField6, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 740, 370, 50));
+        WaterFragment.add(jButton8, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 600, 200, 50));
+        WaterFragment.add(jTextField6, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 730, 370, 50));
 
         jLabel19.setFont(new java.awt.Font("Berlin Sans FB Demi", 0, 24)); // NOI18N
         jLabel19.setText("Amount(L) :");
-        WaterFragment.add(jLabel19, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 700, -1, -1));
+        WaterFragment.add(jLabel19, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 690, -1, -1));
 
         jButton7.setBackground(new java.awt.Color(164, 196, 181));
         jButton7.setFont(new java.awt.Font("Berlin Sans FB Demi", 0, 24)); // NOI18N
         jButton7.setText("Add Water");
         jButton7.setBorder(null);
-        WaterFragment.add(jButton7, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 810, 200, 50));
-        WaterFragment.add(jTextField8, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 740, 290, 50));
+        WaterFragment.add(jButton7, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 800, 200, 50));
+        WaterFragment.add(jTextField8, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 730, 290, 50));
 
         jLabel20.setFont(new java.awt.Font("Berlin Sans FB Demi", 0, 24)); // NOI18N
         jLabel20.setText("ID :");
-        WaterFragment.add(jLabel20, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 700, -1, -1));
+        WaterFragment.add(jLabel20, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 690, -1, -1));
 
         jButton6.setBackground(new java.awt.Color(164, 196, 181));
         jButton6.setFont(new java.awt.Font("Berlin Sans FB Demi", 0, 24)); // NOI18N
         jButton6.setText("Update Water");
         jButton6.setBorder(null);
-        WaterFragment.add(jButton6, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 810, 200, 50));
-        WaterFragment.add(jTextField10, new org.netbeans.lib.awtextra.AbsoluteConstraints(850, 740, 370, 50));
+        WaterFragment.add(jButton6, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 800, 200, 50));
+        WaterFragment.add(jTextField10, new org.netbeans.lib.awtextra.AbsoluteConstraints(830, 730, 370, 50));
 
         jLabel21.setFont(new java.awt.Font("Berlin Sans FB Demi", 0, 24)); // NOI18N
         jLabel21.setText("Amount(L) :");
-        WaterFragment.add(jLabel21, new org.netbeans.lib.awtextra.AbsoluteConstraints(850, 700, -1, -1));
+        WaterFragment.add(jLabel21, new org.netbeans.lib.awtextra.AbsoluteConstraints(830, 690, -1, -1));
 
         FragmentManager.add(WaterFragment, "card5");
 
@@ -388,7 +390,7 @@ public class MainMenuView extends javax.swing.JFrame {
         ));
         jScrollPane3.setViewportView(jTable3);
 
-        HarvestFragment.add(jScrollPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 40, 1400, 540));
+        HarvestFragment.add(jScrollPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 40, 1440, 540));
 
         jButton9.setBackground(new java.awt.Color(164, 196, 181));
         jButton9.setFont(new java.awt.Font("Berlin Sans FB Demi", 0, 24)); // NOI18N
@@ -444,7 +446,7 @@ public class MainMenuView extends javax.swing.JFrame {
                 .addComponent(Topbar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(Sidebar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(FragmentManager, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                    .addComponent(FragmentManager, javax.swing.GroupLayout.DEFAULT_SIZE, 973, Short.MAX_VALUE)))
         );
 
         pack();
