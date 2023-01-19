@@ -11,6 +11,7 @@ import Models.WaterModel;
 import Repositories.RepositoryProvider;
 import java.awt.CardLayout;
 import java.sql.Timestamp;
+import java.text.DecimalFormat;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import javax.swing.JOptionPane;
@@ -239,10 +240,10 @@ public class MainMenuView extends javax.swing.JFrame {
         jLabel9.setText("Total Feed");
         FeedPanel.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(169, 16, -1, -1));
 
-        TotalFeedLabel.setFont(new java.awt.Font("Berlin Sans FB Demi", 1, 70)); // NOI18N
+        TotalFeedLabel.setFont(new java.awt.Font("Berlin Sans FB Demi", 1, 50)); // NOI18N
         TotalFeedLabel.setForeground(new java.awt.Color(255, 255, 255));
         TotalFeedLabel.setText("0.0");
-        FeedPanel.add(TotalFeedLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 60, -1, -1));
+        FeedPanel.add(TotalFeedLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 80, -1, -1));
 
         DashboardFragment.add(FeedPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 40, 370, 170));
 
@@ -257,10 +258,10 @@ public class MainMenuView extends javax.swing.JFrame {
         jLabel10.setText("Total Water");
         WaterPanel.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(135, 18, -1, -1));
 
-        TotalWaterLabel.setFont(new java.awt.Font("Berlin Sans FB Demi", 1, 70)); // NOI18N
+        TotalWaterLabel.setFont(new java.awt.Font("Berlin Sans FB Demi", 1, 50)); // NOI18N
         TotalWaterLabel.setForeground(new java.awt.Color(255, 255, 255));
         TotalWaterLabel.setText("0.0");
-        WaterPanel.add(TotalWaterLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 60, -1, -1));
+        WaterPanel.add(TotalWaterLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 80, -1, -1));
 
         DashboardFragment.add(WaterPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 40, 370, 170));
 
@@ -275,10 +276,10 @@ public class MainMenuView extends javax.swing.JFrame {
         jLabel8.setText("Total Harvest");
         HarvestPanel.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(135, 17, -1, -1));
 
-        TotalHarvestLabel.setFont(new java.awt.Font("Berlin Sans FB Demi", 1, 70)); // NOI18N
+        TotalHarvestLabel.setFont(new java.awt.Font("Berlin Sans FB Demi", 1, 50)); // NOI18N
         TotalHarvestLabel.setForeground(new java.awt.Color(255, 255, 255));
         TotalHarvestLabel.setText("0");
-        HarvestPanel.add(TotalHarvestLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 60, -1, -1));
+        HarvestPanel.add(TotalHarvestLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 80, -1, -1));
 
         DashboardFragment.add(HarvestPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(820, 40, 370, 170));
 
@@ -304,10 +305,10 @@ public class MainMenuView extends javax.swing.JFrame {
         jLabel12.setText("Monthly Average of Feed");
         MonthlyFeedPanel.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(169, 16, -1, -1));
 
-        MonthlyAverageFeedLabel.setFont(new java.awt.Font("Berlin Sans FB Demi", 1, 70)); // NOI18N
+        MonthlyAverageFeedLabel.setFont(new java.awt.Font("Berlin Sans FB Demi", 1, 50)); // NOI18N
         MonthlyAverageFeedLabel.setForeground(new java.awt.Color(255, 255, 255));
         MonthlyAverageFeedLabel.setText("0.0");
-        MonthlyFeedPanel.add(MonthlyAverageFeedLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 60, -1, -1));
+        MonthlyFeedPanel.add(MonthlyAverageFeedLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 80, -1, -1));
 
         DashboardFragment.add(MonthlyFeedPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 390, 610, 170));
 
@@ -712,16 +713,16 @@ public class MainMenuView extends javax.swing.JFrame {
     
     private void LoadTotals() {
         TotalFeedLabel.setText(
-            Double.toString(RepositoryProvider.getProvider().getFeedRepo().getTotalFeeds())
+            new DecimalFormat("#,###.##").format(RepositoryProvider.getProvider().getFeedRepo().getTotalFeeds())
         );
         TotalWaterLabel.setText(
-           Double.toString(RepositoryProvider.getProvider().getWaterRepo().getTotalFeeds())
+            new DecimalFormat("#,###.##").format(RepositoryProvider.getProvider().getWaterRepo().getTotalFeeds())
         );
         TotalHarvestLabel.setText(
             Integer.toString(RepositoryProvider.getProvider().getHarvestRepo().getTotalFeeds())
         );
         MonthlyAverageFeedLabel.setText(
-           Double.toString(RepositoryProvider.getProvider().getFeedRepo().getMonthlyAverageFeed())
+            new DecimalFormat("#,###.##").format(RepositoryProvider.getProvider().getFeedRepo().getMonthlyAverageFeed())
         );
     }
     

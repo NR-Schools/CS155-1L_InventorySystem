@@ -342,7 +342,7 @@
                 <Component class="javax.swing.JLabel" name="TotalFeedLabel">
                   <Properties>
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                      <Font name="Berlin Sans FB Demi" size="70" style="1"/>
+                      <Font name="Berlin Sans FB Demi" size="50" style="1"/>
                     </Property>
                     <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                       <Color blue="ff" green="ff" red="ff" type="rgb"/>
@@ -351,7 +351,7 @@
                   </Properties>
                   <Constraints>
                     <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-                      <AbsoluteConstraints x="190" y="60" width="-1" height="-1"/>
+                      <AbsoluteConstraints x="210" y="80" width="-1" height="-1"/>
                     </Constraint>
                   </Constraints>
                 </Component>
@@ -404,7 +404,7 @@
                 <Component class="javax.swing.JLabel" name="TotalWaterLabel">
                   <Properties>
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                      <Font name="Berlin Sans FB Demi" size="70" style="1"/>
+                      <Font name="Berlin Sans FB Demi" size="50" style="1"/>
                     </Property>
                     <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                       <Color blue="ff" green="ff" red="ff" type="rgb"/>
@@ -413,7 +413,7 @@
                   </Properties>
                   <Constraints>
                     <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-                      <AbsoluteConstraints x="190" y="60" width="-1" height="-1"/>
+                      <AbsoluteConstraints x="210" y="80" width="-1" height="-1"/>
                     </Constraint>
                   </Constraints>
                 </Component>
@@ -466,7 +466,7 @@
                 <Component class="javax.swing.JLabel" name="TotalHarvestLabel">
                   <Properties>
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                      <Font name="Berlin Sans FB Demi" size="70" style="1"/>
+                      <Font name="Berlin Sans FB Demi" size="50" style="1"/>
                     </Property>
                     <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                       <Color blue="ff" green="ff" red="ff" type="rgb"/>
@@ -475,7 +475,7 @@
                   </Properties>
                   <Constraints>
                     <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-                      <AbsoluteConstraints x="210" y="60" width="-1" height="-1"/>
+                      <AbsoluteConstraints x="240" y="80" width="-1" height="-1"/>
                     </Constraint>
                   </Constraints>
                 </Component>
@@ -550,7 +550,7 @@
                 <Component class="javax.swing.JLabel" name="MonthlyAverageFeedLabel">
                   <Properties>
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                      <Font name="Berlin Sans FB Demi" size="70" style="1"/>
+                      <Font name="Berlin Sans FB Demi" size="50" style="1"/>
                     </Property>
                     <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                       <Color blue="ff" green="ff" red="ff" type="rgb"/>
@@ -559,7 +559,7 @@
                   </Properties>
                   <Constraints>
                     <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-                      <AbsoluteConstraints x="320" y="60" width="-1" height="-1"/>
+                      <AbsoluteConstraints x="370" y="80" width="-1" height="-1"/>
                     </Constraint>
                   </Constraints>
                 </Component>
