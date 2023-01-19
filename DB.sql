@@ -29,8 +29,11 @@ DROP TABLE IF EXISTS `FeedTable`;
 
 SELECT * FROM FeedTable;
 
-SELECT SUM(Feed_Amount) AS TotalAmount FROM FeedTable;
-
+SELECT SUM(Water_Amount) AS TotalAmount FROM WaterTable;
+SELECT AVG(Feed_Amount)
+	AS AverageAmountPerMonth
+    FROM FeedTable
+	WHERE FeedTable.Feed_TimeStamp >= DATE_SUB(CURDATE(), INTERVAL 1 MONTH);
 
 -- Create Water Table
 CREATE TABLE WaterTable (
