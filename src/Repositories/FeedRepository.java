@@ -121,4 +121,27 @@ public class FeedRepository extends BaseRepository {
         
         return totalFeeds;
     }
+    
+    public double getMonthlyAverageFeed() {
+        double monthlyAverageFeed = 0;
+        
+        try {
+            Connection con = createSQLConnection();
+            
+            Statement readFeedDB = con.createStatement();
+            ResultSet results = readFeedDB.executeQuery(
+                    "SELECT AVG(Feed_Amount)\n" +
+                    "	AS AverageAmountPerMonth\n" +
+                    "   FROM FeedTable\n" +
+                    "	WHERE FeedTable.Feed_TimeStamp >= DATE_SUB(CURDATE(), INTERVAL 1 MONTH);");
+            results.next();
+            monthlyAverageFeed = results.getDouble("AverageAmountPerMonth");
+            
+            con.close();
+        } catch (Exception ex) {
+            Logger.getLogger(FeedRepository.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
+        return monthlyAverageFeed;
+    }
 }

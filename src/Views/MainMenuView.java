@@ -75,6 +75,10 @@ public class MainMenuView extends javax.swing.JFrame {
         jLabel8 = new javax.swing.JLabel();
         TotalHarvestLabel = new javax.swing.JLabel();
         RefreshTotalAmounts = new javax.swing.JButton();
+        MonthlyFeedPanel = new javax.swing.JPanel();
+        jLabel11 = new javax.swing.JLabel();
+        jLabel12 = new javax.swing.JLabel();
+        MonthlyAverageFeedLabel = new javax.swing.JLabel();
         FeedFragment = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
         FeedsTable = new javax.swing.JTable();
@@ -238,7 +242,7 @@ public class MainMenuView extends javax.swing.JFrame {
         TotalFeedLabel.setFont(new java.awt.Font("Berlin Sans FB Demi", 1, 70)); // NOI18N
         TotalFeedLabel.setForeground(new java.awt.Color(255, 255, 255));
         TotalFeedLabel.setText("0.0");
-        FeedPanel.add(TotalFeedLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(224, 63, -1, -1));
+        FeedPanel.add(TotalFeedLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 60, -1, -1));
 
         DashboardFragment.add(FeedPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 40, 370, 170));
 
@@ -256,7 +260,7 @@ public class MainMenuView extends javax.swing.JFrame {
         TotalWaterLabel.setFont(new java.awt.Font("Berlin Sans FB Demi", 1, 70)); // NOI18N
         TotalWaterLabel.setForeground(new java.awt.Color(255, 255, 255));
         TotalWaterLabel.setText("0.0");
-        WaterPanel.add(TotalWaterLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 60, -1, -1));
+        WaterPanel.add(TotalWaterLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 60, -1, -1));
 
         DashboardFragment.add(WaterPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 40, 370, 170));
 
@@ -288,6 +292,24 @@ public class MainMenuView extends javax.swing.JFrame {
             }
         });
         DashboardFragment.add(RefreshTotalAmounts, new org.netbeans.lib.awtextra.AbsoluteConstraints(1310, 260, 200, 50));
+
+        MonthlyFeedPanel.setBackground(new java.awt.Color(164, 196, 181));
+        MonthlyFeedPanel.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel11.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Resources/total-feed.png"))); // NOI18N
+        MonthlyFeedPanel.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(31, 33, -1, -1));
+
+        jLabel12.setFont(new java.awt.Font("Berlin Sans FB Demi", 1, 36)); // NOI18N
+        jLabel12.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel12.setText("Monthly Average of Feed");
+        MonthlyFeedPanel.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(169, 16, -1, -1));
+
+        MonthlyAverageFeedLabel.setFont(new java.awt.Font("Berlin Sans FB Demi", 1, 70)); // NOI18N
+        MonthlyAverageFeedLabel.setForeground(new java.awt.Color(255, 255, 255));
+        MonthlyAverageFeedLabel.setText("0.0");
+        MonthlyFeedPanel.add(MonthlyAverageFeedLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 60, -1, -1));
+
+        DashboardFragment.add(MonthlyFeedPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 390, 610, 170));
 
         FragmentManager.add(DashboardFragment, "card2");
 
@@ -697,6 +719,9 @@ public class MainMenuView extends javax.swing.JFrame {
         );
         TotalHarvestLabel.setText(
             Integer.toString(RepositoryProvider.getProvider().getHarvestRepo().getTotalFeeds())
+        );
+        MonthlyAverageFeedLabel.setText(
+           Double.toString(RepositoryProvider.getProvider().getFeedRepo().getMonthlyAverageFeed())
         );
     }
     
@@ -1115,6 +1140,8 @@ public class MainMenuView extends javax.swing.JFrame {
     private javax.swing.JPanel HarvestPanel;
     private javax.swing.JButton HarvestViewBtn;
     private javax.swing.JTable HarvestsTable;
+    private javax.swing.JLabel MonthlyAverageFeedLabel;
+    private javax.swing.JPanel MonthlyFeedPanel;
     private javax.swing.JButton RefreshFeedBtn;
     private javax.swing.JButton RefreshHarvestBtn;
     private javax.swing.JButton RefreshTotalAmounts;
@@ -1140,6 +1167,8 @@ public class MainMenuView extends javax.swing.JFrame {
     private javax.swing.JTable WatersTable;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel17;
