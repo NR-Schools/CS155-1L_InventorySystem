@@ -612,6 +612,19 @@ public class MainMenuView extends javax.swing.JFrame {
         HarvestSelectedID = -1;
     }
     
+    private void LoadTableAsync(PropType ptype) {
+        Thread t = new Thread(
+            new Runnable() {
+                @Override
+                public void run() {
+                    LoadTable(ptype);
+                }
+            }
+        );
+        t.setDaemon(true);
+        t.start();
+    }
+    
     private void LoadTable(PropType ptype) {
         DefaultTableModel DTM = new DefaultTableModel();
                 
@@ -662,12 +675,25 @@ public class MainMenuView extends javax.swing.JFrame {
         }
     }
     
+    private void LoadTotalsAsync() {
+        Thread t = new Thread(
+            new Runnable() {
+                @Override
+                public void run() {
+                    LoadTotals();
+                }
+            }
+        );
+        t.setDaemon(true);
+        t.start();
+    }
+    
     private void LoadTotals() {
         TotalFeedLabel.setText(
             Double.toString(RepositoryProvider.getProvider().getFeedRepo().getTotalFeeds())
         );
         TotalWaterLabel.setText(
-            Double.toString(RepositoryProvider.getProvider().getWaterRepo().getTotalFeeds())
+           Double.toString(RepositoryProvider.getProvider().getWaterRepo().getTotalFeeds())
         );
         TotalHarvestLabel.setText(
             Integer.toString(RepositoryProvider.getProvider().getHarvestRepo().getTotalFeeds())
@@ -679,28 +705,28 @@ public class MainMenuView extends javax.swing.JFrame {
         // TODO add your handling code here:
         ((CardLayout)FragmentManager.getLayout()).show(FragmentManager, "card3");
         ResetSelectedIDs();
-        LoadTable(PropType.Feed);
+        LoadTableAsync(PropType.Feed);
     }//GEN-LAST:event_FeedViewBtnActionPerformed
 
     private void WaterViewBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_WaterViewBtnActionPerformed
         // TODO add your handling code here:
         ((CardLayout)FragmentManager.getLayout()).show(FragmentManager, "card5");
         ResetSelectedIDs();
-        LoadTable(PropType.Water);
+        LoadTableAsync(PropType.Water);
     }//GEN-LAST:event_WaterViewBtnActionPerformed
 
     private void HarvestViewBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_HarvestViewBtnActionPerformed
         // TODO add your handling code here:
         ((CardLayout)FragmentManager.getLayout()).show(FragmentManager, "card4");
         ResetSelectedIDs();
-        LoadTable(PropType.Harvest);
+        LoadTableAsync(PropType.Harvest);
     }//GEN-LAST:event_HarvestViewBtnActionPerformed
 
     private void DashboardViewBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DashboardViewBtnActionPerformed
         // TODO add your handling code here:
         ((CardLayout)FragmentManager.getLayout()).show(FragmentManager, "card2");
         ResetSelectedIDs();
-        LoadTotals();
+        LoadTotalsAsync();
     }//GEN-LAST:event_DashboardViewBtnActionPerformed
 
     
@@ -737,7 +763,7 @@ public class MainMenuView extends javax.swing.JFrame {
         // Success Message
         JOptionPane.showMessageDialog(rootPane, "Feed Entry Deleted Successfully", "Feed Info", JOptionPane.INFORMATION_MESSAGE);
         ResetInputs();
-        LoadTable(PropType.Feed);
+        LoadTableAsync(PropType.Feed);
     }//GEN-LAST:event_DeleteFeedBtnActionPerformed
 
     private void AddFeedBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AddFeedBtnActionPerformed
@@ -775,7 +801,7 @@ public class MainMenuView extends javax.swing.JFrame {
         // Success Message
         JOptionPane.showMessageDialog(rootPane, "Feed Entry Added Successfully", "Feed Info", JOptionPane.INFORMATION_MESSAGE);
         ResetInputs();
-        LoadTable(PropType.Feed);
+        LoadTableAsync(PropType.Feed);
     }//GEN-LAST:event_AddFeedBtnActionPerformed
 
     private void UpdateFeedBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_UpdateFeedBtnActionPerformed
@@ -814,13 +840,13 @@ public class MainMenuView extends javax.swing.JFrame {
         // Success Message
         JOptionPane.showMessageDialog(rootPane, "Feed Entry Updated Successfully", "Feed Info", JOptionPane.INFORMATION_MESSAGE);
         ResetInputs();
-        LoadTable(PropType.Feed);
+        LoadTableAsync(PropType.Feed);
     }//GEN-LAST:event_UpdateFeedBtnActionPerformed
 
     private void RefreshFeedBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RefreshFeedBtnActionPerformed
         // TODO add your handling code here:
         
-        LoadTable(PropType.Feed);
+        LoadTableAsync(PropType.Feed);
     }//GEN-LAST:event_RefreshFeedBtnActionPerformed
 
     
@@ -856,7 +882,7 @@ public class MainMenuView extends javax.swing.JFrame {
         // Success Message
         JOptionPane.showMessageDialog(rootPane, "Water Entry Deleted Successfully", "Water Info", JOptionPane.INFORMATION_MESSAGE);
         ResetInputs();
-        LoadTable(PropType.Water);
+        LoadTableAsync(PropType.Water);
     }//GEN-LAST:event_DeleteWaterBtnActionPerformed
 
     private void AddWaterBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AddWaterBtnActionPerformed
@@ -888,7 +914,7 @@ public class MainMenuView extends javax.swing.JFrame {
         // Success Message
         JOptionPane.showMessageDialog(rootPane, "Water Entry Added Successfully", "Water Info", JOptionPane.INFORMATION_MESSAGE);
         ResetInputs();
-        LoadTable(PropType.Water);
+        LoadTableAsync(PropType.Water);
     }//GEN-LAST:event_AddWaterBtnActionPerformed
 
     private void UpdateWaterBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_UpdateWaterBtnActionPerformed
@@ -921,13 +947,13 @@ public class MainMenuView extends javax.swing.JFrame {
         // Success Message
         JOptionPane.showMessageDialog(rootPane, "Water Entry Updated Successfully", "Water Info", JOptionPane.INFORMATION_MESSAGE);
         ResetInputs();
-        LoadTable(PropType.Water);
+        LoadTableAsync(PropType.Water);
     }//GEN-LAST:event_UpdateWaterBtnActionPerformed
 
     private void RefreshWaterBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RefreshWaterBtnActionPerformed
         // TODO add your handling code here:
         
-        LoadTable(PropType.Water);
+        LoadTableAsync(PropType.Water);
     }//GEN-LAST:event_RefreshWaterBtnActionPerformed
 
     
@@ -963,7 +989,7 @@ public class MainMenuView extends javax.swing.JFrame {
         // Success Message
         JOptionPane.showMessageDialog(rootPane, "Harvest Entry Deleted Successfully", "Harvest Info", JOptionPane.INFORMATION_MESSAGE);
         ResetInputs();
-        LoadTable(PropType.Harvest);
+        LoadTableAsync(PropType.Harvest);
     }//GEN-LAST:event_DeleteHarvestBtnActionPerformed
 
     private void AddHarvestBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AddHarvestBtnActionPerformed
@@ -995,7 +1021,7 @@ public class MainMenuView extends javax.swing.JFrame {
         // Success Message
         JOptionPane.showMessageDialog(rootPane, "Harvest Entry Added Successfully", "Harvest Info", JOptionPane.INFORMATION_MESSAGE);
         ResetInputs();
-        LoadTable(PropType.Harvest);
+        LoadTableAsync(PropType.Harvest);
     }//GEN-LAST:event_AddHarvestBtnActionPerformed
 
     private void UpdateHarvestBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_UpdateHarvestBtnActionPerformed
@@ -1028,18 +1054,18 @@ public class MainMenuView extends javax.swing.JFrame {
         // Success Message
         JOptionPane.showMessageDialog(rootPane, "Harvest Entry Updated Successfully", "Harvest Info", JOptionPane.INFORMATION_MESSAGE);
         ResetInputs();
-        LoadTable(PropType.Harvest);
+        LoadTableAsync(PropType.Harvest);
     }//GEN-LAST:event_UpdateHarvestBtnActionPerformed
 
     private void RefreshHarvestBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RefreshHarvestBtnActionPerformed
         // TODO add your handling code here:
         
-        LoadTable(PropType.Harvest);
+        LoadTableAsync(PropType.Harvest);
     }//GEN-LAST:event_RefreshHarvestBtnActionPerformed
 
     private void RefreshTotalAmountsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RefreshTotalAmountsActionPerformed
         // TODO add your handling code here:
-        LoadTotals();
+        LoadTotalsAsync();
     }//GEN-LAST:event_RefreshTotalAmountsActionPerformed
 
     
