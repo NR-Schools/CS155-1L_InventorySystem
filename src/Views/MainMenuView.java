@@ -67,65 +67,76 @@ public class MainMenuView extends javax.swing.JFrame {
         jLabel4 = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
         TotalFeedLabel = new javax.swing.JLabel();
+        jLabel13 = new javax.swing.JLabel();
         WaterPanel = new javax.swing.JPanel();
         jLabel6 = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
         TotalWaterLabel = new javax.swing.JLabel();
+        jLabel16 = new javax.swing.JLabel();
         HarvestPanel = new javax.swing.JPanel();
         jLabel7 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
         TotalHarvestLabel = new javax.swing.JLabel();
+        jLabel26 = new javax.swing.JLabel();
         RefreshTotalAmounts = new javax.swing.JButton();
         MonthlyFeedPanel = new javax.swing.JPanel();
         jLabel11 = new javax.swing.JLabel();
         jLabel12 = new javax.swing.JLabel();
         MonthlyAverageFeedLabel = new javax.swing.JLabel();
+        jLabel27 = new javax.swing.JLabel();
         FeedFragment = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
         FeedsTable = new javax.swing.JTable();
         DeleteFeedBtn = new javax.swing.JButton();
-        jLabel14 = new javax.swing.JLabel();
-        AddFeedAmount = new javax.swing.JTextField();
-        AddFeedBtn = new javax.swing.JButton();
-        jLabel15 = new javax.swing.JLabel();
-        AddFeedPrice = new javax.swing.JTextField();
-        UpdateFeedID = new javax.swing.JLabel();
-        UpdateFeedBtn = new javax.swing.JButton();
-        jLabel17 = new javax.swing.JLabel();
-        UpdateFeedAmount = new javax.swing.JTextField();
-        jLabel18 = new javax.swing.JLabel();
-        UpdateFeedPrice = new javax.swing.JTextField();
         RefreshFeedBtn = new javax.swing.JButton();
+        jPanel1 = new javax.swing.JPanel();
+        AddFeedPrice = new javax.swing.JTextField();
+        jLabel15 = new javax.swing.JLabel();
+        AddFeedBtn = new javax.swing.JButton();
+        AddFeedAmount = new javax.swing.JTextField();
+        jLabel14 = new javax.swing.JLabel();
+        jPanel2 = new javax.swing.JPanel();
+        UpdateFeedPrice = new javax.swing.JTextField();
+        UpdateFeedBtn = new javax.swing.JButton();
+        jLabel18 = new javax.swing.JLabel();
+        UpdateFeedAmount = new javax.swing.JTextField();
+        jLabel17 = new javax.swing.JLabel();
+        UpdateFeedID = new javax.swing.JLabel();
         jLabel25 = new javax.swing.JLabel();
         WaterFragment = new javax.swing.JPanel();
         jScrollPane2 = new javax.swing.JScrollPane();
         WatersTable = new javax.swing.JTable();
         DeleteWaterBtn = new javax.swing.JButton();
-        AddWaterAmount = new javax.swing.JTextField();
+        RefreshWaterBtn = new javax.swing.JButton();
+        jPanel3 = new javax.swing.JPanel();
         jLabel19 = new javax.swing.JLabel();
+        AddWaterAmount = new javax.swing.JTextField();
         AddWaterBtn = new javax.swing.JButton();
-        jLabel20 = new javax.swing.JLabel();
+        jPanel4 = new javax.swing.JPanel();
         UpdateWaterBtn = new javax.swing.JButton();
         UpdateWaterAmount = new javax.swing.JTextField();
         jLabel21 = new javax.swing.JLabel();
-        RefreshWaterBtn = new javax.swing.JButton();
         UpdateWaterID = new javax.swing.JLabel();
+        jLabel20 = new javax.swing.JLabel();
         HarvestFragment = new javax.swing.JPanel();
         jScrollPane3 = new javax.swing.JScrollPane();
         HarvestsTable = new javax.swing.JTable();
         DeleteHarvestBtn = new javax.swing.JButton();
-        jLabel22 = new javax.swing.JLabel();
+        RefreshHarvestBtn = new javax.swing.JButton();
+        jPanel5 = new javax.swing.JPanel();
         AddHarvestAmount = new javax.swing.JTextField();
         AddHarvestBtn = new javax.swing.JButton();
-        jLabel23 = new javax.swing.JLabel();
+        jLabel22 = new javax.swing.JLabel();
+        jPanel6 = new javax.swing.JPanel();
         UpdateHarvestBtn = new javax.swing.JButton();
-        jLabel24 = new javax.swing.JLabel();
         UpdateHarvestAmount = new javax.swing.JTextField();
-        RefreshHarvestBtn = new javax.swing.JButton();
+        jLabel24 = new javax.swing.JLabel();
         UpdateHarvestID = new javax.swing.JLabel();
+        jLabel23 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setSize(new java.awt.Dimension(1850, 1030));
+        setPreferredSize(new java.awt.Dimension(1850, 1050));
+        setSize(new java.awt.Dimension(1850, 1050));
 
         Topbar.setBackground(new java.awt.Color(237, 180, 106));
 
@@ -233,58 +244,74 @@ public class MainMenuView extends javax.swing.JFrame {
         FeedPanel.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Resources/total-feed.png"))); // NOI18N
-        FeedPanel.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(31, 33, -1, -1));
+        FeedPanel.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 30, -1, -1));
 
         jLabel9.setFont(new java.awt.Font("Berlin Sans FB Demi", 1, 36)); // NOI18N
         jLabel9.setForeground(new java.awt.Color(255, 255, 255));
         jLabel9.setText("Total Feed");
-        FeedPanel.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(169, 16, -1, -1));
+        FeedPanel.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 16, -1, -1));
 
         TotalFeedLabel.setFont(new java.awt.Font("Berlin Sans FB Demi", 1, 50)); // NOI18N
         TotalFeedLabel.setForeground(new java.awt.Color(255, 255, 255));
         TotalFeedLabel.setText("0.0");
-        FeedPanel.add(TotalFeedLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 80, -1, -1));
+        FeedPanel.add(TotalFeedLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 60, -1, -1));
 
-        DashboardFragment.add(FeedPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 40, 370, 170));
+        jLabel13.setFont(new java.awt.Font("Berlin Sans FB Demi", 1, 40)); // NOI18N
+        jLabel13.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel13.setText("kg");
+        FeedPanel.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 110, -1, -1));
+
+        DashboardFragment.add(FeedPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 280, 450, 170));
 
         WaterPanel.setBackground(new java.awt.Color(164, 196, 181));
         WaterPanel.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Resources/total-water.png"))); // NOI18N
-        WaterPanel.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(29, 34, -1, -1));
+        WaterPanel.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 30, -1, -1));
 
         jLabel10.setFont(new java.awt.Font("Berlin Sans FB Demi", 1, 36)); // NOI18N
         jLabel10.setForeground(new java.awt.Color(255, 255, 255));
         jLabel10.setText("Total Water");
-        WaterPanel.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(135, 18, -1, -1));
+        WaterPanel.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 16, -1, -1));
 
         TotalWaterLabel.setFont(new java.awt.Font("Berlin Sans FB Demi", 1, 50)); // NOI18N
         TotalWaterLabel.setForeground(new java.awt.Color(255, 255, 255));
         TotalWaterLabel.setText("0.0");
-        WaterPanel.add(TotalWaterLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 80, -1, -1));
+        WaterPanel.add(TotalWaterLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 60, -1, -1));
 
-        DashboardFragment.add(WaterPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 40, 370, 170));
+        jLabel16.setFont(new java.awt.Font("Berlin Sans FB Demi", 1, 40)); // NOI18N
+        jLabel16.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel16.setText("L");
+        WaterPanel.add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 110, -1, -1));
+
+        DashboardFragment.add(WaterPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 280, 450, 170));
 
         HarvestPanel.setBackground(new java.awt.Color(164, 196, 181));
         HarvestPanel.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Resources/total-harvest.png"))); // NOI18N
-        HarvestPanel.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(29, 39, -1, -1));
+        HarvestPanel.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 40, -1, -1));
 
         jLabel8.setFont(new java.awt.Font("Berlin Sans FB Demi", 1, 36)); // NOI18N
         jLabel8.setForeground(new java.awt.Color(255, 255, 255));
         jLabel8.setText("Total Harvest");
-        HarvestPanel.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(135, 17, -1, -1));
+        HarvestPanel.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 20, -1, -1));
 
         TotalHarvestLabel.setFont(new java.awt.Font("Berlin Sans FB Demi", 1, 50)); // NOI18N
         TotalHarvestLabel.setForeground(new java.awt.Color(255, 255, 255));
         TotalHarvestLabel.setText("0");
-        HarvestPanel.add(TotalHarvestLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 80, -1, -1));
+        HarvestPanel.add(TotalHarvestLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 60, -1, -1));
 
-        DashboardFragment.add(HarvestPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(820, 40, 370, 170));
+        jLabel26.setFont(new java.awt.Font("Berlin Sans FB Demi", 1, 40)); // NOI18N
+        jLabel26.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel26.setText("pcs");
+        HarvestPanel.add(jLabel26, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 110, -1, -1));
+
+        DashboardFragment.add(HarvestPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(1040, 280, 450, 170));
 
         RefreshTotalAmounts.setBackground(new java.awt.Color(164, 196, 181));
         RefreshTotalAmounts.setFont(new java.awt.Font("Berlin Sans FB Demi", 0, 24)); // NOI18N
+        RefreshTotalAmounts.setForeground(new java.awt.Color(14, 79, 85));
         RefreshTotalAmounts.setText("Refresh Amounts");
         RefreshTotalAmounts.setBorder(null);
         RefreshTotalAmounts.addActionListener(new java.awt.event.ActionListener() {
@@ -292,28 +319,34 @@ public class MainMenuView extends javax.swing.JFrame {
                 RefreshTotalAmountsActionPerformed(evt);
             }
         });
-        DashboardFragment.add(RefreshTotalAmounts, new org.netbeans.lib.awtextra.AbsoluteConstraints(1310, 260, 200, 50));
+        DashboardFragment.add(RefreshTotalAmounts, new org.netbeans.lib.awtextra.AbsoluteConstraints(1170, 490, 320, 60));
 
         MonthlyFeedPanel.setBackground(new java.awt.Color(164, 196, 181));
         MonthlyFeedPanel.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel11.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Resources/total-feed.png"))); // NOI18N
-        MonthlyFeedPanel.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(31, 33, -1, -1));
+        MonthlyFeedPanel.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 30, -1, -1));
 
         jLabel12.setFont(new java.awt.Font("Berlin Sans FB Demi", 1, 36)); // NOI18N
         jLabel12.setForeground(new java.awt.Color(255, 255, 255));
         jLabel12.setText("Monthly Average of Feed");
-        MonthlyFeedPanel.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(169, 16, -1, -1));
+        MonthlyFeedPanel.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 20, -1, -1));
 
         MonthlyAverageFeedLabel.setFont(new java.awt.Font("Berlin Sans FB Demi", 1, 50)); // NOI18N
         MonthlyAverageFeedLabel.setForeground(new java.awt.Color(255, 255, 255));
         MonthlyAverageFeedLabel.setText("0.0");
-        MonthlyFeedPanel.add(MonthlyAverageFeedLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 80, -1, -1));
+        MonthlyFeedPanel.add(MonthlyAverageFeedLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 70, -1, -1));
 
-        DashboardFragment.add(MonthlyFeedPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 390, 610, 170));
+        jLabel27.setFont(new java.awt.Font("Berlin Sans FB Demi", 1, 40)); // NOI18N
+        jLabel27.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel27.setText("kg");
+        MonthlyFeedPanel.add(jLabel27, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 110, -1, -1));
+
+        DashboardFragment.add(MonthlyFeedPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 40, 740, 170));
 
         FragmentManager.add(DashboardFragment, "card2");
 
+        FeedFragment.setForeground(new java.awt.Color(14, 79, 85));
         FeedFragment.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         FeedsTable.setModel(new javax.swing.table.DefaultTableModel(
@@ -338,8 +371,9 @@ public class MainMenuView extends javax.swing.JFrame {
 
         FeedFragment.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 40, 1440, 540));
 
-        DeleteFeedBtn.setBackground(new java.awt.Color(164, 196, 181));
+        DeleteFeedBtn.setBackground(new java.awt.Color(237, 180, 106));
         DeleteFeedBtn.setFont(new java.awt.Font("Berlin Sans FB Demi", 0, 24)); // NOI18N
+        DeleteFeedBtn.setForeground(new java.awt.Color(14, 79, 85));
         DeleteFeedBtn.setText("Delete Feed");
         DeleteFeedBtn.setBorder(null);
         DeleteFeedBtn.addActionListener(new java.awt.event.ActionListener() {
@@ -349,54 +383,9 @@ public class MainMenuView extends javax.swing.JFrame {
         });
         FeedFragment.add(DeleteFeedBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 600, 200, 50));
 
-        jLabel14.setFont(new java.awt.Font("Berlin Sans FB Demi", 0, 24)); // NOI18N
-        jLabel14.setText("Amount(kg) :");
-        FeedFragment.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 690, -1, -1));
-        FeedFragment.add(AddFeedAmount, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 730, 200, 50));
-
-        AddFeedBtn.setBackground(new java.awt.Color(164, 196, 181));
-        AddFeedBtn.setFont(new java.awt.Font("Berlin Sans FB Demi", 0, 24)); // NOI18N
-        AddFeedBtn.setText("Add Feed");
-        AddFeedBtn.setBorder(null);
-        AddFeedBtn.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                AddFeedBtnActionPerformed(evt);
-            }
-        });
-        FeedFragment.add(AddFeedBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 800, 200, 50));
-
-        jLabel15.setFont(new java.awt.Font("Berlin Sans FB Demi", 0, 24)); // NOI18N
-        jLabel15.setText("Price :");
-        FeedFragment.add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 690, -1, -1));
-        FeedFragment.add(AddFeedPrice, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 730, 200, 50));
-
-        UpdateFeedID.setFont(new java.awt.Font("Berlin Sans FB", 0, 36)); // NOI18N
-        UpdateFeedID.setText("?");
-        FeedFragment.add(UpdateFeedID, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 730, -1, -1));
-
-        UpdateFeedBtn.setBackground(new java.awt.Color(164, 196, 181));
-        UpdateFeedBtn.setFont(new java.awt.Font("Berlin Sans FB Demi", 0, 24)); // NOI18N
-        UpdateFeedBtn.setText("Update Feed");
-        UpdateFeedBtn.setBorder(null);
-        UpdateFeedBtn.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                UpdateFeedBtnActionPerformed(evt);
-            }
-        });
-        FeedFragment.add(UpdateFeedBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 800, 200, 50));
-
-        jLabel17.setFont(new java.awt.Font("Berlin Sans FB Demi", 0, 24)); // NOI18N
-        jLabel17.setText("Amount(kg) :");
-        FeedFragment.add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(750, 690, -1, -1));
-        FeedFragment.add(UpdateFeedAmount, new org.netbeans.lib.awtextra.AbsoluteConstraints(750, 730, 200, 50));
-
-        jLabel18.setFont(new java.awt.Font("Berlin Sans FB Demi", 0, 24)); // NOI18N
-        jLabel18.setText("Price :");
-        FeedFragment.add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(970, 690, -1, -1));
-        FeedFragment.add(UpdateFeedPrice, new org.netbeans.lib.awtextra.AbsoluteConstraints(970, 730, 200, 50));
-
-        RefreshFeedBtn.setBackground(new java.awt.Color(164, 196, 181));
+        RefreshFeedBtn.setBackground(new java.awt.Color(237, 180, 106));
         RefreshFeedBtn.setFont(new java.awt.Font("Berlin Sans FB Demi", 0, 24)); // NOI18N
+        RefreshFeedBtn.setForeground(new java.awt.Color(14, 79, 85));
         RefreshFeedBtn.setText("Refresh Feeds");
         RefreshFeedBtn.setBorder(null);
         RefreshFeedBtn.addActionListener(new java.awt.event.ActionListener() {
@@ -404,11 +393,83 @@ public class MainMenuView extends javax.swing.JFrame {
                 RefreshFeedBtnActionPerformed(evt);
             }
         });
-        FeedFragment.add(RefreshFeedBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(1280, 600, 200, 50));
+        FeedFragment.add(RefreshFeedBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 600, 200, 50));
+
+        jPanel1.setBackground(new java.awt.Color(164, 196, 181));
+        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        AddFeedPrice.setFont(new java.awt.Font("Berlin Sans FB Demi", 0, 24)); // NOI18N
+        jPanel1.add(AddFeedPrice, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 80, 270, 50));
+
+        jLabel15.setFont(new java.awt.Font("Berlin Sans FB Demi", 0, 24)); // NOI18N
+        jLabel15.setForeground(new java.awt.Color(14, 79, 85));
+        jLabel15.setText("Price :");
+        jPanel1.add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 40, -1, -1));
+
+        AddFeedBtn.setBackground(new java.awt.Color(237, 180, 106));
+        AddFeedBtn.setFont(new java.awt.Font("Berlin Sans FB Demi", 0, 24)); // NOI18N
+        AddFeedBtn.setForeground(new java.awt.Color(14, 79, 85));
+        AddFeedBtn.setText("Add Feed");
+        AddFeedBtn.setBorder(null);
+        AddFeedBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                AddFeedBtnActionPerformed(evt);
+            }
+        });
+        jPanel1.add(AddFeedBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 150, 200, 50));
+
+        AddFeedAmount.setFont(new java.awt.Font("Berlin Sans FB Demi", 0, 24)); // NOI18N
+        jPanel1.add(AddFeedAmount, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 80, 260, 50));
+
+        jLabel14.setFont(new java.awt.Font("Berlin Sans FB Demi", 0, 24)); // NOI18N
+        jLabel14.setForeground(new java.awt.Color(14, 79, 85));
+        jLabel14.setText("Amount(kg) :");
+        jPanel1.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 40, -1, -1));
+
+        FeedFragment.add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 670, 610, 230));
+
+        jPanel2.setBackground(new java.awt.Color(164, 196, 181));
+        jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        UpdateFeedPrice.setFont(new java.awt.Font("Berlin Sans FB Demi", 0, 24)); // NOI18N
+        jPanel2.add(UpdateFeedPrice, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 80, 290, 50));
+
+        UpdateFeedBtn.setBackground(new java.awt.Color(237, 180, 106));
+        UpdateFeedBtn.setFont(new java.awt.Font("Berlin Sans FB Demi", 0, 24)); // NOI18N
+        UpdateFeedBtn.setForeground(new java.awt.Color(14, 79, 85));
+        UpdateFeedBtn.setText("Update Feed");
+        UpdateFeedBtn.setBorder(null);
+        UpdateFeedBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                UpdateFeedBtnActionPerformed(evt);
+            }
+        });
+        jPanel2.add(UpdateFeedBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 150, 200, 50));
+
+        jLabel18.setFont(new java.awt.Font("Berlin Sans FB Demi", 0, 24)); // NOI18N
+        jLabel18.setForeground(new java.awt.Color(14, 79, 85));
+        jLabel18.setText("Price :");
+        jPanel2.add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 40, -1, -1));
+
+        UpdateFeedAmount.setFont(new java.awt.Font("Berlin Sans FB Demi", 0, 24)); // NOI18N
+        jPanel2.add(UpdateFeedAmount, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 80, 290, 50));
+
+        jLabel17.setFont(new java.awt.Font("Berlin Sans FB Demi", 0, 24)); // NOI18N
+        jLabel17.setForeground(new java.awt.Color(14, 79, 85));
+        jLabel17.setText("Amount(kg) :");
+        jPanel2.add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 40, -1, -1));
+
+        UpdateFeedID.setFont(new java.awt.Font("Berlin Sans FB Demi", 0, 24)); // NOI18N
+        UpdateFeedID.setForeground(new java.awt.Color(14, 79, 85));
+        UpdateFeedID.setText("?");
+        jPanel2.add(UpdateFeedID, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 40, -1, -1));
 
         jLabel25.setFont(new java.awt.Font("Berlin Sans FB Demi", 0, 24)); // NOI18N
+        jLabel25.setForeground(new java.awt.Color(14, 79, 85));
         jLabel25.setText("ID :");
-        FeedFragment.add(jLabel25, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 690, -1, -1));
+        jPanel2.add(jLabel25, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 40, -1, -1));
+
+        FeedFragment.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 670, 800, 230));
 
         FragmentManager.add(FeedFragment, "card3");
 
@@ -435,8 +496,9 @@ public class MainMenuView extends javax.swing.JFrame {
 
         WaterFragment.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 40, 1440, 540));
 
-        DeleteWaterBtn.setBackground(new java.awt.Color(164, 196, 181));
+        DeleteWaterBtn.setBackground(new java.awt.Color(237, 180, 106));
         DeleteWaterBtn.setFont(new java.awt.Font("Berlin Sans FB Demi", 0, 24)); // NOI18N
+        DeleteWaterBtn.setForeground(new java.awt.Color(14, 79, 85));
         DeleteWaterBtn.setText("Delete Water");
         DeleteWaterBtn.setBorder(null);
         DeleteWaterBtn.addActionListener(new java.awt.event.ActionListener() {
@@ -445,45 +507,10 @@ public class MainMenuView extends javax.swing.JFrame {
             }
         });
         WaterFragment.add(DeleteWaterBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 600, 200, 50));
-        WaterFragment.add(AddWaterAmount, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 730, 370, 50));
 
-        jLabel19.setFont(new java.awt.Font("Berlin Sans FB Demi", 0, 24)); // NOI18N
-        jLabel19.setText("Amount(L) :");
-        WaterFragment.add(jLabel19, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 690, -1, -1));
-
-        AddWaterBtn.setBackground(new java.awt.Color(164, 196, 181));
-        AddWaterBtn.setFont(new java.awt.Font("Berlin Sans FB Demi", 0, 24)); // NOI18N
-        AddWaterBtn.setText("Add Water");
-        AddWaterBtn.setBorder(null);
-        AddWaterBtn.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                AddWaterBtnActionPerformed(evt);
-            }
-        });
-        WaterFragment.add(AddWaterBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 800, 200, 50));
-
-        jLabel20.setFont(new java.awt.Font("Berlin Sans FB Demi", 0, 24)); // NOI18N
-        jLabel20.setText("ID :");
-        WaterFragment.add(jLabel20, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 690, -1, -1));
-
-        UpdateWaterBtn.setBackground(new java.awt.Color(164, 196, 181));
-        UpdateWaterBtn.setFont(new java.awt.Font("Berlin Sans FB Demi", 0, 24)); // NOI18N
-        UpdateWaterBtn.setText("Update Water");
-        UpdateWaterBtn.setBorder(null);
-        UpdateWaterBtn.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                UpdateWaterBtnActionPerformed(evt);
-            }
-        });
-        WaterFragment.add(UpdateWaterBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 800, 200, 50));
-        WaterFragment.add(UpdateWaterAmount, new org.netbeans.lib.awtextra.AbsoluteConstraints(830, 730, 370, 50));
-
-        jLabel21.setFont(new java.awt.Font("Berlin Sans FB Demi", 0, 24)); // NOI18N
-        jLabel21.setText("Amount(L) :");
-        WaterFragment.add(jLabel21, new org.netbeans.lib.awtextra.AbsoluteConstraints(830, 690, -1, -1));
-
-        RefreshWaterBtn.setBackground(new java.awt.Color(164, 196, 181));
+        RefreshWaterBtn.setBackground(new java.awt.Color(237, 180, 106));
         RefreshWaterBtn.setFont(new java.awt.Font("Berlin Sans FB Demi", 0, 24)); // NOI18N
+        RefreshWaterBtn.setForeground(new java.awt.Color(14, 79, 85));
         RefreshWaterBtn.setText("Refresh Waters");
         RefreshWaterBtn.setBorder(null);
         RefreshWaterBtn.addActionListener(new java.awt.event.ActionListener() {
@@ -491,14 +518,71 @@ public class MainMenuView extends javax.swing.JFrame {
                 RefreshWaterBtnActionPerformed(evt);
             }
         });
-        WaterFragment.add(RefreshWaterBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(1280, 600, 200, 50));
+        WaterFragment.add(RefreshWaterBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 600, 200, 50));
 
-        UpdateWaterID.setFont(new java.awt.Font("Berlin Sans FB", 0, 36)); // NOI18N
+        jPanel3.setBackground(new java.awt.Color(164, 196, 181));
+        jPanel3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel19.setFont(new java.awt.Font("Berlin Sans FB Demi", 0, 24)); // NOI18N
+        jLabel19.setForeground(new java.awt.Color(14, 79, 85));
+        jLabel19.setText("Amount(L) :");
+        jPanel3.add(jLabel19, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 40, -1, -1));
+
+        AddWaterAmount.setFont(new java.awt.Font("Berlin Sans FB Demi", 0, 24)); // NOI18N
+        jPanel3.add(AddWaterAmount, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 80, 550, 50));
+
+        AddWaterBtn.setBackground(new java.awt.Color(237, 180, 106));
+        AddWaterBtn.setFont(new java.awt.Font("Berlin Sans FB Demi", 0, 24)); // NOI18N
+        AddWaterBtn.setForeground(new java.awt.Color(14, 79, 85));
+        AddWaterBtn.setText("Add Water");
+        AddWaterBtn.setBorder(null);
+        AddWaterBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                AddWaterBtnActionPerformed(evt);
+            }
+        });
+        jPanel3.add(AddWaterBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 150, 200, 50));
+
+        WaterFragment.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 670, 610, 230));
+
+        jPanel4.setBackground(new java.awt.Color(164, 196, 181));
+        jPanel4.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        UpdateWaterBtn.setBackground(new java.awt.Color(237, 180, 106));
+        UpdateWaterBtn.setFont(new java.awt.Font("Berlin Sans FB Demi", 0, 24)); // NOI18N
+        UpdateWaterBtn.setForeground(new java.awt.Color(14, 79, 85));
+        UpdateWaterBtn.setText("Update Water");
+        UpdateWaterBtn.setBorder(null);
+        UpdateWaterBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                UpdateWaterBtnActionPerformed(evt);
+            }
+        });
+        jPanel4.add(UpdateWaterBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 150, 200, 50));
+
+        UpdateWaterAmount.setFont(new java.awt.Font("Berlin Sans FB Demi", 0, 24)); // NOI18N
+        jPanel4.add(UpdateWaterAmount, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 80, 600, 50));
+
+        jLabel21.setFont(new java.awt.Font("Berlin Sans FB Demi", 0, 24)); // NOI18N
+        jLabel21.setForeground(new java.awt.Color(14, 79, 85));
+        jLabel21.setText("Amount(L) :");
+        jPanel4.add(jLabel21, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 40, -1, -1));
+
+        UpdateWaterID.setFont(new java.awt.Font("Berlin Sans FB Demi", 0, 24)); // NOI18N
+        UpdateWaterID.setForeground(new java.awt.Color(14, 79, 85));
         UpdateWaterID.setText("?");
-        WaterFragment.add(UpdateWaterID, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 730, -1, -1));
+        jPanel4.add(UpdateWaterID, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 40, -1, -1));
+
+        jLabel20.setFont(new java.awt.Font("Berlin Sans FB Demi", 0, 24)); // NOI18N
+        jLabel20.setForeground(new java.awt.Color(14, 79, 85));
+        jLabel20.setText("ID :");
+        jPanel4.add(jLabel20, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 40, -1, -1));
+
+        WaterFragment.add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 670, 800, 230));
 
         FragmentManager.add(WaterFragment, "card5");
 
+        HarvestFragment.setForeground(new java.awt.Color(14, 79, 85));
         HarvestFragment.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         HarvestsTable.setModel(new javax.swing.table.DefaultTableModel(
@@ -522,8 +606,9 @@ public class MainMenuView extends javax.swing.JFrame {
 
         HarvestFragment.add(jScrollPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 40, 1440, 540));
 
-        DeleteHarvestBtn.setBackground(new java.awt.Color(164, 196, 181));
+        DeleteHarvestBtn.setBackground(new java.awt.Color(237, 180, 106));
         DeleteHarvestBtn.setFont(new java.awt.Font("Berlin Sans FB Demi", 0, 24)); // NOI18N
+        DeleteHarvestBtn.setForeground(new java.awt.Color(14, 79, 85));
         DeleteHarvestBtn.setText("Delete Harvest");
         DeleteHarvestBtn.setBorder(null);
         DeleteHarvestBtn.addActionListener(new java.awt.event.ActionListener() {
@@ -533,44 +618,9 @@ public class MainMenuView extends javax.swing.JFrame {
         });
         HarvestFragment.add(DeleteHarvestBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 600, 200, 50));
 
-        jLabel22.setFont(new java.awt.Font("Berlin Sans FB Demi", 0, 24)); // NOI18N
-        jLabel22.setText("Amount(Per Chicken) :");
-        HarvestFragment.add(jLabel22, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 690, -1, -1));
-        HarvestFragment.add(AddHarvestAmount, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 730, 370, 50));
-
-        AddHarvestBtn.setBackground(new java.awt.Color(164, 196, 181));
-        AddHarvestBtn.setFont(new java.awt.Font("Berlin Sans FB Demi", 0, 24)); // NOI18N
-        AddHarvestBtn.setText("Add Harvest");
-        AddHarvestBtn.setBorder(null);
-        AddHarvestBtn.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                AddHarvestBtnActionPerformed(evt);
-            }
-        });
-        HarvestFragment.add(AddHarvestBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 800, 200, 50));
-
-        jLabel23.setFont(new java.awt.Font("Berlin Sans FB Demi", 0, 24)); // NOI18N
-        jLabel23.setText("ID :");
-        HarvestFragment.add(jLabel23, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 690, -1, -1));
-
-        UpdateHarvestBtn.setBackground(new java.awt.Color(164, 196, 181));
-        UpdateHarvestBtn.setFont(new java.awt.Font("Berlin Sans FB Demi", 0, 24)); // NOI18N
-        UpdateHarvestBtn.setText("Update Harvest");
-        UpdateHarvestBtn.setBorder(null);
-        UpdateHarvestBtn.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                UpdateHarvestBtnActionPerformed(evt);
-            }
-        });
-        HarvestFragment.add(UpdateHarvestBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 800, 200, 50));
-
-        jLabel24.setFont(new java.awt.Font("Berlin Sans FB Demi", 0, 24)); // NOI18N
-        jLabel24.setText("Amount(Per Chicken) :");
-        HarvestFragment.add(jLabel24, new org.netbeans.lib.awtextra.AbsoluteConstraints(810, 690, -1, -1));
-        HarvestFragment.add(UpdateHarvestAmount, new org.netbeans.lib.awtextra.AbsoluteConstraints(810, 730, 370, 50));
-
-        RefreshHarvestBtn.setBackground(new java.awt.Color(164, 196, 181));
+        RefreshHarvestBtn.setBackground(new java.awt.Color(237, 180, 106));
         RefreshHarvestBtn.setFont(new java.awt.Font("Berlin Sans FB Demi", 0, 24)); // NOI18N
+        RefreshHarvestBtn.setForeground(new java.awt.Color(14, 79, 85));
         RefreshHarvestBtn.setText("Refresh Harvests");
         RefreshHarvestBtn.setBorder(null);
         RefreshHarvestBtn.addActionListener(new java.awt.event.ActionListener() {
@@ -578,11 +628,67 @@ public class MainMenuView extends javax.swing.JFrame {
                 RefreshHarvestBtnActionPerformed(evt);
             }
         });
-        HarvestFragment.add(RefreshHarvestBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(1280, 600, 200, 50));
+        HarvestFragment.add(RefreshHarvestBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 600, 200, 50));
 
-        UpdateHarvestID.setFont(new java.awt.Font("Berlin Sans FB", 0, 36)); // NOI18N
+        jPanel5.setBackground(new java.awt.Color(164, 196, 181));
+        jPanel5.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        AddHarvestAmount.setFont(new java.awt.Font("Berlin Sans FB Demi", 0, 24)); // NOI18N
+        jPanel5.add(AddHarvestAmount, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 80, 550, 50));
+
+        AddHarvestBtn.setBackground(new java.awt.Color(237, 180, 106));
+        AddHarvestBtn.setFont(new java.awt.Font("Berlin Sans FB Demi", 0, 24)); // NOI18N
+        AddHarvestBtn.setForeground(new java.awt.Color(14, 79, 85));
+        AddHarvestBtn.setText("Add Harvest");
+        AddHarvestBtn.setBorder(null);
+        AddHarvestBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                AddHarvestBtnActionPerformed(evt);
+            }
+        });
+        jPanel5.add(AddHarvestBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 150, 200, 50));
+
+        jLabel22.setFont(new java.awt.Font("Berlin Sans FB Demi", 0, 24)); // NOI18N
+        jLabel22.setForeground(new java.awt.Color(14, 79, 85));
+        jLabel22.setText("Amount(Per Chicken) :");
+        jPanel5.add(jLabel22, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 40, -1, -1));
+
+        HarvestFragment.add(jPanel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 670, 610, 230));
+
+        jPanel6.setBackground(new java.awt.Color(164, 196, 181));
+        jPanel6.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        UpdateHarvestBtn.setBackground(new java.awt.Color(237, 180, 106));
+        UpdateHarvestBtn.setFont(new java.awt.Font("Berlin Sans FB Demi", 0, 24)); // NOI18N
+        UpdateHarvestBtn.setForeground(new java.awt.Color(14, 79, 85));
+        UpdateHarvestBtn.setText("Update Harvest");
+        UpdateHarvestBtn.setBorder(null);
+        UpdateHarvestBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                UpdateHarvestBtnActionPerformed(evt);
+            }
+        });
+        jPanel6.add(UpdateHarvestBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 150, 200, 50));
+
+        UpdateHarvestAmount.setFont(new java.awt.Font("Berlin Sans FB Demi", 0, 24)); // NOI18N
+        jPanel6.add(UpdateHarvestAmount, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 80, 600, 50));
+
+        jLabel24.setFont(new java.awt.Font("Berlin Sans FB Demi", 0, 24)); // NOI18N
+        jLabel24.setForeground(new java.awt.Color(14, 79, 85));
+        jLabel24.setText("Amount(Per Chicken) :");
+        jPanel6.add(jLabel24, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 40, -1, -1));
+
+        UpdateHarvestID.setFont(new java.awt.Font("Berlin Sans FB Demi", 0, 24)); // NOI18N
+        UpdateHarvestID.setForeground(new java.awt.Color(14, 79, 85));
         UpdateHarvestID.setText("?");
-        HarvestFragment.add(UpdateHarvestID, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 730, -1, -1));
+        jPanel6.add(UpdateHarvestID, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 40, -1, -1));
+
+        jLabel23.setFont(new java.awt.Font("Berlin Sans FB Demi", 0, 24)); // NOI18N
+        jLabel23.setForeground(new java.awt.Color(14, 79, 85));
+        jLabel23.setText("ID :");
+        jPanel6.add(jLabel23, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 40, -1, -1));
+
+        HarvestFragment.add(jPanel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 670, 800, 230));
 
         FragmentManager.add(HarvestFragment, "card4");
 
@@ -605,7 +711,7 @@ public class MainMenuView extends javax.swing.JFrame {
                 .addComponent(Topbar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(Sidebar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(FragmentManager, javax.swing.GroupLayout.DEFAULT_SIZE, 953, Short.MAX_VALUE)))
+                    .addComponent(FragmentManager, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
         );
 
         pack();
@@ -1170,8 +1276,10 @@ public class MainMenuView extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
+    private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel15;
+    private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel17;
     private javax.swing.JLabel jLabel18;
     private javax.swing.JLabel jLabel19;
@@ -1182,6 +1290,8 @@ public class MainMenuView extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel23;
     private javax.swing.JLabel jLabel24;
     private javax.swing.JLabel jLabel25;
+    private javax.swing.JLabel jLabel26;
+    private javax.swing.JLabel jLabel27;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
@@ -1189,6 +1299,12 @@ public class MainMenuView extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel2;
+    private javax.swing.JPanel jPanel3;
+    private javax.swing.JPanel jPanel4;
+    private javax.swing.JPanel jPanel5;
+    private javax.swing.JPanel jPanel6;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
