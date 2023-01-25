@@ -57,8 +57,11 @@ public class AuthRepository extends BaseRepository {
                             Username
                      )
             );
-            if(results.first()) {
+            if(results.next()) {
                 StoredHashedPassword = results.getString("HashedPassword");
+                System.out.println(StoredHashedPassword);
+                System.out.println(HashedPasswordInput);
+
             }
             else {
                 return false;
@@ -70,6 +73,7 @@ public class AuthRepository extends BaseRepository {
             return HashedPasswordInput == null ? StoredHashedPassword == null : HashedPasswordInput.equals(StoredHashedPassword);
         }
         catch (Exception ex) {
+            System.out.println(ex.getMessage());
         }
         return false;
     }
