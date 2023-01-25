@@ -62,10 +62,10 @@ public class LoginView extends javax.swing.JFrame {
 
         jPanel2.setBackground(new java.awt.Color(164, 196, 181));
         jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-        jPanel2.add(PasswordField, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 370, 430, 40));
+        jPanel2.add(PasswordField, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 370, 450, 40));
 
         UsernameField.setFont(new java.awt.Font("Arial Narrow", 0, 18)); // NOI18N
-        jPanel2.add(UsernameField, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 250, 430, 40));
+        jPanel2.add(UsernameField, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 250, 450, 40));
 
         jLabel2.setFont(new java.awt.Font("Arial Narrow", 1, 16)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(14, 79, 85));
@@ -105,7 +105,10 @@ public class LoginView extends javax.swing.JFrame {
 
         jPanel3.setBackground(new java.awt.Color(255, 255, 255));
         jPanel3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-        jPanel3.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 180, 460, 320));
+
+        jLabel5.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel5.setIcon(new javax.swing.ImageIcon("C:\\Users\\user\\OneDrive\\Documents\\Term6\\Software-Engineering-Laboratory\\Inventory-Management-System\\CS155-8L_InventorySystem\\src\\main\\java\\Resources\\logo.png")); // NOI18N
+        jPanel3.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 180, 460, 320));
 
         jLabel6.setFont(new java.awt.Font("Berlin Sans FB Demi", 1, 34)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(14, 79, 85));
