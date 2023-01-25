@@ -14,9 +14,9 @@ import java.sql.Statement;
  * @author hp
  */
 public abstract class BaseRepository {
-    private String USERNAME = "sql6590997";
-    private String PASSWORD = "JX7vaTZMbm";
-    private final String LINK = "jdbc:mysql://sql6.freemysqlhosting.net:3306?useTimezone=true&serverTimezone=GMT%2B8";
+    private final String USERNAME = "freedb_sql_user";
+    private final String PASSWORD = "9kMBUt7%xWzb8DX";
+    private final String LINK = "jdbc:mysql://sql.freedb.tech:3306?useTimezone=true&serverTimezone=GMT%2B8";
     private final String CONNECTOR = "com.mysql.cj.jdbc.Driver";
     
     protected Connection createSQLConnection() throws Exception {
@@ -25,7 +25,7 @@ public abstract class BaseRepository {
         Connection sql_con = DriverManager.getConnection(LINK, USERNAME, PASSWORD);
             
         Statement SetDB = sql_con.createStatement();
-        SetDB.executeUpdate("USE sql6590997;");
+        SetDB.executeUpdate("USE freedb_sql_db;");
             
         return sql_con;
     }

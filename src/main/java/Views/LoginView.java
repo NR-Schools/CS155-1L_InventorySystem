@@ -105,8 +105,6 @@ public class LoginView extends javax.swing.JFrame {
 
         jPanel3.setBackground(new java.awt.Color(255, 255, 255));
         jPanel3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        jLabel5.setIcon(new javax.swing.ImageIcon("C:\\Users\\hp\\Documents\\NetBeansProjects\\CS155-1_InventorySystem\\src\\main\\java\\Resources\\logo.png")); // NOI18N
         jPanel3.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 180, 460, 320));
 
         jLabel6.setFont(new java.awt.Font("Berlin Sans FB Demi", 1, 34)); // NOI18N
