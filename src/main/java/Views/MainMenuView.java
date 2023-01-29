@@ -931,7 +931,7 @@ public class MainMenuView extends javax.swing.JFrame {
         }
         
         if (Amount == 0) {
-            JOptionPane.showMessageDialog(rootPane, "Invalid Water Amount", "Update Water Error", JOptionPane.ERROR_MESSAGE);
+            JOptionPane.showMessageDialog(rootPane, "Invalid Feed Amount", "Update Water Error", JOptionPane.ERROR_MESSAGE);
             return;
         }
         
