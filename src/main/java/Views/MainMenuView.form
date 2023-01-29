@@ -87,9 +87,6 @@
             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="55" green="4f" red="e" type="rgb"/>
             </Property>
-            <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="2" name="C:\Users\user\OneDrive\Documents\Term6\Software-Engineering-Laboratory\Inventory-Management-System\CS155-8L_InventorySystem\src\main\java\Resources\inventory.png"/>
-            </Property>
             <Property name="text" type="java.lang.String" value="Inventory Management System"/>
           </Properties>
         </Component>
@@ -117,9 +114,6 @@
             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="ff" green="ff" red="ff" type="rgb"/>
             </Property>
-            <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="2" name="C:\Users\user\OneDrive\Documents\Term6\Software-Engineering-Laboratory\Inventory-Management-System\CS155-8L_InventorySystem\src\main\java\Resources\feed.png"/>
-            </Property>
             <Property name="text" type="java.lang.String" value="   FEED"/>
             <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
               <Border info="null"/>
@@ -146,9 +140,6 @@
             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="ff" green="ff" red="ff" type="rgb"/>
             </Property>
-            <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="2" name="C:\Users\user\OneDrive\Documents\Term6\Software-Engineering-Laboratory\Inventory-Management-System\CS155-8L_InventorySystem\src\main\java\Resources\water.png"/>
-            </Property>
             <Property name="text" type="java.lang.String" value="   WATER"/>
             <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
               <Border info="null"/>
@@ -174,9 +165,6 @@
             </Property>
             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="ff" green="ff" red="ff" type="rgb"/>
-            </Property>
-            <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="2" name="C:\Users\user\OneDrive\Documents\Term6\Software-Engineering-Laboratory\Inventory-Management-System\CS155-8L_InventorySystem\src\main\java\Resources\harvest.png"/>
             </Property>
             <Property name="text" type="java.lang.String" value="   HARVEST"/>
             <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
@@ -226,11 +214,6 @@
           </Constraints>
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel2">
-          <Properties>
-            <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="2" name="C:\Users\user\OneDrive\Documents\Term6\Software-Engineering-Laboratory\Inventory-Management-System\CS155-8L_InventorySystem\src\main\java\Resources\user.png"/>
-            </Property>
-          </Properties>
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
               <AbsoluteConstraints x="10" y="20" width="90" height="70"/>
@@ -247,9 +230,6 @@
             </Property>
             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="ff" green="ff" red="ff" type="rgb"/>
-            </Property>
-            <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="2" name="C:\Users\user\OneDrive\Documents\Term6\Software-Engineering-Laboratory\Inventory-Management-System\CS155-8L_InventorySystem\src\main\java\Resources\dashboard.png"/>
             </Property>
             <Property name="text" type="java.lang.String" value="   DASHBOARD"/>
             <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
@@ -312,11 +292,6 @@
               </Layout>
               <SubComponents>
                 <Component class="javax.swing.JLabel" name="jLabel4">
-                  <Properties>
-                    <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                      <Image iconType="2" name="C:\Users\user\OneDrive\Documents\Term6\Software-Engineering-Laboratory\Inventory-Management-System\CS155-8L_InventorySystem\src\main\java\Resources\total-feed.png"/>
-                    </Property>
-                  </Properties>
                   <Constraints>
                     <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
                       <AbsoluteConstraints x="20" y="20" width="-1" height="-1"/>
@@ -391,11 +366,6 @@
               </Layout>
               <SubComponents>
                 <Component class="javax.swing.JLabel" name="jLabel6">
-                  <Properties>
-                    <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                      <Image iconType="2" name="C:\Users\user\OneDrive\Documents\Term6\Software-Engineering-Laboratory\Inventory-Management-System\CS155-8L_InventorySystem\src\main\java\Resources\total-water.png"/>
-                    </Property>
-                  </Properties>
                   <Constraints>
                     <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
                       <AbsoluteConstraints x="20" y="20" width="-1" height="-1"/>
@@ -470,11 +440,6 @@
               </Layout>
               <SubComponents>
                 <Component class="javax.swing.JLabel" name="jLabel7">
-                  <Properties>
-                    <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                      <Image iconType="2" name="C:\Users\user\OneDrive\Documents\Term6\Software-Engineering-Laboratory\Inventory-Management-System\CS155-8L_InventorySystem\src\main\java\Resources\total-harvest.png"/>
-                    </Property>
-                  </Properties>
                   <Constraints>
                     <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
                       <AbsoluteConstraints x="20" y="20" width="-1" height="-1"/>
@@ -574,11 +539,6 @@
               </Layout>
               <SubComponents>
                 <Component class="javax.swing.JLabel" name="jLabel11">
-                  <Properties>
-                    <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                      <Image iconType="2" name="C:\Users\user\OneDrive\Documents\Term6\Software-Engineering-Laboratory\Inventory-Management-System\CS155-8L_InventorySystem\src\main\java\Resources\total-feed.png"/>
-                    </Property>
-                  </Properties>
                   <Constraints>
                     <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
                       <AbsoluteConstraints x="20" y="20" width="-1" height="-1"/>
@@ -593,15 +553,15 @@
                     <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                       <Color blue="ff" green="ff" red="ff" type="rgb"/>
                     </Property>
-                    <Property name="text" type="java.lang.String" value="Monthly Average of Feed"/>
+                    <Property name="text" type="java.lang.String" value="Monthly Average of Feed Consumption"/>
                   </Properties>
                   <Constraints>
                     <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-                      <AbsoluteConstraints x="170" y="20" width="-1" height="-1"/>
+                      <AbsoluteConstraints x="70" y="20" width="-1" height="-1"/>
                     </Constraint>
                   </Constraints>
                 </Component>
-                <Component class="javax.swing.JLabel" name="MonthlyAverageFeedLabel">
+                <Component class="javax.swing.JLabel" name="MonthlyAverageFeedConsumptionLabel">
                   <Properties>
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                       <Font name="Berlin Sans FB Demi" size="40" style="1"/>
@@ -1013,11 +973,6 @@
                   </Constraints>
                 </Component>
                 <Component class="javax.swing.JLabel" name="jLabel28">
-                  <Properties>
-                    <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                      <Image iconType="2" name="C:\Users\user\OneDrive\Documents\Term6\Software-Engineering-Laboratory\Inventory-Management-System\CS155-8L_InventorySystem\src\main\java\Resources\total-feed.png"/>
-                    </Property>
-                  </Properties>
                   <Constraints>
                     <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
                       <AbsoluteConstraints x="20" y="50" width="-1" height="-1"/>
@@ -1333,11 +1288,6 @@
                   </Constraints>
                 </Component>
                 <Component class="javax.swing.JLabel" name="jLabel29">
-                  <Properties>
-                    <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                      <Image iconType="2" name="C:\Users\user\OneDrive\Documents\Term6\Software-Engineering-Laboratory\Inventory-Management-System\CS155-8L_InventorySystem\src\main\java\Resources\total-water.png"/>
-                    </Property>
-                  </Properties>
                   <Constraints>
                     <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
                       <AbsoluteConstraints x="20" y="50" width="-1" height="-1"/>
@@ -1467,7 +1417,7 @@
                     </Constraint>
                   </Constraints>
                 </Component>
-                <Component class="javax.swing.JButton" name="AddHarvestBtn">
+                <Component class="javax.swing.JButton" name="SubmitHarvestBtn">
                   <Properties>
                     <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                       <Color blue="6a" green="b4" red="ed" type="rgb"/>
@@ -1484,7 +1434,7 @@
                     </Property>
                   </Properties>
                   <Events>
-                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="AddHarvestBtnActionPerformed"/>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="SubmitHarvestBtnActionPerformed"/>
                   </Events>
                   <Constraints>
                     <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
@@ -1505,6 +1455,27 @@
                   <Constraints>
                     <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
                       <AbsoluteConstraints x="20" y="20" width="-1" height="-1"/>
+                    </Constraint>
+                  </Constraints>
+                </Component>
+                <Component class="javax.swing.JComboBox" name="AddConsumeHarvestCB">
+                  <Properties>
+                    <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                      <Font name="Berlin Sans FB Demi" size="20" style="0"/>
+                    </Property>
+                    <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+                      <StringArray count="2">
+                        <StringItem index="0" value="Add Harvest"/>
+                        <StringItem index="1" value="Consume Harvest"/>
+                      </StringArray>
+                    </Property>
+                  </Properties>
+                  <AuxValues>
+                    <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+                  </AuxValues>
+                  <Constraints>
+                    <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
+                      <AbsoluteConstraints x="20" y="110" width="210" height="40"/>
                     </Constraint>
                   </Constraints>
                 </Component>
@@ -1637,11 +1608,6 @@
                   </Constraints>
                 </Component>
                 <Component class="javax.swing.JLabel" name="jLabel30">
-                  <Properties>
-                    <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                      <Image iconType="2" name="C:\Users\user\OneDrive\Documents\Term6\Software-Engineering-Laboratory\Inventory-Management-System\CS155-8L_InventorySystem\src\main\java\Resources\total-harvest.png"/>
-                    </Property>
-                  </Properties>
                   <Constraints>
                     <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
                       <AbsoluteConstraints x="20" y="50" width="-1" height="-1"/>

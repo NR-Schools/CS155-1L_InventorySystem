@@ -122,7 +122,7 @@ public class FeedRepository extends BaseRepository {
         return totalFeeds;
     }
     
-    public double getMonthlyAverageFeed() {
+    public double getMonthlyAverageFeedConsumption() {
         double monthlyAverageFeed = 0;
         
         try {
@@ -130,10 +130,11 @@ public class FeedRepository extends BaseRepository {
             
             Statement readFeedDB = con.createStatement();
             ResultSet results = readFeedDB.executeQuery(
-                    "SELECT AVG(Feed_Amount)\n" +
-                    "	AS AverageAmountPerMonth\n" +
-                    "   FROM FeedTable\n" +
-                    "	WHERE FeedTable.Feed_TimeStamp >= DATE_SUB(CURDATE(), INTERVAL 1 MONTH);");
+                    "SELECT COALESCE(AVG(ABS(Feed_Amount)))\n" +
+                    "AS AverageAmountPerMonth\n" +
+                    "FROM FeedTable\n" +
+                    "WHERE FeedTable.Feed_TimeStamp >= DATE_SUB(CURDATE(), INTERVAL 1 MONTH)\n" +
+                    "AND FeedTable.Feed_Amount < 0;");
             results.next();
             monthlyAverageFeed = results.getDouble("AverageAmountPerMonth");
             

@@ -18,10 +18,6 @@ import javax.crypto.spec.PBEKeySpec;
  *
  * @author hp
  */
-
-// Idk kung ganto ba hehe :)
-// Pede gawin na lng tong helper class or service since isa lng naman yung i-authenticate niya
-// Kayo bahala
 public class AuthRepository extends BaseRepository {
     
     public AuthRepository() {}
@@ -59,9 +55,6 @@ public class AuthRepository extends BaseRepository {
             );
             if(results.next()) {
                 StoredHashedPassword = results.getString("HashedPassword");
-                System.out.println(StoredHashedPassword);
-                System.out.println(HashedPasswordInput);
-
             }
             else {
                 return false;
