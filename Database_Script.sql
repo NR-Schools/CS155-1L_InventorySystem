@@ -1,4 +1,4 @@
-USE freedb_sql_db;
+USE sql12593192;
 
 SHOW TABLES;
 
