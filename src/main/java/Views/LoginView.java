@@ -107,7 +107,7 @@ public class LoginView extends javax.swing.JFrame {
         jPanel3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel5.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel5.setIcon(new javax.swing.ImageIcon("C:\\Users\\user\\OneDrive\\Documents\\Term6\\Software-Engineering-Laboratory\\Inventory-Management-System\\CS155-8L_InventorySystem\\src\\main\\java\\Resources\\logo.png")); // NOI18N
+        jLabel5.setIcon(new javax.swing.ImageIcon("C:\\Users\\hp\\Downloads\\Mapua\\College\\2\\2nd\\CS155-1L\\CS155-1L_InventorySystem\\src\\main\\java\\Resources\\logo.png")); // NOI18N
         jPanel3.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 180, 460, 320));
 
         jLabel6.setFont(new java.awt.Font("Berlin Sans FB Demi", 1, 34)); // NOI18N

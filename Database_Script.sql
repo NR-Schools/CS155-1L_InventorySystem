@@ -1,5 +1,7 @@
 USE sql12593192;
 
+CREATE DATABASE sql12593192\_db;
+
 SHOW TABLES;
 
 -- Create Auth Table

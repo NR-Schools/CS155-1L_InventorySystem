@@ -141,13 +141,13 @@ public class MainMenuView extends javax.swing.JFrame {
         jLabel30 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setPreferredSize(new java.awt.Dimension(1485, 820));
         setSize(new java.awt.Dimension(1500, 1050));
 
         Topbar.setBackground(new java.awt.Color(237, 180, 106));
 
         jLabel5.setFont(new java.awt.Font("Berlin Sans FB Demi", 0, 36)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(14, 79, 85));
+        jLabel5.setIcon(new javax.swing.ImageIcon("C:\\Users\\hp\\Downloads\\Mapua\\College\\2\\2nd\\CS155-1L\\CS155-1L_InventorySystem\\src\\main\\java\\Resources\\inventory.png")); // NOI18N
         jLabel5.setText("Inventory Management System");
 
         javax.swing.GroupLayout TopbarLayout = new javax.swing.GroupLayout(Topbar);
@@ -164,7 +164,7 @@ public class MainMenuView extends javax.swing.JFrame {
             .addGroup(TopbarLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel5)
-                .addContainerGap(10, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         Sidebar.setBackground(new java.awt.Color(14, 79, 85));
@@ -173,6 +173,7 @@ public class MainMenuView extends javax.swing.JFrame {
         FeedViewBtn.setBackground(new java.awt.Color(14, 79, 85));
         FeedViewBtn.setFont(new java.awt.Font("Berlin Sans FB Demi", 0, 18)); // NOI18N
         FeedViewBtn.setForeground(new java.awt.Color(255, 255, 255));
+        FeedViewBtn.setIcon(new javax.swing.ImageIcon("C:\\Users\\hp\\Downloads\\Mapua\\College\\2\\2nd\\CS155-1L\\CS155-1L_InventorySystem\\src\\main\\java\\Resources\\feed.png")); // NOI18N
         FeedViewBtn.setText("   FEED");
         FeedViewBtn.setBorder(null);
         FeedViewBtn.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
@@ -186,6 +187,7 @@ public class MainMenuView extends javax.swing.JFrame {
         WaterViewBtn.setBackground(new java.awt.Color(14, 79, 85));
         WaterViewBtn.setFont(new java.awt.Font("Berlin Sans FB Demi", 0, 18)); // NOI18N
         WaterViewBtn.setForeground(new java.awt.Color(255, 255, 255));
+        WaterViewBtn.setIcon(new javax.swing.ImageIcon("C:\\Users\\hp\\Downloads\\Mapua\\College\\2\\2nd\\CS155-1L\\CS155-1L_InventorySystem\\src\\main\\java\\Resources\\water.png")); // NOI18N
         WaterViewBtn.setText("   WATER");
         WaterViewBtn.setBorder(null);
         WaterViewBtn.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
@@ -199,6 +201,7 @@ public class MainMenuView extends javax.swing.JFrame {
         HarvestViewBtn.setBackground(new java.awt.Color(14, 79, 85));
         HarvestViewBtn.setFont(new java.awt.Font("Berlin Sans FB Demi", 0, 18)); // NOI18N
         HarvestViewBtn.setForeground(new java.awt.Color(255, 255, 255));
+        HarvestViewBtn.setIcon(new javax.swing.ImageIcon("C:\\Users\\hp\\Downloads\\Mapua\\College\\2\\2nd\\CS155-1L\\CS155-1L_InventorySystem\\src\\main\\java\\Resources\\harvest.png")); // NOI18N
         HarvestViewBtn.setText("   HARVEST");
         HarvestViewBtn.setBorder(null);
         HarvestViewBtn.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
@@ -218,11 +221,14 @@ public class MainMenuView extends javax.swing.JFrame {
         jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel3.setText("Admin");
         Sidebar.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(106, 58, -1, -1));
+
+        jLabel2.setIcon(new javax.swing.ImageIcon("C:\\Users\\hp\\Downloads\\Mapua\\College\\2\\2nd\\CS155-1L\\CS155-1L_InventorySystem\\src\\main\\java\\Resources\\user.png")); // NOI18N
         Sidebar.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 20, 90, 70));
 
         DashboardViewBtn.setBackground(new java.awt.Color(14, 79, 85));
         DashboardViewBtn.setFont(new java.awt.Font("Berlin Sans FB Demi", 0, 18)); // NOI18N
         DashboardViewBtn.setForeground(new java.awt.Color(255, 255, 255));
+        DashboardViewBtn.setIcon(new javax.swing.ImageIcon("C:\\Users\\hp\\Downloads\\Mapua\\College\\2\\2nd\\CS155-1L\\CS155-1L_InventorySystem\\src\\main\\java\\Resources\\dashboard.png")); // NOI18N
         DashboardViewBtn.setText("   DASHBOARD");
         DashboardViewBtn.setBorder(null);
         DashboardViewBtn.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
@@ -242,6 +248,8 @@ public class MainMenuView extends javax.swing.JFrame {
 
         FeedPanel.setBackground(new java.awt.Color(164, 196, 181));
         FeedPanel.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel4.setIcon(new javax.swing.ImageIcon("C:\\Users\\hp\\Downloads\\Mapua\\College\\2\\2nd\\CS155-1L\\CS155-1L_InventorySystem\\src\\main\\java\\Resources\\total-feed.png")); // NOI18N
         FeedPanel.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, -1, -1));
 
         jLabel9.setFont(new java.awt.Font("Berlin Sans FB Demi", 1, 24)); // NOI18N
@@ -264,6 +272,8 @@ public class MainMenuView extends javax.swing.JFrame {
 
         WaterPanel.setBackground(new java.awt.Color(164, 196, 181));
         WaterPanel.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel6.setIcon(new javax.swing.ImageIcon("C:\\Users\\hp\\Downloads\\Mapua\\College\\2\\2nd\\CS155-1L\\CS155-1L_InventorySystem\\src\\main\\java\\Resources\\total-water.png")); // NOI18N
         WaterPanel.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, -1, -1));
 
         jLabel10.setFont(new java.awt.Font("Berlin Sans FB Demi", 1, 24)); // NOI18N
@@ -286,6 +296,8 @@ public class MainMenuView extends javax.swing.JFrame {
 
         HarvestPanel.setBackground(new java.awt.Color(164, 196, 181));
         HarvestPanel.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel7.setIcon(new javax.swing.ImageIcon("C:\\Users\\hp\\Downloads\\Mapua\\College\\2\\2nd\\CS155-1L\\CS155-1L_InventorySystem\\src\\main\\java\\Resources\\total-harvest.png")); // NOI18N
         HarvestPanel.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, -1, -1));
 
         jLabel8.setFont(new java.awt.Font("Berlin Sans FB Demi", 1, 24)); // NOI18N
@@ -320,12 +332,14 @@ public class MainMenuView extends javax.swing.JFrame {
 
         MonthlyFeedPanel.setBackground(new java.awt.Color(164, 196, 181));
         MonthlyFeedPanel.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel11.setIcon(new javax.swing.ImageIcon("C:\\Users\\hp\\Downloads\\Mapua\\College\\2\\2nd\\CS155-1L\\CS155-1L_InventorySystem\\src\\main\\java\\Resources\\total-feed.png")); // NOI18N
         MonthlyFeedPanel.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, -1, -1));
 
         jLabel12.setFont(new java.awt.Font("Berlin Sans FB Demi", 1, 24)); // NOI18N
         jLabel12.setForeground(new java.awt.Color(255, 255, 255));
         jLabel12.setText("Monthly Average of Feed Consumption");
-        MonthlyFeedPanel.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 20, -1, -1));
+        MonthlyFeedPanel.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 20, -1, -1));
 
         MonthlyAverageFeedConsumptionLabel.setFont(new java.awt.Font("Berlin Sans FB Demi", 1, 40)); // NOI18N
         MonthlyAverageFeedConsumptionLabel.setForeground(new java.awt.Color(255, 255, 255));
@@ -468,6 +482,8 @@ public class MainMenuView extends javax.swing.JFrame {
             }
         });
         jPanel2.add(DeleteFeedBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 110, 210, 40));
+
+        jLabel28.setIcon(new javax.swing.ImageIcon("C:\\Users\\hp\\Downloads\\Mapua\\College\\2\\2nd\\CS155-1L\\CS155-1L_InventorySystem\\src\\main\\java\\Resources\\total-feed.png")); // NOI18N
         jPanel2.add(jLabel28, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 50, -1, -1));
 
         FeedFragment.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 490, 610, 170));
@@ -582,6 +598,8 @@ public class MainMenuView extends javax.swing.JFrame {
             }
         });
         jPanel4.add(DeleteWaterBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 110, 210, 40));
+
+        jLabel29.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Resources/total-water.png"))); // NOI18N
         jPanel4.add(jLabel29, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 50, -1, -1));
 
         WaterFragment.add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 490, 610, 170));
@@ -697,6 +715,8 @@ public class MainMenuView extends javax.swing.JFrame {
             }
         });
         jPanel6.add(DeleteHarvestBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 110, 210, 40));
+
+        jLabel30.setIcon(new javax.swing.ImageIcon("C:\\Users\\hp\\Downloads\\Mapua\\College\\2\\2nd\\CS155-1L\\CS155-1L_InventorySystem\\src\\main\\java\\Resources\\total-harvest.png")); // NOI18N
         jPanel6.add(jLabel30, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 50, -1, -1));
 
         HarvestFragment.add(jPanel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 490, 610, 170));

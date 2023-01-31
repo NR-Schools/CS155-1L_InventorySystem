@@ -196,7 +196,7 @@
               <Properties>
                 <Property name="horizontalAlignment" type="int" value="0"/>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="2" name="C:\Users\user\OneDrive\Documents\Term6\Software-Engineering-Laboratory\Inventory-Management-System\CS155-8L_InventorySystem\src\main\java\Resources\logo.png"/>
+                  <Image iconType="2" name="C:\Users\hp\Downloads\Mapua\College\2\2nd\CS155-1L\CS155-1L_InventorySystem\src\main\java\Resources\logo.png"/>
                 </Property>
               </Properties>
               <Constraints>
